@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" role="img" aria-label="Xnipertools logo">
+  <title>Xnipertools</title>
+  <defs>
+    <linearGradient id="xtGrad" gradientUnits="userSpaceOnUse" x1="20" y1="6" x2="46" y2="58">
+      <stop offset="0" stop-color="#a6c0ff"/>
+      <stop offset="1" stop-color="#5e8bff"/>
+    </linearGradient>
+  </defs>
+  <!-- Screwdriver (forms one stroke of the X) -->
+  <g transform="rotate(45 32 32)" fill="url(#xtGrad)">
+    <rect x="26" y="5" width="12" height="16" rx="5"/>
+    <rect x="29.5" y="21" width="5" height="3"/>
+    <rect x="30.5" y="23" width="3" height="25"/>
+    <path d="M30 48 H34 L33 55 H31 Z"/>
+  </g>
+  <!-- Wrench (forms the other stroke of the X) -->
+  <g transform="rotate(-45 32 32)" stroke="url(#xtGrad)" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M27 9 A7 7 0 1 0 37 9"/>
+    <line x1="32" y1="14" x2="32" y2="44"/>
+    <circle cx="32" cy="51" r="6"/>
+  </g>
+</svg>
