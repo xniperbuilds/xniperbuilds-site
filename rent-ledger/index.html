@@ -54,6 +54,22 @@
 .xlink{text-align:center;color:var(--muted);font-size:.95rem;margin-top:26px}
 .xlink a{color:var(--indigo);font-weight:600}
 @media(max-width:900px){.deep{grid-template-columns:1fr;gap:20px}.deep.rev .dtext{order:0}.gallery{grid-template-columns:1fr}}
+.dm-overlay{position:fixed;inset:0;background:rgba(22,24,29,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.dm-overlay.open{display:flex}
+.dm{background:#fff;border-radius:22px;max-width:520px;width:100%;padding:30px 28px 26px;box-shadow:var(--shadow-lg);position:relative;max-height:92vh;overflow:auto}
+.dm h3{font-size:1.4rem;font-weight:700;padding-right:36px}
+.dm .dm-sub{color:var(--muted);font-size:.95rem;margin-top:6px}
+.dm-close{position:absolute;top:14px;right:14px;background:var(--violet-soft);border:0;width:36px;height:36px;border-radius:10px;cursor:pointer;color:var(--indigo);font-size:16px;font-family:inherit}
+.dm label{display:block;font-family:var(--font-head);font-weight:600;font-size:.85rem;margin:16px 0 6px;color:var(--ink-2)}
+.dm input:not(#dm-bot),.dm textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;box-sizing:border-box}
+.dm input:focus,.dm textarea:focus{border-color:var(--bright)}
+.dm textarea{min-height:110px;resize:vertical}
+.dm-send{margin-top:20px;width:100%;justify-content:center}
+.dm-msg{margin-top:12px;font-size:.92rem;min-height:20px;text-align:center}
+.dm-msg.ok{color:#1a7f37}
+.dm-msg.err{color:#c62828}
+.dm-alt{text-align:center;color:var(--muted);font-size:.85rem;margin-top:10px}
+.dm-alt a{color:var(--indigo);font-weight:600}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rent Ledger","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://xniperbuilds.com/rent-ledger/","description":"Desktop software for rent-a-car and vehicle-lease businesses — lease ledger with automatic monthly rent posting, payments and running balances, monthly collection rosters in Excel, partner colour coding, own-vehicle fee ledger, reminders for dues, contracts and document expiry, WhatsApp notices, receipts with verification codes, PDF and Excel reports, backups and multi-user accounts. Runs fully offline; SAR-ready; licensed per PC.","publisher":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com/"}}
@@ -77,7 +93,7 @@
       <a href="/#products">Products</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-      <a class="btn btn-primary nav-cta" href="mailto:hello@xniperbuilds.com?subject=Rent%20Ledger%20Demo%20Request">Contact for demo</a>
+      <a class="btn btn-primary nav-cta js-demo" href="#demo">Contact for demo</a>
     </nav>
     <button class="menu-btn" aria-label="Menu" aria-controls="nav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -95,7 +111,7 @@
         <h1>Run your rent-a-car business on one ledger.</h1>
         <p class="lead">Rent Ledger manages vehicle leases end to end — automatic monthly rent, collections, partner tracking, reminders and clean printed reports — offline on your own PC, built for rent-a-car offices.</p>
         <div class="phero-cta">
-          <a class="btn btn-primary btn-lg" href="mailto:hello@xniperbuilds.com?subject=Rent%20Ledger%20Demo%20Request">Contact now for a demo</a>
+          <a class="btn btn-primary btn-lg js-demo" href="#demo">Contact now for a demo</a>
           <a class="btn btn-ghost btn-lg" href="#features">See all features</a>
         </div>
         <p class="muted" style="margin-top:14px;font-size:.92rem">Windows desktop · Works offline · SAR-ready · English interface</p>
@@ -332,7 +348,7 @@
       <div class="cta-inner reveal">
         <h2>See Rent Ledger with your own fleet in mind.</h2>
         <p>A live demo takes 15 minutes — bring your current register and compare.</p>
-        <a class="btn btn-ondark btn-lg" href="mailto:hello@xniperbuilds.com?subject=Rent%20Ledger%20Demo%20Request">Contact now for a demo</a>
+        <a class="btn btn-ondark btn-lg js-demo" href="#demo">Contact now for a demo</a>
       </div>
       <p class="xlink">Also from XniperBuilds: <a href="/transport-ledger/">Transport Ledger</a> — the same ledger discipline, built for transport businesses.</p>
     </div>
@@ -382,6 +398,55 @@
   </div>
 </footer>
 
+<div class="dm-overlay" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="dm-title">
+  <div class="dm">
+    <button class="dm-close" aria-label="Close" onclick="dmClose()">✕</button>
+    <h3 id="dm-title">Request a live demo</h3>
+    <p class="dm-sub">Tell us a little about your business — we will reach out and show you Rent Ledger live.</p>
+    <label for="dm-name">Your name</label>
+    <input id="dm-name" type="text" autocomplete="name">
+    <label for="dm-email">Email</label>
+    <input id="dm-email" type="email" autocomplete="email">
+    <label for="dm-wa">WhatsApp number (optional)</label>
+    <input id="dm-wa" type="tel" autocomplete="tel" placeholder="+966 50 000 0000">
+    <label for="dm-details">Demo details</label>
+    <textarea id="dm-details" placeholder="Tell us about your office — fleet size, current register or software, what you want to see…"></textarea>
+    <input type="checkbox" id="dm-bot" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="btn btn-primary dm-send" onclick="dmSend()">Send demo request</button>
+    <div class="dm-msg" id="dm-msg"></div>
+    <p class="dm-alt">Prefer email? <a href="mailto:hello@xniperbuilds.com?subject=Rent%20Ledger%20Demo%20Request">hello@xniperbuilds.com</a></p>
+  </div>
+</div>
+<script>
+var DM_PRODUCT='Rent Ledger';
+var W3KEY='a2f7894f-12bf-4f3d-b7c0-3680c257269b';
+function dmOpen(e){if(e)e.preventDefault();document.getElementById('demo-modal').classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('dm-name').focus();},60);}
+function dmClose(){document.getElementById('demo-modal').classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.js-demo').forEach(function(a){a.addEventListener('click',dmOpen);});
+document.getElementById('demo-modal').addEventListener('click',function(e){if(e.target===this)dmClose();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')dmClose();});
+function dmSend(){
+  var name=document.getElementById('dm-name').value.trim(),
+      email=document.getElementById('dm-email').value.trim(),
+      wa=document.getElementById('dm-wa').value.trim(),
+      det=document.getElementById('dm-details').value.trim(),
+      msg=document.getElementById('dm-msg'),
+      btn=document.querySelector('.dm-send');
+  if(document.getElementById('dm-bot').checked)return;
+  if(!name||!email||!det){msg.className='dm-msg err';msg.textContent='Please fill in your name, email and demo details.';return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.className='dm-msg err';msg.textContent='Please enter a valid email address.';return;}
+  var orig=btn.textContent;btn.disabled=true;btn.textContent='Sending…';msg.className='dm-msg';msg.textContent='';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+    access_key:W3KEY,subject:DM_PRODUCT+' demo request — '+name,from_name:'XniperBuilds Demo Request',
+    product:DM_PRODUCT,name:name,email:email,whatsapp:(wa||'—'),details:det
+  })}).then(function(r){return r.json();}).then(function(d){
+    btn.disabled=false;btn.textContent=orig;
+    if(d&&d.success){msg.className='dm-msg ok';msg.textContent='✅ Thanks, '+name+'! Your request is in — we will contact you shortly.';
+      document.getElementById('dm-name').value='';document.getElementById('dm-email').value='';document.getElementById('dm-wa').value='';document.getElementById('dm-details').value='';}
+    else{msg.className='dm-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';}
+  }).catch(function(){btn.disabled=false;btn.textContent=orig;msg.className='dm-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';});
+}
+</script>
 <script src="/main.js"></script>
 </body>
 </html>
