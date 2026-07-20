@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XG0JQC6P51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XG0JQC6P51');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Software Development — Business Apps Built for You | XniperBuilds</title>
+<meta name="description" content="XniperBuilds builds custom business software — desktop ledgers, invoicing, dispatch and management apps shaped to your exact workflow. You own it, it runs offline, and we support it directly. Custom projects from $1,999. Get a free quote.">
+<link rel="canonical" href="https://xniperbuilds.com/custom-software/">
+<link rel="icon" href="/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#3E33A6">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xniperbuilds.com/custom-software/">
+<meta property="og:title" content="Custom Software Development — Business apps built for you">
+<meta property="og:description" content="Custom business software shaped to your workflow — ledgers, invoicing, dispatch and management tools. You own it, runs offline, supported directly. Projects from $1,999.">
+<meta property="og:image" content="/png/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/png/og-1200x630.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.cs-hero-svg{width:100%;max-width:290px;height:auto}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px 20px;box-shadow:var(--shadow-sm)}
+.step .n{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-family:var(--font-head);font-weight:700;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,var(--bright),var(--indigo));margin-bottom:14px}
+.step h4{font-size:1.05rem;font-weight:600}
+.step p{color:var(--muted);margin-top:7px;font-size:.92rem}
+a.value{display:block;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+a.value:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#dcd5f7}
+a.value .more{margin-top:14px;font-family:var(--font-head);font-weight:600;font-size:.95rem;color:var(--indigo);display:inline-flex;align-items:center;gap:7px;transition:gap .18s ease}
+a.value:hover .more{gap:12px}
+.cprice{max-width:640px;margin:0 auto;text-align:center;background:linear-gradient(135deg,#fff,#f1edfb);border:1px solid var(--line);border-radius:var(--radius);padding:46px 34px;box-shadow:var(--shadow)}
+.cprice .from{font-family:var(--font-head);color:var(--muted);font-size:1rem}
+.cprice .amt{font-family:var(--font-head);font-weight:700;font-size:3rem;color:var(--ink);letter-spacing:-.02em;line-height:1;margin-left:6px}
+.cprice p{color:var(--muted);margin:16px auto 0;max-width:470px;font-size:.98rem}
+.faq{max-width:760px;margin:0 auto;display:grid;gap:14px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);padding:0 22px}
+.faq summary{cursor:pointer;font-family:var(--font-head);font-weight:600;font-size:1.02rem;padding:18px 30px 18px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--indigo);font-weight:500}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);padding:0 0 18px;font-size:.98rem}
+.xlink{text-align:center;color:var(--muted);font-size:.95rem;margin-top:26px}
+.xlink a{color:var(--indigo);font-weight:600}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.dm-overlay{position:fixed;inset:0;background:rgba(22,24,29,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.dm-overlay.open{display:flex}
+.dm{background:#fff;border-radius:22px;max-width:520px;width:100%;padding:30px 28px 24px;box-shadow:var(--shadow-lg);position:relative;max-height:92vh;overflow:auto}
+.dm h3{font-size:1.4rem;font-weight:700;padding-right:36px}
+.dm .dm-sub{color:var(--muted);font-size:.95rem;margin-top:6px}
+.dm-close{position:absolute;top:14px;right:14px;background:var(--violet-soft);border:0;width:36px;height:36px;border-radius:10px;cursor:pointer;color:var(--indigo);font-size:16px;font-family:inherit}
+.dm label{display:block;font-family:var(--font-head);font-weight:600;font-size:.85rem;margin:16px 0 6px;color:var(--ink-2)}
+.dm input:not(#dm-bot),.dm textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;box-sizing:border-box}
+.dm input:focus,.dm textarea:focus{border-color:var(--bright)}
+.dm textarea{min-height:110px;resize:vertical}
+.dm-send{margin-top:20px;width:100%;justify-content:center}
+.dm-msg{margin-top:12px;font-size:.92rem;min-height:20px;text-align:center}
+.dm-msg.ok{color:#1a7f37}.dm-msg.err{color:#c62828}
+.dm-alt{text-align:center;color:var(--muted);font-size:.85rem;margin-top:10px}
+.dm-alt a{color:var(--indigo);font-weight:600}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Custom Software Development","serviceType":"Custom business software development","provider":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com/"},"areaServed":["Saudi Arabia","Worldwide"],"description":"Custom business software built to your exact workflow — desktop ledgers, invoicing, dispatch and management apps. You own the licence, it can run fully offline, and it is supported directly by the builder.","offers":{"@type":"Offer","priceCurrency":"USD","price":"1999","description":"Custom software projects starting price"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://xniperbuilds.com/"},{"@type":"ListItem","position":2,"name":"Custom Software","item":"https://xniperbuilds.com/custom-software/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does custom software cost?","acceptedAnswer":{"@type":"Answer","text":"Custom projects start from $1,999. The final price depends on scope and features — after we understand what you need, you get a clear fixed quote up front, billed in USD with SAR invoicing available for Saudi businesses."}},{"@type":"Question","name":"How long does it take to build?","acceptedAnswer":{"@type":"Answer","text":"A small tool can take a couple of weeks; a full business system usually takes one to two months. Your proposal includes a realistic timeline before any work begins."}},{"@type":"Question","name":"Do I own the software?","acceptedAnswer":{"@type":"Answer","text":"Yes. You get a perpetual licence to use the software for your business, your data stays on your own PC, and there is no forced subscription."}},{"@type":"Question","name":"Can you customise or extend software I already have?","acceptedAnswer":{"@type":"Answer","text":"If we built it, absolutely. For other software we can usually add features, build reports, or rebuild it to work the way you need — tell us what you have and what you want."}},{"@type":"Question","name":"What about updates and support?","acceptedAnswer":{"@type":"Answer","text":"The first year of support is included. After that, ongoing support and updates are optional and quoted per project — you are never locked in."}},{"@type":"Question","name":"Do you work with businesses remotely?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work with businesses in Saudi Arabia and beyond. Discovery, demos, delivery and support are all handled remotely."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+      <span><b>Xniper</b><span>Builds</span></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="/#products">Products</a>
+      <a href="#work">Our work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-primary nav-cta js-demo" href="#quote">Get a quote</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="phero">
+    <div class="hero-orbs"><span class="orb a"></span><span class="orb b"></span></div>
+    <div class="wrap">
+      <div>
+        <div class="crumbs"><a href="/">Home</a> / <span style="color:var(--indigo)">Custom Software</span></div>
+        <span class="eyebrow" style="margin-top:14px">Custom software · Built for you</span>
+        <h1>Software built around the way you work.</h1>
+        <p class="lead">We design and build custom business software — ledgers, invoicing, dispatch and management tools — shaped to your exact workflow. You own it, it runs offline, and we support it directly.</p>
+        <div class="phero-cta">
+          <a class="btn btn-primary btn-lg js-demo" href="#quote">Get a free quote</a>
+          <a class="btn btn-ghost btn-lg" href="#work">See our work</a>
+        </div>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Desktop &amp; web · Offline-capable · You own the licence · Ongoing support</p>
+      </div>
+      <div class="pvisual">
+        <svg class="cs-hero-svg" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="csbar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B7BF7"/><stop offset="1" stop-color="#5B4BE0"/></linearGradient>
+            <linearGradient id="cshead" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5B4BE0"/><stop offset="1" stop-color="#8B7BF7"/></linearGradient>
+          </defs>
+          <rect x="25" y="28" width="200" height="150" rx="16" fill="#fff" stroke="#e7e5f0" stroke-width="2"/>
+          <path d="M25 44a16 16 0 0 1 16-16h168a16 16 0 0 1 16 16v8H25z" fill="url(#cshead)"/>
+          <circle cx="41" cy="40" r="3.5" fill="#fff" opacity=".9"/><circle cx="53" cy="40" r="3.5" fill="#fff" opacity=".6"/><circle cx="65" cy="40" r="3.5" fill="#fff" opacity=".4"/>
+          <rect x="42" y="68" width="74" height="40" rx="9" fill="#efeaff"/>
+          <rect x="126" y="68" width="58" height="40" rx="9" fill="#f3f1fb"/>
+          <rect x="52" y="80" width="30" height="7" rx="3.5" fill="#8B7BF7"/>
+          <rect x="52" y="92" width="50" height="7" rx="3.5" fill="#c9bff9"/>
+          <rect x="136" y="80" width="24" height="7" rx="3.5" fill="#8B7BF7"/>
+          <rect x="136" y="92" width="38" height="7" rx="3.5" fill="#c9bff9"/>
+          <rect x="42" y="150" width="12" height="18" rx="3" fill="url(#csbar)"/>
+          <rect x="60" y="140" width="12" height="28" rx="3" fill="url(#csbar)"/>
+          <rect x="78" y="152" width="12" height="16" rx="3" fill="url(#csbar)"/>
+          <rect x="96" y="132" width="12" height="36" rx="3" fill="url(#csbar)"/>
+          <rect x="114" y="146" width="12" height="22" rx="3" fill="url(#csbar)"/>
+          <rect x="132" y="124" width="12" height="44" rx="3" fill="url(#csbar)"/>
+          <rect x="150" y="138" width="12" height="30" rx="3" fill="url(#csbar)"/>
+          <rect x="168" y="150" width="12" height="18" rx="3" fill="url(#csbar)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="build" style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>What we build</h2>
+        <p>Practical software for real businesses — the systems that run an office, not another app you have to fight.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg></div>
+          <h4>Ledgers &amp; khata</h4>
+          <p>Accounts, running balances, payments and settlements — one source of truth for every party.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+          <h4>Invoicing &amp; billing</h4>
+          <p>Rate sheets, quotations and invoices — with verification codes and full history.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v9H2z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="16.5" cy="18.5" r="1.8"/></svg></div>
+          <h4>Dispatch &amp; operations</h4>
+          <p>Jobs, drivers and live boards — assign, track and settle the day's work.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v6H3zM3 9v12h18V9M8 14h8"/></svg></div>
+          <h4>Inventory &amp; POS</h4>
+          <p>Stock, sales and receipts — kept in step so your counts always match your books.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="1.5"/><rect x="13.5" y="12" width="7.5" height="9" rx="1.5"/><rect x="3" y="15.5" width="7.5" height="5.5" rx="1.5"/></svg></div>
+          <h4>Reports &amp; dashboards</h4>
+          <p>Excel and PDF reports and at-a-glance dashboards — profit, dues and totals the way your accountant reads them.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h4>Desktop &amp; offline tools</h4>
+          <p>Windows apps that run without internet — your data stays on your machine, licensed per PC.</p>
+        </div>
+      </div>
+      <div class="chips reveal">
+        <span class="chip">Windows desktop</span><span class="chip">Web apps</span><span class="chip">Offline</span>
+        <span class="chip">Excel / PDF</span><span class="chip">Multi-user</span><span class="chip">Backups</span>
+        <span class="chip">Licensing</span><span class="chip">SAR-ready</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-bg" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Why go custom</h2>
+        <p>Off-the-shelf software makes you change how you work. Custom software fits what you already do.</p>
+      </div>
+      <div class="values">
+        <div class="value reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16.5 7.1 18.2 8 12.7 4 8.8l5.5-.8L12 3z"/></svg></div>
+          <h4>Fits your workflow</h4>
+          <p>We shape the software to how your office already runs — your terms, your sheets, your process.</p>
+        </div>
+        <div class="value reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h4>You own it</h4>
+          <p>A perpetual licence and no forced subscriptions. Your data lives on your own PC — never uploaded.</p>
+        </div>
+        <div class="value reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h4>Direct support</h4>
+          <p>You talk to the builder, not a call centre. Fixes, tweaks and new reports come fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Software we've built</h2>
+        <p>Real systems in daily use — the same care goes into your build.</p>
+      </div>
+      <div class="values">
+        <a class="value reveal" href="/transport-ledger/">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v9H2z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="16.5" cy="18.5" r="1.8"/></svg></div>
+          <h4>Transport Ledger</h4>
+          <p>Complete desktop software for transport businesses — trips, party khata, settlements, invoicing, workers and reports.</p>
+          <span class="more">View <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="value reveal" href="/rent-ledger/">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 6.6 6.6A2 2 0 0 1 8.5 5.3h7a2 2 0 0 1 1.9 1.3L19 11"/><rect x="3" y="11" width="18" height="6" rx="2"/><circle cx="7.5" cy="19.5" r="1.5"/><circle cx="16.5" cy="19.5" r="1.5"/></svg></div>
+          <h4>Rent Ledger</h4>
+          <p>A rent-a-car lease ledger for Windows — automatic monthly rent, collection rosters, reminders and verified receipts.</p>
+          <span class="more">View <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="value reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+          <h4>Dispatch &amp; field systems</h4>
+          <p>Live dispatch boards, driver apps and admin panels — built for a Saudi transport operator and in daily use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>How it works</h2>
+        <p>A simple path from "this is a mess" to software your team opens every morning.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="n">1</div>
+          <h4>Discuss</h4>
+          <p>Tell us your process and what hurts today — we listen first.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h4>Proposal &amp; quote</h4>
+          <p>A clear scope and a fixed price up front — no surprises.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h4>Build</h4>
+          <p>We build it, showing you working versions as we go.</p>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <h4>Deliver &amp; train</h4>
+          <p>Installed, your data imported and your team trained.</p>
+        </div>
+        <div class="step">
+          <div class="n">5</div>
+          <h4>Support</h4>
+          <p>First year included, then optional ongoing support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Fixed quotes, no surprises</h2>
+        <p>Every project is priced up front once we understand the scope.</p>
+      </div>
+      <div class="cprice reveal">
+        <div><span class="from">Custom projects from</span> <span class="amt">$1,999</span></div>
+        <p>The final price depends on scope and features. You get a clear fixed quote before any work starts — billed in USD, with SAR invoicing available for businesses in Saudi Arabia.</p>
+        <a class="btn btn-primary btn-lg js-demo" href="#quote">Get a free quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Frequently asked questions</h2>
+        <p>Straight answers about building custom software with us.</p>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>How much does custom software cost?</summary>
+          <p>Custom projects start from $1,999. The final price depends on scope and features — after we understand what you need, you get a clear fixed quote up front, billed in USD with SAR invoicing available for Saudi businesses.</p>
+        </details>
+        <details>
+          <summary>How long does it take to build?</summary>
+          <p>A small tool can take a couple of weeks; a full business system usually takes one to two months. Your proposal includes a realistic timeline before any work begins.</p>
+        </details>
+        <details>
+          <summary>Do I own the software?</summary>
+          <p>Yes. You get a perpetual licence to use the software for your business, your data stays on your own PC, and there is no forced subscription.</p>
+        </details>
+        <details>
+          <summary>Can you customise or extend software I already have?</summary>
+          <p>If we built it, absolutely. For other software we can usually add features, build reports, or rebuild it to work the way you need — tell us what you have and what you want.</p>
+        </details>
+        <details>
+          <summary>What about updates and support?</summary>
+          <p>The first year of support is included. After that, ongoing support and updates are optional and quoted per project — you are never locked in.</p>
+        </details>
+        <details>
+          <summary>Do you work with businesses remotely?</summary>
+          <p>Yes. We work with businesses in Saudi Arabia and beyond. Discovery, demos, delivery and support are all handled remotely.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <h2>Have a process no software fits? Let's build it.</h2>
+        <p>Tell us what your business runs on today — we'll show you what it could run on instead.</p>
+        <a class="btn btn-ondark btn-lg js-demo" href="#quote">Get a free quote</a>
+      </div>
+      <p class="xlink">See it in action: <a href="/transport-ledger/">Transport Ledger</a> and <a href="/rent-ledger/">Rent Ledger</a> — two systems we build and maintain.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true" style="color:#8B7BF7"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+          <span><b>Xniper</b><span>Builds</span></span>
+        </a>
+        <p>An independent studio building free web tools, browser games, Android apps and business desktop software.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Products</h5>
+          <a href="/xnipertools/">Xnipertools</a>
+          <a href="/xniperarcade/">XniperArcade</a>
+          <a href="/riplox/">Riplox</a>
+          <a href="/cipherly/">Cipherly</a>
+          <a href="/transport-ledger/">Transport Ledger</a>
+          <a href="/rent-ledger/">Rent Ledger</a>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <a href="/custom-software/">Custom Software</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="https://github.com/xniperbuilds" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="foot-col">
+          <h5>Live</h5>
+          <a href="https://xnipertools.com" target="_blank" rel="noopener">xnipertools.com</a>
+          <a href="https://xniperarcade.me" target="_blank" rel="noopener">xniperarcade.me</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 XniperBuilds. All rights reserved.</span>
+      <span>Built by XniperBuilds.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dm-overlay" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="dm-title">
+  <div class="dm">
+    <button class="dm-close" aria-label="Close" onclick="dmClose()">✕</button>
+    <h3 id="dm-title">Get a free quote</h3>
+    <p class="dm-sub">Tell us about your business and what you'd like built — we'll come back with a scope and a price.</p>
+    <label for="dm-name">Your name</label>
+    <input id="dm-name" type="text" autocomplete="name">
+    <label for="dm-email">Email</label>
+    <input id="dm-email" type="email" autocomplete="email">
+    <label for="dm-wa">WhatsApp number (optional)</label>
+    <input id="dm-wa" type="tel" autocomplete="tel" placeholder="+966 50 000 0000">
+    <label for="dm-details">What do you want built?</label>
+    <textarea id="dm-details" placeholder="Tell us about your business — what you do now, the software or registers you use, and what you want it to do…"></textarea>
+    <input type="checkbox" id="dm-bot" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="btn btn-primary dm-send" onclick="dmSend()">Send my enquiry</button>
+    <div class="dm-msg" id="dm-msg"></div>
+    <p class="dm-alt">Prefer email? <a href="mailto:hello@xniperbuilds.com?subject=Custom%20Software%20Enquiry">hello@xniperbuilds.com</a></p>
+  </div>
+</div>
+<script>
+var DM_PRODUCT='Custom Software';
+var W3KEY='a2f7894f-12bf-4f3d-b7c0-3680c257269b';
+function dmOpen(e){if(e)e.preventDefault();document.getElementById('demo-modal').classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('dm-name').focus();},60);}
+function dmClose(){document.getElementById('demo-modal').classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.js-demo').forEach(function(a){a.addEventListener('click',dmOpen);});
+document.getElementById('demo-modal').addEventListener('click',function(e){if(e.target===this)dmClose();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')dmClose();});
+function dmSend(){
+  var name=document.getElementById('dm-name').value.trim(),
+      email=document.getElementById('dm-email').value.trim(),
+      wa=document.getElementById('dm-wa').value.trim(),
+      det=document.getElementById('dm-details').value.trim(),
+      msg=document.getElementById('dm-msg'),
+      btn=document.querySelector('.dm-send');
+  if(document.getElementById('dm-bot').checked)return;
+  if(!name||!email||!det){msg.className='dm-msg err';msg.textContent='Please fill in your name, email and project details.';return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.className='dm-msg err';msg.textContent='Please enter a valid email address.';return;}
+  var orig=btn.textContent;btn.disabled=true;btn.textContent='Sending…';msg.className='dm-msg';msg.textContent='';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+    access_key:W3KEY,subject:DM_PRODUCT+' enquiry — '+name,from_name:'XniperBuilds Custom Software',
+    product:DM_PRODUCT,name:name,email:email,whatsapp:(wa||'—'),details:det
+  })}).then(function(r){return r.json();}).then(function(d){
+    btn.disabled=false;btn.textContent=orig;
+    if(d&&d.success){msg.className='dm-msg ok';msg.textContent='✅ Thanks, '+name+'! Your enquiry is in — we will get back to you shortly.';
+      document.getElementById('dm-name').value='';document.getElementById('dm-email').value='';document.getElementById('dm-wa').value='';document.getElementById('dm-details').value='';}
+    else{msg.className='dm-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';}
+  }).catch(function(){btn.disabled=false;btn.textContent=orig;msg.className='dm-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';});
+}
+</script>
+<script src="/main.js"></script>
+</body>
+</html>

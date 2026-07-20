@@ -70,15 +70,33 @@
 .dm-msg.err{color:#c62828}
 .dm-alt{text-align:center;color:var(--muted);font-size:.85rem;margin-top:10px}
 .dm-alt a{color:var(--indigo);font-weight:600}
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:840px;margin:0 auto;align-items:stretch}
+.plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.plan:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#dcd5f7}
+.plan.featured{box-shadow:var(--shadow);background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,var(--bright),var(--violet)) border-box;border:1.6px solid transparent}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--font-head);font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--bright),var(--indigo));padding:6px 15px;border-radius:999px;box-shadow:0 8px 18px -8px rgba(62,51,166,.7)}
+.plan-head h3{font-size:1.35rem;font-weight:700}
+.plan-tag{display:inline-block;font-family:var(--font-head);font-weight:500;font-size:.88rem;color:var(--bright);margin-top:5px}
+.price{display:flex;align-items:baseline;gap:8px;margin:20px 0 6px;flex-wrap:wrap}
+.price .from{font-family:var(--font-head);font-size:.9rem;color:var(--muted)}
+.price .amt{font-family:var(--font-head);font-weight:700;font-size:2.7rem;color:var(--ink);letter-spacing:-.02em;line-height:1}
+.price .per{font-size:.95rem;color:var(--muted)}
+.plan-note{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+.plan-feats{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:11px}
+.plan-feats li{position:relative;padding-left:28px;color:var(--ink-2);font-size:.96rem}
+.plan-feats li::before{content:"✓";position:absolute;left:0;top:0;color:var(--indigo);font-weight:700}
+.plan-cta{width:100%;justify-content:center;margin-top:auto}
+.price-foot{text-align:center;color:var(--muted);font-size:.9rem;max-width:640px;margin:26px auto 0}
+@media(max-width:760px){.pricing{grid-template-columns:1fr;max-width:430px}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rent Ledger","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://xniperbuilds.com/rent-ledger/","description":"Desktop software for rent-a-car and vehicle-lease businesses — lease ledger with automatic monthly rent posting, payments and running balances, monthly collection rosters in Excel, partner colour coding, own-vehicle fee ledger, reminders for dues, contracts and document expiry, WhatsApp notices, receipts with verification codes, PDF and Excel reports, backups and multi-user accounts. Runs fully offline; SAR-ready; licensed per PC.","publisher":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com/"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rent Ledger","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://xniperbuilds.com/rent-ledger/","description":"Desktop software for rent-a-car and vehicle-lease businesses — lease ledger with automatic monthly rent posting, payments and running balances, monthly collection rosters in Excel, partner colour coding, own-vehicle fee ledger, reminders for dues, contracts and document expiry, WhatsApp notices, receipts with verification codes, PDF and Excel reports, backups and multi-user accounts. Runs fully offline; SAR-ready; licensed per PC.","offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"1599","highPrice":"3999","offerCount":"2"},"publisher":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com/"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://xniperbuilds.com/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://xniperbuilds.com/#products"},{"@type":"ListItem","position":3,"name":"Rent Ledger","item":"https://xniperbuilds.com/rent-ledger/"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it fit a Saudi rent-a-car business?","acceptedAnswer":{"@type":"Answer","text":"Yes. Rent Ledger uses SAR currency, Saudi mobile formats for WhatsApp notices, and a clean English interface — it was built for exactly this trade."}},{"@type":"Question","name":"Is my data stored online?","acceptedAnswer":{"@type":"Answer","text":"No. It is a Windows desktop app; your data stays in your own PC and your backups go where you choose."}},{"@type":"Question","name":"Will partner details show on printed sheets?","acceptedAnswer":{"@type":"Answer","text":"No names, ever. Partners appear only as a colour on serial cells and dots inside the app — discreet by design."}},{"@type":"Question","name":"Can I move everything to a new computer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Built-in transfer moves your complete data, and we issue a license for the new machine."}},{"@type":"Question","name":"Can features be customised?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build and maintain Rent Ledger ourselves — reports and features can be tailored to how your office works."}},{"@type":"Question","name":"How do I get a demo and pricing?","acceptedAnswer":{"@type":"Answer","text":"Email us at hello@xniperbuilds.com. We will walk you through the software live and quote per business."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it fit a Saudi rent-a-car business?","acceptedAnswer":{"@type":"Answer","text":"Yes. Rent Ledger uses SAR currency, Saudi mobile formats for WhatsApp notices, and a clean English interface — it was built for exactly this trade."}},{"@type":"Question","name":"Is my data stored online?","acceptedAnswer":{"@type":"Answer","text":"No. It is a Windows desktop app; your data stays in your own PC and your backups go where you choose."}},{"@type":"Question","name":"Will partner details show on printed sheets?","acceptedAnswer":{"@type":"Answer","text":"No names, ever. Partners appear only as a colour on serial cells and dots inside the app — discreet by design."}},{"@type":"Question","name":"Can I move everything to a new computer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Built-in transfer moves your complete data, and we issue a license for the new machine."}},{"@type":"Question","name":"Can features be customised?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build and maintain Rent Ledger ourselves — reports and features can be tailored to how your office works."}},{"@type":"Question","name":"How do I get a demo and pricing?","acceptedAnswer":{"@type":"Answer","text":"Starting prices are listed on the page. Email hello@xniperbuilds.com or request a demo for a live walkthrough and a final quote for your business."}}]}
 </script>
 </head>
 <body>
@@ -91,6 +109,7 @@
     </a>
     <nav class="nav-links" id="nav">
       <a href="/#products">Products</a>
+      <a href="#pricing">Pricing</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
       <a class="btn btn-primary nav-cta js-demo" href="#demo">Contact for demo</a>
@@ -308,6 +327,51 @@
     </div>
   </section>
 
+  <section class="section" id="pricing" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple licensing, no surprises</h2>
+        <p>Pay yearly, or own it for life. Every licence is per PC and includes setup, data import and training.</p>
+      </div>
+      <div class="pricing">
+        <div class="plan reveal">
+          <div class="plan-head">
+            <h3>Yearly Licence</h3>
+            <span class="plan-tag">Easy way to start</span>
+          </div>
+          <div class="price"><span class="from">from</span><span class="amt">$1,599</span><span class="per">/ year</span></div>
+          <p class="plan-note">The full software with support and updates included, renewed each year.</p>
+          <ul class="plan-feats">
+            <li>Every feature, licensed per PC</li>
+            <li>Support &amp; updates included</li>
+            <li>Setup, data import &amp; training</li>
+            <li>Move to a new PC anytime</li>
+          </ul>
+          <a class="btn btn-ghost btn-lg plan-cta js-demo" href="#demo">Get a quote</a>
+        </div>
+        <div class="plan featured reveal">
+          <span class="plan-badge">Best value</span>
+          <div class="plan-head">
+            <h3>Perpetual Licence</h3>
+            <span class="plan-tag">Own it for life</span>
+          </div>
+          <div class="price"><span class="from">from</span><span class="amt">$3,999</span><span class="per">one-time</span></div>
+          <p class="plan-note">Pay once and it is yours — no yearly fee. The first year of support and updates is on us.</p>
+          <ul class="plan-feats">
+            <li>Every feature, per PC — no yearly fee</li>
+            <li>First year of support &amp; updates free</li>
+            <li>Optional support after that — $599/year</li>
+            <li>Setup, data import &amp; training</li>
+            <li>Free transfer to a new PC</li>
+          </ul>
+          <a class="btn btn-primary btn-lg plan-cta js-demo" href="#demo">Get a quote</a>
+        </div>
+      </div>
+      <p class="price-foot">Prices are starting points — the final quote depends on your business size and any custom features. Billed in USD; SAR invoicing available for businesses in Saudi Arabia.</p>
+    </div>
+  </section>
+
   <section class="section" style="padding-top:20px">
     <div class="wrap">
       <div class="section-head reveal">
@@ -337,7 +401,7 @@
         </details>
         <details>
           <summary>How do I get a demo and pricing?</summary>
-          <p>Email us at hello@xniperbuilds.com. We will walk you through the software live and quote per business.</p>
+          <p>Starting prices are listed above on this page. Email hello@xniperbuilds.com or request a demo, and we will walk you through the software live and give you a final quote for your business.</p>
         </details>
       </div>
     </div>

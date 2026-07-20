@@ -31,6 +31,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<style>
+.cs-strip{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;background:linear-gradient(135deg,#fff,#f1edfb);border:1px solid var(--line);border-radius:var(--radius);padding:34px 38px;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.cs-strip:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#dcd5f7}
+.cs-strip h3{font-size:1.5rem;font-weight:700;margin-top:8px}
+.cs-strip p{color:var(--muted);margin-top:10px;max-width:560px}
+.cs-strip .btn{flex:none}
+@media(max-width:640px){.cs-strip{padding:28px 24px}}
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com/","description":"Independent studio building free web tools, browser games, Android apps and business desktop software.","brand":["Xnipertools","XniperArcade","Riplox","Riplox TT","Cipherly","JFF Stylish Name","JFF Crosshair Pro","Transport Ledger","Rent Ledger"],"sameAs":["https://github.com/xniperbuilds"]}
 </script>
@@ -45,6 +53,7 @@
     </a>
     <nav class="nav-links" id="nav">
       <a href="#products">Products</a>
+      <a href="/custom-software/">Custom Software</a>
       <a href="/open-source/">Open Source</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -175,6 +184,20 @@
     </div>
   </section>
 
+  <!-- CUSTOM SOFTWARE -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <a class="cs-strip reveal" href="/custom-software/">
+        <div>
+          <span class="eyebrow">Custom software</span>
+          <h3>Need software built just for your business?</h3>
+          <p>Ledgers, invoicing, dispatch and management tools — shaped to your exact workflow. You own it, it runs offline, and we support it directly.</p>
+        </div>
+        <span class="btn btn-primary btn-lg">Explore custom software</span>
+      </a>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section class="section about-bg" id="about">
     <div class="wrap">
@@ -241,6 +264,7 @@
         </div>
         <div class="foot-col">
           <h5>Studio</h5>
+          <a href="/custom-software/">Custom Software</a>
           <a href="/open-source/">Open Source</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
