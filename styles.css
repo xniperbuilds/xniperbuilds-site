@@ -202,6 +202,24 @@ section{position:relative}
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- responsive ---------- */
+/* Questions and answers. Product pages carried this inline until four more
+   pages wanted it, so it lives here now and each page just uses the class. */
+.faq{max-width:760px;margin:0 auto;display:grid;gap:14px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);padding:0 22px}
+.faq summary{cursor:pointer;font-family:var(--font-head);font-weight:600;font-size:1.02rem;padding:18px 30px 18px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--indigo);font-weight:500}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{color:var(--muted);padding:0 0 18px;font-size:.98rem}
+.faq details p+p{padding-top:0;margin-top:-8px}
+
+/* Long-form answers under a heading, for the things a feature card cannot say
+   in a sentence. Narrow on purpose: prose stops being readable past ~70ch. */
+.prose{max-width:760px;margin:0 auto}
+.prose h3{font-family:var(--font-head);font-size:1.12rem;margin:30px 0 8px}
+.prose h3:first-child{margin-top:0}
+.prose p{color:var(--muted);font-size:.98rem;margin:0 0 12px}
+
 @media(max-width:900px){
   .grid,.values,.feat-grid{grid-template-columns:1fr 1fr}
   .phero .wrap{grid-template-columns:1fr;gap:32px}
