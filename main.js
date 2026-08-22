@@ -24,22 +24,32 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-  // Point download buttons straight at the file instead of at a releases page.
+  // Say which version and how big, under the download buttons.
   //
-  // Every such button ships pointing at .../releases/latest, which always
-  // works. This upgrades it to the actual installer or APK so a click starts
-  // the download where the visitor already is, rather than handing them a
-  // GitHub page and asking them to find the right file among several.
+  // The buttons themselves need nothing from this. Each one points at
+  //   github.com/<repo>/releases/latest/download/<stable name>
+  // which GitHub redirects to whichever release is newest, straight to its
+  // CDN. No API, so nothing here can be rate-limited, and a click works with
+  // JavaScript switched off entirely.
   //
-  // The asset name carries the version, so it cannot be hardcoded - it is
-  // read from the release. If GitHub is slow, rate-limited or unreachable,
-  // nothing is changed and the original link is still there. That is the
-  // whole reason the href starts out valid rather than empty.
-  var buttons = document.querySelectorAll('[data-dl]');
-  if (!buttons.length || !window.fetch) return;
+  // That matters more than it sounds. The first version of this asked
+  // api.github.com for the asset URL, because the file name carried the
+  // version and could not be written down in advance. That API allows 60
+  // calls an hour PER IP - and behind a mobile carrier, thousands of people
+  // share one. Sixty visitors from that carrier in an hour and the sixty-first
+  // gets a refusal: exactly the moment a promotion is working is the moment
+  // the button would stop leading to a file. The fix was on the release side,
+  // not here - every release now also carries a copy under a name that never
+  // changes, so the URL can simply be written in the page.
+  //
+  // What is left is decoration: the version and the size, so nobody is asked
+  // to trust a blind link. If it does not arrive, the note stays empty and the
+  // download is unaffected.
+  var notes = document.querySelectorAll('[data-dl]');
+  if (!notes.length || !window.fetch) return;
 
   var byRepo = {};
-  buttons.forEach(function (el) {
+  notes.forEach(function (el) {
     var repo = el.getAttribute('data-dl');
     (byRepo[repo] = byRepo[repo] || []).push(el);
   });
@@ -53,27 +63,21 @@
       .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
       .then(function (rel) {
         byRepo[repo].forEach(function (el) {
-          var prefix = el.getAttribute('data-dl-match') || '';
-          var asset = (rel.assets || []).filter(function (a) {
-            return a.name.indexOf(prefix) === 0;
-          })[0];
-          if (!asset) return;
-          el.href = asset.browser_download_url;
-          el.setAttribute('download', '');
-
-          // Say what is about to arrive. Someone who can see the version and
-          // the size before clicking is not being asked to trust a blind link.
-          //
           // The selector is checked before use: querySelector('') throws, and
           // a throw here would abandon every button after this one - which is
           // exactly what happened the first time this was written.
           var sel = el.getAttribute('data-dl-note');
           var note = sel ? document.querySelector(sel) : null;
-          if (note) {
-            note.textContent = (rel.tag_name || '') + ' · ' + mb(asset.size);
-          }
+          if (!note) return;
+
+          var name = el.getAttribute('data-dl-file') || '';
+          var asset = (rel.assets || []).filter(function (a) {
+            return a.name === name;
+          })[0];
+          note.textContent = (rel.tag_name || '') +
+            (asset ? ' · ' + mb(asset.size) : '');
         });
       })
-      .catch(function () { /* the releases link it shipped with still works */ });
+      .catch(function () { /* the button is a plain link; it does not need us */ });
   });
 })();
