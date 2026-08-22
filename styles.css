@@ -157,6 +157,12 @@ section{position:relative}
 .cta-inner .btn{margin-top:30px;position:relative}
 .btn-ondark{background:#fff;color:var(--indigo)}
 .btn-ondark:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(0,0,0,.4)}
+/* The second choice on a dark band. Outlined rather than filled so the one
+   people actually came for stays the obvious one. */
+.btn-ondark-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-ondark-ghost:hover{transform:translateY(-2px);border-color:#fff;background:rgba(255,255,255,.08)}
+.cta-inner .btn+.btn{margin-left:12px}
+@media(max-width:520px){.cta-inner .btn{display:block;width:100%}.cta-inner .btn+.btn{margin-left:0;margin-top:12px}}
 
 /* ---------- footer ---------- */
 .site-foot{background:var(--ink);color:#c7c9d4;padding:56px 0 30px}
