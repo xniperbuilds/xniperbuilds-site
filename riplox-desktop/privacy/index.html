@@ -102,7 +102,8 @@
         </ul>
 
         <h2>Send, and what the relay can see</h2>
-        <p>Send lets you share a link on your phone and have the download start on your PC. It works two ways:</p>
+        <p>Send lets you share a link on your phone and have the download start on your PC. It also carries plain text the same way — a key, a password, a Wi-Fi code — which arrives on the PC hidden until you copy it, and is then gone. Everything below applies equally to both.</p>
+        <p>It works two ways:</p>
         <ul>
           <li><strong>On the same Wi-Fi</strong>, the link goes straight from your phone to your PC across your own network. It never reaches us, and it works with <strong>no internet connection at all</strong>.</li>
           <li><strong>Anywhere else</strong>, it passes through our relay at <code>relay.xniperbuilds.com</code>. The link is sealed with <strong>AES-GCM</strong> using the key your phone and PC agreed at pairing, <em>before</em> it leaves the phone. The relay holds and forwards that sealed envelope; it does not have the key and cannot read the link, the quality you chose, or anything else inside.</li>
