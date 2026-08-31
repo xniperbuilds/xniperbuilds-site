@@ -70,16 +70,16 @@
         <div class="crumbs"><a href="/">Home</a> / <a href="/riplox-tt/">Riplox TT</a> / <span style="color:var(--indigo)">Privacy</span></div>
         <span class="eyebrow" style="margin-top:14px">Legal</span>
         <h1 style="font-size:clamp(2rem,4vw,2.6rem);font-weight:700;margin:12px 0 0">Privacy Policy</h1>
-        <p class="updated">Riplox TT · Last updated: 13 July 2026</p>
+        <p class="updated">Riplox TT · Last updated: 1 September 2026</p>
 
         <p style="margin-top:22px">Riplox TT is a video downloader for Android published by XniperBuilds. Almost everything in the app happens on your own device. This policy explains what stays local, what uses the internet, and the ads the app shows.</p>
 
         <div class="callout">
-          <p><strong>The short version:</strong> No account and no personal information. Your downloads and history stay on your device. The app connects to the internet only to fetch the video you ask for and to keep its download engine current. Because the app is free and shows ads, Google AdMob uses a device advertising ID — see "Advertising" below.</p>
+          <p><strong>The short version:</strong> No account and no personal information. Your downloads and history stay on your device. The app goes online only to look up the video link you gave it, to download that video, to keep its download engine current, and to load ads. Since version 1.1.5 the link you paste or share is sent to an XniperBuilds lookup service, which keeps and logs nothing — see "Network use" below. Because the app is free and shows ads, Google AdMob uses a device advertising ID — see "Advertising" below.</p>
         </div>
 
         <h2>Data we collect</h2>
-        <p>We do not collect any personal or identifying information ourselves. There is no sign-up or login. We do not gather your real name, email, phone number, contacts, location or usage analytics, and we have no servers that receive your data. The only device data involved is the advertising identifier, used solely by our ads provider (Google AdMob) to show ads — see "Advertising" below.</p>
+        <p>We do not collect any personal or identifying information. There is no XniperBuilds account to create and no sign-up of any kind. We do not gather your real name, email, phone number, contacts, location or usage analytics, and we keep no records of what you download — our lookup service (below) stores nothing and writes no logs. The only device data involved is the advertising identifier, used solely by our ads provider (Google AdMob) to show ads — see "Advertising" below.</p>
 
         <h2>Data stored on your device</h2>
         <p>To work, the app keeps a small amount of data <strong>locally on your phone only</strong>:</p>
@@ -87,10 +87,12 @@
           <li><strong>Download history</strong> — the title, link and saved-file location of videos you download, so you can replay or re-download them. It never leaves your device, and you can delete any entry (or clear it) at any time.</li>
           <li><strong>Preferences</strong> — your chosen video quality and audio (MP3) setting.</li>
           <li><strong>Downloaded files</strong> — saved to your device's gallery (Movies / Music / Pictures). These are your files.</li>
+          <li><strong>Your TikTok session, only if you use "Connect TikTok"</strong> — an optional login for private, region-locked or age-restricted videos. Public videos need no login at all. You sign in on TikTok's own page inside the app, so <strong>your password is never seen, handled or stored by us</strong>. The resulting session stays in the app's private storage on your phone, is excluded from cloud backup and device transfer, is never sent to us or to our lookup service, and is removed when you log out.</li>
         </ul>
 
         <h2>Network use</h2>
-        <p>The app connects to the internet only to (1) fetch the video you asked it to download from TikTok, (2) keep its open-source download engine up to date so links keep working, and (3) load ads. No other network calls are made, and no information about you is sent to us.</p>
+        <p>The app connects to the internet only to (1) look up the link you paste or share, (2) fetch the video itself from TikTok, (3) keep its open-source download engine up to date so links keep working, and (4) load ads. No other network calls are made.</p>
+        <p><strong>The lookup service.</strong> From version 1.1.5, step (1) runs on an XniperBuilds service rather than on your phone, because TikTok will only hand the clean, watermark-free video to a request the phone itself cannot make. What is sent is the <strong>TikTok link</strong> you gave the app — nothing else, no identifier, and nothing from your history. The service reads that public post and returns the video's title, cover and download addresses. It <strong>stores nothing and logs nothing</strong>: the link arrives, the answer leaves. Your network address is visible to it for the moment the request takes, and is used only to stop one device flooding the service; it is not recorded. The video itself is then downloaded by your phone, directly from TikTok. If the service cannot be reached, the app falls back to looking the link up on your phone.</p>
 
         <h2>Advertising</h2>
         <p>Riplox TT is free and shows ads through <strong>Google AdMob</strong>. To serve ads, AdMob collects and uses a device <strong>advertising ID</strong> and limited device information to show ads and measure their performance. You can reset or delete your advertising ID, or opt out of ad personalisation, any time in your device settings (Settings → Google → Ads). Learn more in <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's advertising policies</a>.</p>
