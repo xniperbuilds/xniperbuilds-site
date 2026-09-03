@@ -85,6 +85,16 @@
   .now-open svg{width:15px;height:15px}
   .badge-live{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
     color:var(--indigo);background:var(--violet-soft);border:1px solid #e3ddfb;border-radius:999px;padding:3px 10px}
+  .seg{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .seg .pill{display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+    font-family:var(--font-head);font-weight:600;font-size:.9rem;color:var(--ink-2);
+    border:1px solid var(--line);border-radius:12px;padding:11px 16px;background:var(--paper);
+    transition:border-color .15s,background .15s,color .15s}
+  .seg .pill input{width:16px;height:16px;accent-color:var(--indigo);margin:0}
+  .seg .pill:has(input:checked){border-color:var(--bright);background:var(--violet-soft);color:var(--indigo)}
+  .apply-card select{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+    font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink);outline:none}
+  .apply-card select:focus{border-color:var(--bright)}
   @media(max-width:900px){
     /* the emblem is decoration - let the headline lead on a phone */
     .phero .pvisual{display:none}
@@ -129,7 +139,7 @@
           <a class="btn btn-primary btn-lg" href="#apply">Apply to test</a>
           <a class="btn btn-ghost btn-lg" href="#how">How it works</a>
         </div>
-        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Android 8.0+ · Needs a Google Play (Gmail) account · Takes two minutes</p>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Android 8.0+ · Needs a Google Play (Gmail) account · Already using an app? <a href="#report" style="color:var(--indigo);font-weight:600">Report a bug</a></p>
       </div>
       <div class="pvisual">
         <div class="big-emblem">
@@ -295,6 +305,56 @@
     </div>
   </section>
 
+  <section class="section" id="report" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Found a bug? Want a feature?</h2>
+        <p>Tester or not — if one of our apps misbehaves, or you want it to do something it doesn't, tell us here.</p>
+      </div>
+      <div class="apply-wrap reveal">
+        <div class="apply-card">
+          <label>What is this?</label>
+          <div class="seg">
+            <label class="pill"><input type="radio" name="rp-kind" value="Bug" checked>Bug or error</label>
+            <label class="pill"><input type="radio" name="rp-kind" value="Feature request">New feature</label>
+            <label class="pill"><input type="radio" name="rp-kind" value="Improvement">Improvement</label>
+          </div>
+
+          <label for="rp-app">Which app?</label>
+          <select id="rp-app">
+            <option>Riplox IG</option>
+            <option>Riplox TT</option>
+            <option>Riplox for Android</option>
+            <option>Riplox Desktop</option>
+            <option>JFF Stylish Name</option>
+            <option>JFF Crosshair Pro</option>
+            <option>Cipherly</option>
+            <option>Clutch</option>
+            <option>Transport Ledger</option>
+            <option>Rent Ledger</option>
+            <option>Xnipertools (website)</option>
+            <option>Something else</option>
+          </select>
+
+          <label for="rp-details">Tell us what happened</label>
+          <textarea id="rp-details" placeholder="For a bug: what you did, what you expected, what happened instead. For a feature: what you want it to do."></textarea>
+
+          <label for="rp-device">Phone and Android version <span class="opt">&mdash; optional</span></label>
+          <input id="rp-device" type="text" placeholder="e.g. Samsung A15, Android 14">
+
+          <label for="rp-email">Your email <span class="opt">&mdash; optional</span></label>
+          <input id="rp-email" type="email" autocomplete="email" placeholder="Only if you want a reply">
+
+          <input type="checkbox" id="rp-bot" style="display:none" tabindex="-1" autocomplete="off">
+          <button class="btn btn-primary ap-send" onclick="rpSend()">Send report</button>
+          <div class="ap-msg" id="rp-msg"></div>
+          <p class="ap-alt">Prefer email? <a href="mailto:hello@xniperbuilds.com?subject=App%20bug%20report">hello@xniperbuilds.com</a></p>
+        </div>
+        <p class="privacy-note">Reports go straight to us. Nothing is published, and an email address is only used to reply to you about this report.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="wrap">
       <div class="cta-inner reveal">
@@ -337,6 +397,7 @@
           <a href="/#about">About</a>
           <a href="/#contact">Contact</a>
           <a href="/app-testing/">App testing</a>
+          <a href="/app-testing/#report">Report a bug</a>
           <a href="https://github.com/xniperbuilds" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="foot-col">
@@ -379,6 +440,29 @@ function apSend(){
       document.getElementById('ap-name').value='';document.getElementById('ap-email').value='';
       document.getElementById('ap-contact').value='';document.getElementById('ap-device').value='';
       document.getElementById('ap-notes').value='';document.getElementById('ap-agree').checked=false;}
+    else{msg.className='ap-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';}
+  }).catch(function(){btn.disabled=false;btn.textContent=orig;msg.className='ap-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';});
+}
+
+function rpSend(){
+  var kind=document.querySelector('input[name="rp-kind"]:checked').value,
+      app=document.getElementById('rp-app').value,
+      det=document.getElementById('rp-details').value.trim(),
+      device=document.getElementById('rp-device').value.trim(),
+      email=document.getElementById('rp-email').value.trim(),
+      msg=document.getElementById('rp-msg'),
+      btn=document.querySelector('#report .ap-send');
+  if(document.getElementById('rp-bot').checked)return;
+  if(!det){msg.className='ap-msg err';msg.textContent='Please tell us what happened first.';return;}
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.className='ap-msg err';msg.textContent='That email address does not look right.';return;}
+  var orig=btn.textContent;btn.disabled=true;btn.textContent='Sending…';msg.className='ap-msg';msg.textContent='';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+    access_key:W3KEY,subject:kind+' — '+app,from_name:'XniperBuilds App Feedback',
+    type:kind,app:app,details:det,device:(device||'—'),email:(email||'not given')
+  })}).then(function(r){return r.json();}).then(function(d){
+    btn.disabled=false;btn.textContent=orig;
+    if(d&&d.success){msg.className='ap-msg ok';msg.textContent='✅ Got it — thanks. We read every one of these.';
+      document.getElementById('rp-details').value='';document.getElementById('rp-device').value='';document.getElementById('rp-email').value='';}
     else{msg.className='ap-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';}
   }).catch(function(){btn.disabled=false;btn.textContent=orig;msg.className='ap-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';});
 }
