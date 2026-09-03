@@ -80,8 +80,11 @@
   .now-card img{width:62px;height:62px;border-radius:16px;flex:none}
   .now-card h4{font-size:1.02rem;font-weight:600;margin-bottom:5px}
   .now-card p{color:var(--muted);font-size:.9rem;line-height:1.5}
-  .now-open{display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  .now-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:12px}
+  .now-open{display:inline-flex;align-items:center;gap:6px;
     font-family:var(--font-head);font-weight:600;font-size:.85rem;color:var(--indigo)}
+  .now-open:hover{text-decoration:underline}
+  .now-open.sec{color:var(--muted);font-weight:500}
   .now-open svg{width:14px;height:14px}
   .badge-live{display:inline-block;margin-bottom:7px;
     font-family:var(--font-head);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
@@ -215,63 +218,77 @@
         <p>Five apps are on test right now. Tap one to open it on Google Play.</p>
       </div>
       <div class="now-grid">
-        <a class="now-card reveal" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.riploxtt" target="_blank" rel="noopener">
+        <div class="now-card reveal">
           <img src="/logos/riplox-tt.png" alt="Riplox TT logo">
           <div>
             <span class="badge-live open">Open test</span>
             <h4>Riplox TT</h4>
             <p>Save any TikTok without the watermark, or pull its audio as MP3. Anyone can install this one — no invite needed.</p>
-            <span class="now-open">Install from Google Play
+            <div class="now-links">
+            <a class="now-open" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.riploxtt" target="_blank" rel="noopener">Install from Google Play
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
-            </span>
+            </a>
+            </div>
           </div>
-        </a>
-        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.riploxig" target="_blank" rel="noopener">
+        </div>
+        <div class="now-card reveal">
           <img src="/logos/riplox-ig.png" alt="Riplox IG logo">
           <div>
             <span class="badge-live">Closed test</span>
             <h4>Riplox IG</h4>
             <p>Share a reel, story or carousel from Instagram and it saves itself to your gallery. One link takes every video.</p>
-            <span class="now-open">Open the tester page
+            <div class="now-links">
+            <a class="now-open" href="https://play.google.com/apps/testing/com.xniperbuilds.riploxig" target="_blank" rel="noopener">Join the test
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
-            </span>
+            </a>
+            <a class="now-open sec" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.riploxig" target="_blank" rel="noopener">Play listing</a>
+            </div>
           </div>
-        </a>
-        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.jffcrosshair" target="_blank" rel="noopener">
+        </div>
+        <div class="now-card reveal">
           <img src="/logos/jff-crosshair.png" alt="JFF Crosshair Pro logo">
           <div>
             <span class="badge-live">Closed test</span>
             <h4>JFF Crosshair Pro</h4>
             <p>A crosshair overlay that sits on top of your game, with sizes, colours and profiles you can switch mid-match.</p>
-            <span class="now-open">Open the tester page
+            <div class="now-links">
+            <a class="now-open" href="https://play.google.com/apps/testing/com.xniperbuilds.jffcrosshair" target="_blank" rel="noopener">Join the test
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
-            </span>
+            </a>
+            <a class="now-open sec" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.jffcrosshair" target="_blank" rel="noopener">Play listing</a>
+            </div>
           </div>
-        </a>
-        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.jff" target="_blank" rel="noopener">
+        </div>
+        <div class="now-card reveal">
           <img src="/logos/jff.png" alt="JFF Stylish Name logo">
           <div>
             <span class="badge-live">Closed test</span>
             <h4>JFF Stylish Name</h4>
             <p>Turn your gamer name into stylish fonts and symbols, then copy it straight into the game.</p>
-            <span class="now-open">Open the tester page
+            <div class="now-links">
+            <a class="now-open" href="https://play.google.com/apps/testing/com.xniperbuilds.jff" target="_blank" rel="noopener">Join the test
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
-            </span>
+            </a>
+            <a class="now-open sec" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.jff" target="_blank" rel="noopener">Play listing</a>
+            </div>
           </div>
-        </a>
-        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.cipherly" target="_blank" rel="noopener">
+        </div>
+        <div class="now-card reveal">
           <img src="/logos/cipherly.png" alt="Cipherly logo">
           <div>
             <span class="badge-live">Closed test</span>
             <h4>Cipherly</h4>
             <p>Lock a message behind a password and send it anywhere. Only someone with the key can read it back.</p>
-            <span class="now-open">Open the tester page
+            <div class="now-links">
+            <a class="now-open" href="https://play.google.com/apps/testing/com.xniperbuilds.cipherly" target="_blank" rel="noopener">Join the test
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
-            </span>
+            </a>
+            <a class="now-open sec" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.cipherly" target="_blank" rel="noopener">Play listing</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-      <p class="privacy-note">Riplox TT is an open test — install it straight away. The others are closed tests: their tester page only lets you in once your email is on the list, so send the form below first.</p>
+      <p class="privacy-note">Riplox TT is an open test — install it straight away. The other four are closed tests: "Join the test" only works once your email is on the list, so send the form below first, then join and install.</p>
     </div>
   </section>
 
