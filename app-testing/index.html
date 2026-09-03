@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XG0JQC6P51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XG0JQC6P51');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply for Android app testing — tester programme | XniperBuilds</title>
+<meta name="description" content="Test XniperBuilds Android apps before they reach Google Play. Install, keep it 14 days, tell us what breaks — and get free access to every paid app we release. Apply with your Play Store email.">
+<link rel="canonical" href="https://xniperbuilds.com/app-testing/">
+<link rel="icon" href="/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#3E33A6">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xniperbuilds.com/app-testing/">
+<meta property="og:title" content="Become an Android tester — XniperBuilds">
+<meta property="og:description" content="Test our Android apps before release. 14 days on your phone, and free access to every paid app we build.">
+<meta property="og:image" content="/png/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/png/og-1200x630.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does testing cost anything?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing to pay, no subscription, no card. The apps you test are free, and so is the programme."}},
+{"@type":"Question","name":"Why do you need my Gmail address?","acceptedAnswer":{"@type":"Answer","text":"Google Play closed testing works by email. Your address goes on the tester list for the app, which is what lets the private install link work on your phone. It has to be the exact Google account signed into the Play Store on the device you will test on."}},
+{"@type":"Question","name":"What does free access to paid apps mean?","acceptedAnswer":{"@type":"Answer","text":"When we release an app or a pro unlock that other people pay for, testers get it at no cost on the Google account they test with. It stays free for that account, not for a trial period."}},
+{"@type":"Question","name":"Why 14 days?","acceptedAnswer":{"@type":"Answer","text":"Google requires an app to run a closed test with at least 12 testers for 14 continuous days before it can be published to everyone. If someone uninstalls early the clock can reset, which is why we ask you to leave it on the phone for the two weeks."}},
+{"@type":"Question","name":"Do I have to write reports?","acceptedAnswer":{"@type":"Answer","text":"No. A screenshot or a one-line message when something looks wrong is plenty. If nothing breaks, you do not have to send anything at all."}},
+{"@type":"Question","name":"Can I leave the programme?","acceptedAnswer":{"@type":"Answer","text":"Yes, any time. Uninstall the app and reply once to say you are out. There is no lock-in and nothing to cancel."}},
+{"@type":"Question","name":"Will a test build damage my phone?","acceptedAnswer":{"@type":"Answer","text":"No. Test builds install from Google Play like any other app, in their own sandbox, and uninstall the same way. They are the same builds we run on our own phones."}}]}
+</script>
+<style>
+  /* page-scoped: apply form + steps */
+  .apply-wrap{max-width:620px;margin:0 auto}
+  .apply-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 30px 26px;box-shadow:var(--shadow)}
+  .apply-card label{display:block;font-family:var(--font-head);font-weight:600;font-size:.85rem;margin:18px 0 6px;color:var(--ink-2)}
+  .apply-card label .opt{font-weight:500;color:var(--muted)}
+  .apply-card input[type=text],.apply-card input[type=email],.apply-card input[type=tel],.apply-card textarea{
+    width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:.95rem;
+    background:var(--paper);color:var(--ink);outline:none;transition:border .15s;box-sizing:border-box}
+  .apply-card input:focus,.apply-card textarea:focus{border-color:var(--bright)}
+  .apply-card textarea{min-height:92px;resize:vertical}
+  .hint{font-size:.82rem;color:var(--muted);margin-top:6px}
+  .agree{display:flex;gap:11px;align-items:flex-start;margin-top:22px;
+    background:var(--violet-soft);border:1px solid #e3ddfb;border-radius:14px;padding:14px 16px}
+  .agree input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--indigo)}
+  .agree span{font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .ap-send{margin-top:20px;width:100%;justify-content:center}
+  .ap-msg{margin-top:12px;font-size:.92rem;min-height:20px;text-align:center}
+  .ap-msg.ok{color:#1a7f37}.ap-msg.err{color:#c62828}
+  .ap-alt{text-align:center;color:var(--muted);font-size:.85rem;margin-top:12px}
+  .ap-alt a{color:var(--indigo);font-weight:600}
+  .privacy-note{max-width:620px;margin:16px auto 0;text-align:center;font-size:.85rem;color:var(--muted)}
+  .steps{display:grid;gap:16px;max-width:760px;margin:0 auto}
+  .step{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius-sm);padding:20px 22px;box-shadow:var(--shadow-sm)}
+  .step .n{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+    font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;
+    background:linear-gradient(135deg,var(--bright),var(--indigo) 60%,var(--deep));
+    box-shadow:0 8px 18px -10px rgba(62,51,166,.8)}
+  .step h4{font-size:1.02rem;font-weight:600;margin-bottom:4px}
+  .step p{color:var(--muted);font-size:.95rem}
+  .now-grid{display:grid;gap:18px;max-width:760px;margin:0 auto}
+  .now-card{display:flex;gap:20px;align-items:center;position:relative;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow-sm);
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+  .now-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#dcd5f7}
+  .now-card img{width:72px;height:72px;border-radius:18px;flex:none}
+  .now-card h4{font-size:1.1rem;font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .now-card p{color:var(--muted);font-size:.95rem}
+  .now-open{display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+    font-family:var(--font-head);font-weight:600;font-size:.88rem;color:var(--indigo)}
+  .now-open svg{width:15px;height:15px}
+  .badge-live{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--indigo);background:var(--violet-soft);border:1px solid #e3ddfb;border-radius:999px;padding:3px 10px}
+  @media(max-width:900px){
+    /* the emblem is decoration - let the headline lead on a phone */
+    .phero .pvisual{display:none}
+  }
+  @media(max-width:640px){
+    .apply-card{padding:26px 20px 22px}
+    .now-card{flex-direction:column;text-align:center;gap:14px}
+    .step{padding:18px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+      <span><b>Xniper</b><span>Builds</span></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="/#products">Products</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="#apply">Apply to test</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="phero">
+    <div class="hero-orbs"><span class="orb a"></span><span class="orb b"></span></div>
+    <div class="wrap">
+      <div>
+        <div class="crumbs"><a href="/">Home</a> / <span style="color:var(--indigo)">App testing</span></div>
+        <span class="eyebrow" style="margin-top:14px">Tester programme · Android</span>
+        <h1>Test our apps before<br>anyone else can.</h1>
+        <p class="lead">Every Android app we build goes through a closed test on real phones before it reaches Google Play. Testers install it, keep it for 14 days and tell us what breaks — and in return get free access to every paid app we release.</p>
+        <div class="phero-cta">
+          <a class="btn btn-primary btn-lg" href="#apply">Apply to test</a>
+          <a class="btn btn-ghost btn-lg" href="#how">How it works</a>
+        </div>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Android 8.0+ · Needs a Google Play (Gmail) account · Takes two minutes</p>
+      </div>
+      <div class="pvisual">
+        <div class="big-emblem">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="width:100%;height:100%;color:var(--indigo)"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>What testers get</h2>
+        <p>You are doing us a favour, so the deal is meant to be worth your while.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+          <h4>Free access to paid apps</h4>
+          <p>Anything we later charge for is free on your account — not a trial, not a discount.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+          <h4>Every build first</h4>
+          <p>New features land on your phone weeks before the public Play listing sees them.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h4>Your feedback ships</h4>
+          <p>One tester message has changed a release more than once. Small list, real weight.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div>
+          <h4>Nothing to pay</h4>
+          <p>No fee, no subscription, no card, no ads pushed at you for taking part.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+          <h4>Real apps, not surveys</h4>
+          <p>Downloaders, gaming tools and utilities people use every day — installed from Google Play.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></div>
+          <h4>Leave whenever</h4>
+          <p>Uninstall and you are out. No lock-in, no account to close, no follow-up mail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>How it works</h2>
+        <p>Four steps, and only the third one asks anything of you.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">1</div><div><h4>Send us your Play Store email</h4><p>Use the form below — it has to be the Google account signed into the Play Store on the phone you will test on.</p></div></div>
+        <div class="step reveal"><div class="n">2</div><div><h4>Accept the invite</h4><p>We add you to the tester list and send back a private join link. One tap, then install from Google Play like any other app.</p></div></div>
+        <div class="step reveal"><div class="n">3</div><div><h4>Keep it for 14 days</h4><p>Google needs 12 testers running the app for 14 continuous days before it can go public. Uninstalling early can reset that clock for everyone, so leave it on the phone.</p></div></div>
+        <div class="step reveal"><div class="n">4</div><div><h4>Tell us what broke</h4><p>A screenshot or a single line is plenty. If nothing goes wrong, you do not have to send anything at all.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>In testing right now</h2>
+        <p>Tap an app to open its tester page on Google Play. New apps join every few weeks.</p>
+      </div>
+      <div class="now-grid">
+        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.riploxig" target="_blank" rel="noopener">
+          <img src="/logos/riplox-ig.png" alt="Riplox IG logo">
+          <div>
+            <h4>Riplox IG — Instagram downloader <span class="badge-live">Closed test</span></h4>
+            <p>Share a reel, story or carousel from Instagram and it saves straight to your gallery, on its own — no pasting, no watermark, MP3 audio too. One link grabs every video in a carousel.</p>
+            <span class="now-open">Open the tester page on Google Play
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+      <p class="privacy-note">The Play tester page only lets you in once your email is on the list — send the form below first, then open it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="apply" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Apply for Android app testing</h2>
+        <p>Fill this in and we will send your join link. Usually the same day.</p>
+      </div>
+      <div class="apply-wrap reveal">
+        <div class="apply-card">
+          <label for="ap-name">Your name</label>
+          <input id="ap-name" type="text" autocomplete="name" placeholder="What should we call you?">
+
+          <label for="ap-email">Google Play email (Gmail)</label>
+          <input id="ap-email" type="email" autocomplete="email" placeholder="you@gmail.com">
+          <p class="hint">Must be the account signed into the Play Store on your phone — a different address cannot open the tester link.</p>
+
+          <label for="ap-contact">WhatsApp or Telegram <span class="opt">— optional</span></label>
+          <input id="ap-contact" type="tel" autocomplete="tel" placeholder="+92 300 0000000">
+          <p class="hint">Only so we can reach you faster than email if a build needs a quick check.</p>
+
+          <label for="ap-device">Phone and Android version <span class="opt">— optional</span></label>
+          <input id="ap-device" type="text" placeholder="e.g. Samsung A15, Android 14">
+
+          <label for="ap-notes">Anything you want to test, or tell us <span class="opt">— optional</span></label>
+          <textarea id="ap-notes" placeholder="Which app you are most interested in, or what you would like us to build."></textarea>
+
+          <label class="agree" for="ap-agree">
+            <input type="checkbox" id="ap-agree">
+            <span>I can install the app and keep it on my phone for 14 days.</span>
+          </label>
+
+          <input type="checkbox" id="ap-bot" style="display:none" tabindex="-1" autocomplete="off">
+          <button class="btn btn-primary ap-send" onclick="apSend()">Send my application</button>
+          <div class="ap-msg" id="ap-msg"></div>
+          <p class="ap-alt">Prefer email? <a href="mailto:hello@xniperbuilds.com?subject=Android%20tester%20application">hello@xniperbuilds.com</a></p>
+        </div>
+        <p class="privacy-note">Your email is used for one thing: adding you to the Google Play tester list and sending the join link. It is not sold, not shared and not added to any mailing list — ask us and we will remove it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Questions testers ask</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Does testing cost anything?</summary>
+          <p>No. Nothing to pay, no subscription, no card. The apps you test are free, and so is the programme.</p>
+        </details>
+        <details>
+          <summary>Why do you need my Gmail address?</summary>
+          <p>Google Play closed testing works by email. Your address goes on the tester list for the app, which is what makes the private install link work on your phone. It has to be the exact Google account signed into the Play Store on the device you will test on.</p>
+        </details>
+        <details>
+          <summary>What does "free access to paid apps" mean?</summary>
+          <p>When we release an app or a pro unlock that other people pay for, testers get it at no cost on the Google account they test with. It stays free for that account — it is not a trial and not a discount code.</p>
+        </details>
+        <details>
+          <summary>Why 14 days?</summary>
+          <p>Google requires an app to run a closed test with at least 12 testers for 14 continuous days before it can be published to everyone. If people uninstall early the clock can reset, which is why we ask you to leave it on the phone for the two weeks.</p>
+        </details>
+        <details>
+          <summary>Do I have to write reports?</summary>
+          <p>No. A screenshot or a one-line message when something looks wrong is plenty. If nothing breaks, you do not have to send anything at all.</p>
+        </details>
+        <details>
+          <summary>Can I leave the programme?</summary>
+          <p>Yes, any time. Uninstall the app and reply once to say you are out. There is no lock-in and nothing to cancel.</p>
+        </details>
+        <details>
+          <summary>Will a test build damage my phone?</summary>
+          <p>No. Test builds install from Google Play like any other app, run in their own sandbox and uninstall the same way. They are the same builds we run on our own phones.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <h2>Two minutes now, free apps later</h2>
+        <p>Send your Play Store email and you are on the list for every app we test from here on.</p>
+        <a class="btn btn-ondark btn-lg" href="#apply">Apply to test</a>
+        <a class="btn btn-ondark-ghost btn-lg" href="/#products">See what we build</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true" style="color:#8B7BF7"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+          <span><b>Xniper</b><span>Builds</span></span>
+        </a>
+        <p>An independent studio building free web tools, browser games and Android software.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Products</h5>
+          <a href="/xnipertools/">Xnipertools</a>
+          <a href="/xniperarcade/">XniperArcade</a>
+          <a href="/riplox/">Riplox</a>
+          <a href="/cipherly/">Cipherly</a>
+          <a href="/riplox-tt/">Riplox TT</a>
+          <a href="/jff/">JFF Stylish Name</a>
+          <a href="/jff-crosshair/">JFF Crosshair Pro</a>
+          <a href="/transport-ledger/">Transport Ledger</a>
+          <a href="/rent-ledger/">Rent Ledger</a>
+          <a href="/riplox-desktop/">Riplox Desktop</a>
+          <a href="/riplox-android/">Riplox for Android</a>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/app-testing/">App testing</a>
+          <a href="https://github.com/xniperbuilds" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="foot-col">
+          <h5>Live</h5>
+          <a href="https://xnipertools.com" target="_blank" rel="noopener">xnipertools.com</a>
+          <a href="https://xniperarcade.me" target="_blank" rel="noopener">xniperarcade.me</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 XniperBuilds. All rights reserved.</span>
+      <span><a href="/riplox-ig/privacy/" style="color:inherit">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var W3KEY='a2f7894f-12bf-4f3d-b7c0-3680c257269b';
+function apSend(){
+  var name=document.getElementById('ap-name').value.trim(),
+      email=document.getElementById('ap-email').value.trim(),
+      contact=document.getElementById('ap-contact').value.trim(),
+      device=document.getElementById('ap-device').value.trim(),
+      notes=document.getElementById('ap-notes').value.trim(),
+      agree=document.getElementById('ap-agree').checked,
+      msg=document.getElementById('ap-msg'),
+      btn=document.querySelector('.ap-send');
+  if(document.getElementById('ap-bot').checked)return;
+  if(!name||!email){msg.className='ap-msg err';msg.textContent='Please fill in your name and Play Store email.';return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.className='ap-msg err';msg.textContent='Please enter a valid email address.';return;}
+  if(!agree){msg.className='ap-msg err';msg.textContent='Please confirm you can keep the app installed for 14 days.';return;}
+  var orig=btn.textContent;btn.disabled=true;btn.textContent='Sending…';msg.className='ap-msg';msg.textContent='';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+    access_key:W3KEY,subject:'Android tester application — '+name,from_name:'XniperBuilds Tester Application',
+    name:name,email:email,contact:(contact||'—'),device:(device||'—'),notes:(notes||'—'),
+    can_keep_14_days:'yes'
+  })}).then(function(r){return r.json();}).then(function(d){
+    btn.disabled=false;btn.textContent=orig;
+    if(d&&d.success){msg.className='ap-msg ok';msg.textContent='✅ Thanks, '+name+'! You are on the list — your join link is on its way.';
+      document.getElementById('ap-name').value='';document.getElementById('ap-email').value='';
+      document.getElementById('ap-contact').value='';document.getElementById('ap-device').value='';
+      document.getElementById('ap-notes').value='';document.getElementById('ap-agree').checked=false;}
+    else{msg.className='ap-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';}
+  }).catch(function(){btn.disabled=false;btn.textContent=orig;msg.className='ap-msg err';msg.textContent='Could not send right now — please email us directly at hello@xniperbuilds.com.';});
+}
+</script>
+<script src="/main.js"></script>
+</body>
+</html>
