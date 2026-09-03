@@ -72,19 +72,21 @@
     box-shadow:0 8px 18px -10px rgba(62,51,166,.8)}
   .step h4{font-size:1.02rem;font-weight:600;margin-bottom:4px}
   .step p{color:var(--muted);font-size:.95rem}
-  .now-grid{display:grid;gap:18px;max-width:760px;margin:0 auto}
-  .now-card{display:flex;gap:20px;align-items:center;position:relative;
-    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow-sm);
+  .now-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:0 auto}
+  .now-card{display:flex;gap:18px;align-items:flex-start;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow-sm);
     transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
   .now-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#dcd5f7}
-  .now-card img{width:72px;height:72px;border-radius:18px;flex:none}
-  .now-card h4{font-size:1.1rem;font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .now-card p{color:var(--muted);font-size:.95rem}
+  .now-card img{width:62px;height:62px;border-radius:16px;flex:none}
+  .now-card h4{font-size:1.02rem;font-weight:600;margin-bottom:5px}
+  .now-card p{color:var(--muted);font-size:.9rem;line-height:1.5}
   .now-open{display:inline-flex;align-items:center;gap:6px;margin-top:10px;
-    font-family:var(--font-head);font-weight:600;font-size:.88rem;color:var(--indigo)}
-  .now-open svg{width:15px;height:15px}
-  .badge-live{font-family:var(--font-head);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    font-family:var(--font-head);font-weight:600;font-size:.85rem;color:var(--indigo)}
+  .now-open svg{width:14px;height:14px}
+  .badge-live{display:inline-block;margin-bottom:7px;
+    font-family:var(--font-head);font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
     color:var(--indigo);background:var(--violet-soft);border:1px solid #e3ddfb;border-radius:999px;padding:3px 10px}
+  .badge-live.open{color:#1a7f37;background:#e8f6ec;border-color:#cfe9d6}
   .seg{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
   .seg .pill{display:inline-flex;align-items:center;gap:9px;cursor:pointer;
     font-family:var(--font-head);font-weight:600;font-size:.9rem;color:var(--ink-2);
@@ -101,7 +103,8 @@
   }
   @media(max-width:640px){
     .apply-card{padding:26px 20px 22px}
-    .now-card{flex-direction:column;text-align:center;gap:14px}
+    .now-grid{grid-template-columns:1fr}
+    .now-card{gap:14px}
     .step{padding:18px}
   }
 </style>
@@ -209,21 +212,66 @@
     <div class="wrap">
       <div class="section-head reveal">
         <h2>In testing right now</h2>
-        <p>Tap an app to open its tester page on Google Play. New apps join every few weeks.</p>
+        <p>Five apps are on test right now. Tap one to open it on Google Play.</p>
       </div>
       <div class="now-grid">
+        <a class="now-card reveal" href="https://play.google.com/store/apps/details?id=com.xniperbuilds.riploxtt" target="_blank" rel="noopener">
+          <img src="/logos/riplox-tt.png" alt="Riplox TT logo">
+          <div>
+            <span class="badge-live open">Open test</span>
+            <h4>Riplox TT</h4>
+            <p>Save any TikTok without the watermark, or pull its audio as MP3. Anyone can install this one — no invite needed.</p>
+            <span class="now-open">Install from Google Play
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
         <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.riploxig" target="_blank" rel="noopener">
           <img src="/logos/riplox-ig.png" alt="Riplox IG logo">
           <div>
-            <h4>Riplox IG — Instagram downloader <span class="badge-live">Closed test</span></h4>
-            <p>Share a reel, story or carousel from Instagram and it saves straight to your gallery, on its own — no pasting, no watermark, MP3 audio too. One link grabs every video in a carousel.</p>
-            <span class="now-open">Open the tester page on Google Play
+            <span class="badge-live">Closed test</span>
+            <h4>Riplox IG</h4>
+            <p>Share a reel, story or carousel from Instagram and it saves itself to your gallery. One link takes every video.</p>
+            <span class="now-open">Open the tester page
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.jffcrosshair" target="_blank" rel="noopener">
+          <img src="/logos/jff-crosshair.png" alt="JFF Crosshair Pro logo">
+          <div>
+            <span class="badge-live">Closed test</span>
+            <h4>JFF Crosshair Pro</h4>
+            <p>A crosshair overlay that sits on top of your game, with sizes, colours and profiles you can switch mid-match.</p>
+            <span class="now-open">Open the tester page
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.jff" target="_blank" rel="noopener">
+          <img src="/logos/jff.png" alt="JFF Stylish Name logo">
+          <div>
+            <span class="badge-live">Closed test</span>
+            <h4>JFF Stylish Name</h4>
+            <p>Turn your gamer name into stylish fonts and symbols, then copy it straight into the game.</p>
+            <span class="now-open">Open the tester page
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="now-card reveal" href="https://play.google.com/apps/testing/com.xniperbuilds.cipherly" target="_blank" rel="noopener">
+          <img src="/logos/cipherly.png" alt="Cipherly logo">
+          <div>
+            <span class="badge-live">Closed test</span>
+            <h4>Cipherly</h4>
+            <p>Lock a message behind a password and send it anywhere. Only someone with the key can read it back.</p>
+            <span class="now-open">Open the tester page
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
             </span>
           </div>
         </a>
       </div>
-      <p class="privacy-note">The Play tester page only lets you in once your email is on the list — send the form below first, then open it.</p>
+      <p class="privacy-note">Riplox TT is an open test — install it straight away. The others are closed tests: their tester page only lets you in once your email is on the list, so send the form below first.</p>
     </div>
   </section>
 
@@ -322,7 +370,11 @@
 
           <label for="rp-app">Which app? <span class="opt">&mdash; the ones in testing right now</span></label>
           <select id="rp-app">
+            <option>Riplox TT</option>
             <option>Riplox IG</option>
+            <option>JFF Crosshair Pro</option>
+            <option>JFF Stylish Name</option>
+            <option>Cipherly</option>
             <option>Something else</option>
           </select>
 
