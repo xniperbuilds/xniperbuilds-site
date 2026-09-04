@@ -272,3 +272,37 @@ section{position:relative}
   .stats{gap:26px}
   .cta-inner{padding:48px 24px}
 }
+
+/* ---------- comparison tables + long-form prose (added Sept 2026) ----------
+   New selectors only; nothing above is changed. Used by /riplox-desktop/ and
+   /riplox-vs-metube/. Wide tables scroll inside their own box so the page
+   itself never scrolls sideways on a phone. */
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--paper-2);
+  box-shadow:var(--shadow-sm)}
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.97rem}
+table.cmp th,table.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.cmp thead th{font-family:var(--font-head);font-weight:600;font-size:.88rem;
+  letter-spacing:.02em;color:var(--indigo);background:var(--violet-soft)}
+table.cmp tbody th{font-weight:500;color:var(--ink)}
+table.cmp td{color:var(--ink-2)}
+table.cmp tr:last-child th,table.cmp tr:last-child td{border-bottom:0}
+/* The own-column tint must not land on the header row: it is lighter than
+   --violet-soft, so it bleached the one column it was meant to emphasise. */
+table.cmp tbody .own{background:rgba(139,123,247,.06)}
+table.cmp thead th.own{background:#e3ddfb;color:var(--deep)}
+table.cmp .yes{color:var(--indigo);font-weight:600}
+table.cmp .no{color:var(--muted)}
+.tbl-note{color:var(--muted);font-size:.9rem;margin-top:14px;text-align:center}
+.prose{max-width:760px;margin:0 auto}
+.prose h3{font-family:var(--font-head);font-size:1.4rem;font-weight:600;margin:38px 0 12px}
+.prose h3:first-child{margin-top:0}
+.prose p{color:var(--ink-2);line-height:1.75;margin:0 0 16px}
+.prose ul{color:var(--ink-2);line-height:1.75;padding-left:22px;margin:0 0 16px}
+.callout{border:1px solid var(--line);border-left:3px solid var(--violet);
+  background:var(--paper-2);border-radius:var(--radius-sm);padding:22px 24px;margin:26px 0}
+.callout p:last-child{margin-bottom:0}
+@media (max-width:720px){
+  table.cmp{min-width:520px;font-size:.92rem}
+  table.cmp th,table.cmp td{padding:12px 14px}
+}

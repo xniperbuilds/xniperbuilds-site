@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XG0JQC6P51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XG0JQC6P51');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riplox features — yt-dlp GUI for Windows + Android APK | XniperBuilds</title>
+<meta name="description" content="Every Riplox feature explained one at a time: 8K, playlists, MP3, trimming, converting, following channels and phone-to-PC sending. Windows and Android.">
+<link rel="canonical" href="https://xniperbuilds.com/riplox-features/">
+<link rel="icon" href="/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#3E33A6">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://xniperbuilds.com/riplox-features/">
+<meta property="og:title" content="Riplox features — Windows and Android, explained one at a time">
+<meta property="og:description" content="Every feature of Riplox for Windows and Riplox for Android, each one explained on its own: 8K, playlists, MP3, trimming, subtitles, converting, following channels, phone-to-PC sending and the Secret Vault.">
+<meta property="og:image" content="/png/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/png/og-1200x630.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://xniperbuilds.com/"},
+{"@type":"ListItem","position":2,"name":"Riplox","item":"https://xniperbuilds.com/riplox/"},
+{"@type":"ListItem","position":3,"name":"Features","item":"https://xniperbuilds.com/riplox-features/"}]}
+</script>
+<!-- ⚠️ AT RELEASE: keep softwareVersion in step with src/app.py. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Riplox apps","itemListElement":[
+{"@type":"ListItem","position":1,"item":{
+  "@type":"SoftwareApplication","name":"Riplox Desktop","applicationCategory":"MultimediaApplication",
+  "operatingSystem":"Windows 10, Windows 11","softwareVersion":"1.6.0",
+  "url":"https://xniperbuilds.com/riplox-desktop/",
+  "downloadUrl":"https://github.com/xniperbuilds/riplox-desktop/releases/latest",
+  "license":"https://www.gnu.org/licenses/gpl-3.0.html",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "author":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com"},
+  "featureList":["Download video up to 8K or extract MP3 audio with cover art and tags","Whole playlists with filtering, sorting and range selection","Channel sections - Videos, Shorts and Live","Download queue with live speed, pause, resume and a speed limit","Clipboard capture and a global keyboard shortcut","Drag and drop links, or paste twenty at once","Trim a clip by timestamp without re-encoding the whole file","Subtitles, chapters and SponsorBlock","Dubbed audio tracks in any or every language","Choose the cover picture","Convert, shrink or make a GIF from a file already on disk","Follow channels and playlists and be told what is new","Find every media link on a page","A drop folder that queues links written into it","Schedule downloads, or hold them outside chosen hours","Send a link from your phone and the PC downloads it","Start with Windows, and a tray that keeps downloads running","Sign in through your own browser for private videos","A searchable library of finished files","Export and import settings and links","HTTP, HTTPS and SOCKS proxy support","Light, dark and system themes","Portable build that writes nothing outside its own folder","Self-updating yt-dlp engine"]}},
+{"@type":"ListItem","position":2,"item":{
+  "@type":"SoftwareApplication","name":"Riplox for Android","applicationCategory":"MultimediaApplication",
+  "operatingSystem":"Android 8.0+",
+  "url":"https://xniperbuilds.com/riplox-android/",
+  "downloadUrl":"https://github.com/xniperbuilds/riplox/releases/latest",
+  "license":"https://www.gnu.org/licenses/gpl-3.0.html",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "author":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com"},
+  "featureList":["Download from the Android Share menu of any app","Over a thousand sites through yt-dlp","Video up to 4K as MP4, MKV or WEBM","Audio as MP3, M4A, OPUS, WAV or FLAC with cover art","A queue that survives closing the app and a reboot","Secret Vault behind a fingerprint or PIN","Searchable history with multi-select and a Trash","Export and import your links, optionally password protected","No adverts, no download cap and no paid tier","AMOLED dark theme"]}}]}
+</script>
+<style>
+  .toc{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper-2);
+    padding:24px 26px;box-shadow:var(--shadow-sm);max-width:900px;margin:0 auto}
+  .toc h2{font-family:var(--font-head);font-size:1.1rem;margin:0 0 14px;color:var(--indigo)}
+  .toc ul{list-style:none;padding:0;margin:0;display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px 22px}
+  .toc a{color:var(--ink-2);text-decoration:none;font-size:.94rem;line-height:1.6}
+  .toc a:hover{color:var(--indigo);text-decoration:underline}
+  .feat-block{max-width:820px;margin:0 auto}
+  .feat-block h3{font-family:var(--font-head);font-size:1.32rem;font-weight:600;
+    margin:40px 0 10px;scroll-margin-top:90px}
+  .feat-block h3:first-of-type{margin-top:0}
+  .feat-block p{color:var(--ink-2);line-height:1.78;margin:0 0 14px}
+  .platform-tag{display:inline-block;font-family:var(--font-head);font-weight:600;font-size:10px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--indigo);background:var(--violet-soft);
+    border:1px solid #e3ddfb;padding:4px 9px;border-radius:999px;vertical-align:middle;margin-left:10px}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+      <span><b>Xniper</b><span>Builds</span></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="/#products">Products</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
+         data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe">Download</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="phero">
+    <div class="hero-orbs"><span class="orb a"></span><span class="orb b"></span></div>
+    <div class="wrap phero-grid">
+      <div>
+        <div class="crumbs"><a href="/">Home</a> / <a href="/riplox/">Riplox</a> / <span style="color:var(--indigo)">Features</span></div>
+        <span class="eyebrow" style="margin-top:14px">Windows &amp; Android</span>
+        <h1>Every Riplox feature,<br>one at a time.</h1>
+        <p class="lead">Riplox comes in two shapes: a free, open-source <strong>yt-dlp GUI for Windows</strong>, and a free <strong>Android video downloader</strong> that works from the Share menu. This page explains what each one does, feature by feature, so you can tell before installing anything whether it does the thing you came for.</p>
+        <div class="phero-cta">
+          <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
+             data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe" data-dl-note="#dl-note">Download for Windows</a>
+          <a class="btn btn-ghost btn-lg" href="/riplox-android/">Get the Android APK</a>
+        </div>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Both free · Both open source (GPL-3.0) · No ads, no caps, no account <span id="dl-note"></span></p>
+      </div>
+      <div class="pvisual">
+        <div class="big-emblem"><img src="/logos/riplox-desktop.png" alt="Riplox logo"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:30px;padding-bottom:20px">
+    <div class="wrap">
+      <nav class="toc reveal" aria-label="Features on this page">
+        <h2>Jump to a feature</h2>
+        <ul>
+          <li><a href="#quality">Quality, 8K to MP3</a></li>
+          <li><a href="#playlists">Playlists</a></li>
+          <li><a href="#channels">Channels</a></li>
+          <li><a href="#queue">The queue</a></li>
+          <li><a href="#clipboard">Clipboard capture</a></li>
+          <li><a href="#shortcut">Keyboard shortcut</a></li>
+          <li><a href="#paste">Drag, drop and bulk paste</a></li>
+          <li><a href="#trim">Trimming</a></li>
+          <li><a href="#subtitles">Subtitles and chapters</a></li>
+          <li><a href="#dubs">Dubbed audio</a></li>
+          <li><a href="#cover">Cover picture</a></li>
+          <li><a href="#convert">Convert, shrink, GIF</a></li>
+          <li><a href="#following">Following channels</a></li>
+          <li><a href="#findonpage">Find on a page</a></li>
+          <li><a href="#dropfolder">Drop folder</a></li>
+          <li><a href="#schedule">Scheduling</a></li>
+          <li><a href="#send">Send from your phone</a></li>
+          <li><a href="#tray">Tray and autostart</a></li>
+          <li><a href="#signin">Signing in</a></li>
+          <li><a href="#library">Library</a></li>
+          <li><a href="#backup">Backup and export</a></li>
+          <li><a href="#proxy">Proxy</a></li>
+          <li><a href="#themes">Themes</a></li>
+          <li><a href="#portable">Portable build</a></li>
+          <li><a href="#engine">Self-updating engine</a></li>
+          <li><a href="#secondroute">When a site refuses</a></li>
+          <li><a href="#android-share">Android: Share to download</a></li>
+          <li><a href="#android-formats">Android: formats</a></li>
+          <li><a href="#android-queue">Android: background queue</a></li>
+          <li><a href="#android-vault">Android: Secret Vault</a></li>
+          <li><a href="#android-history">Android: history</a></li>
+          <li><a href="#android-apk">Android: why an APK</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Riplox Desktop — the Windows app (.exe)</h2>
+        <p>A yt-dlp GUI for Windows 10 and 11. Everything below is in the free version, because there is no other version.</p>
+      </div>
+
+      <div class="feat-block reveal">
+
+        <h3 id="quality">Quality, from 8K down to MP3 <span class="platform-tag">Windows</span></h3>
+        <p>Riplox downloads video in 8K, 4K, 1440p, 1080p, 720p, 480p and 360p, or pulls the sound out on its own as an MP3 with the cover art and tags already attached. The list you are shown is not a menu of hopes: a rung appears only where that video genuinely has it, so you are never offered 4K on a clip that was uploaded at 720p. Where the highest resolution exists only in a newer codec such as VP9 or AV1, Riplox says so before you press anything, because those files are smaller but will not open in every player. Everything else is saved as MP4 in H.264 wherever the site offers that, which is the format that plays on phones, in Windows Media Player and in WhatsApp without hunting for a codec.</p>
+
+        <h3 id="playlists">Whole playlists, or exactly the parts you want <span class="platform-tag">Windows</span></h3>
+        <p>Paste a playlist link and Riplox can take the entire playlist in one click — there is no cap at ten videos and no "upgrade to download the rest". If you want only some of it, the playlist opens as a list you can work through: filter by title, sort by length or by name, take the first N, invert your selection, shift-click a range, or press the download button on a single row. This is the part most free downloaders limit hardest, which is why it is worth being plain about: whatever is in the playlist, you can have.</p>
+
+        <h3 id="channels">Channel sections — Videos, Shorts and Live <span class="platform-tag">Windows</span></h3>
+        <p>Give Riplox a channel link and it opens that channel's sections rather than guessing which one you meant. Videos, Shorts and Live each behave exactly like an ordinary playlist, with the same filtering and selection, so downloading a whole YouTube channel — or only its Shorts, or only what it streamed live — is the same handful of clicks as downloading a playlist.</p>
+
+        <h3 id="queue">A download queue that keeps its promises <span class="platform-tag">Windows</span></h3>
+        <p>Several downloads run at once, as many as you set rather than one at a time, each with a live speed and an estimated finish. Pause and resume are real: a paused download picks up where it stopped instead of starting again. There is a speed limit if you would rather Riplox did not take the whole connection while you are working, and the queue survives closing the app and restarting the PC.</p>
+
+        <h3 id="clipboard">Clipboard capture <span class="platform-tag">Windows</span></h3>
+        <p>Copy a video link anywhere — a browser, a chat, a document — and Riplox notices, even while it is hidden in the tray. By default it offers it; you can also tell it to queue whatever it catches without asking, which turns downloading a run of videos into copying a run of links.</p>
+
+        <h3 id="shortcut">A global keyboard shortcut <span class="platform-tag">Windows</span></h3>
+        <p>One hotkey downloads whatever link you just copied, without switching windows or touching Riplox at all. It defaults to Ctrl+Shift+D, and if another program already owns that combination Riplox takes a free pair instead and tells you which — rather than leaving you pressing keys that quietly do nothing. You can set your own.</p>
+
+        <h3 id="paste">Drag, drop, and twenty links at once <span class="platform-tag">Windows</span></h3>
+        <p>Drop a link straight onto the window, or paste a whole block of links in one go and let Riplox sort them out. Bulk pasting is the fastest way to hand it a list you already have — from a text file, a chat export, or a page you copied.</p>
+
+        <h3 id="trim">Trimming a clip out of a longer video <span class="platform-tag">Windows</span></h3>
+        <p>Cut a section out by timestamp, so you keep the two minutes you wanted rather than the two-hour stream around them. Riplox does this without re-encoding the whole file, which is why it finishes quickly and does not lose quality, and there is an exact-cut option for when the frame you need matters more than the seconds saved.</p>
+
+        <h3 id="subtitles">Subtitles, chapters and SponsorBlock <span class="platform-tag">Windows</span></h3>
+        <p>Download subtitles as a separate file or embed them in the video — the ones a person actually wrote, the machine-generated ones, or both. Chapter marks are kept where the site provides them, so a long video still has its sections when it lands on your disk, and sponsor segments can be skipped using SponsorBlock data rather than watched through.</p>
+
+        <h3 id="dubs">Dubbed audio tracks <span class="platform-tag">Windows</span></h3>
+        <p>When a video carries more than one language, Riplox can take just the one you want, or every dub it has, each saved as its own file. This is the difference between downloading a video and downloading the version you can understand.</p>
+
+        <h3 id="cover">Choosing the cover picture <span class="platform-tag">Windows</span></h3>
+        <p>Sites usually offer several thumbnails and pick one for you. Riplox lets you choose from the ones the site actually has, keeps it beside the file, and puts it inside the file itself where the format allows — which is what makes an MP3 show the right artwork in a music player.</p>
+
+        <h3 id="convert">Convert, shrink, and make a GIF <span class="platform-tag">Windows</span></h3>
+        <p>Riplox also works on files already on your disk, so you do not need a second program for the ordinary jobs. Convert audio to MP3, M4A, OPUS, FLAC or WAV, or video to MP4, MKV, MOV or WebM. Shrink a video to 1080p, 720p or 480p when the original is bigger than you need, or cut a short GIF out of it. When the codec already fits the container it is remuxed rather than re-encoded, so an MP4 into an MKV finishes in about a second instead of a quarter of an hour. Nothing is ever scaled up, and your original file is never touched.</p>
+
+        <h3 id="following">Following a channel for new uploads <span class="platform-tag">Windows</span></h3>
+        <p>Follow a channel or a playlist and Riplox tells you what is new, so you are not checking by hand. Where a site publishes its own feed — YouTube does — Riplox reads that feed instead of scraping the page, which is light enough to check every fifteen minutes and to follow a hundred channels without any of it becoming a problem for the site. Nothing downloads on its own unless you switch that on for that particular channel, and when you do it stays capped. Each channel can carry its own quality, folder and title rules, and the whole list exports and imports.</p>
+
+        <h3 id="findonpage">Find on a page <span class="platform-tag">Windows</span></h3>
+        <p>Point Riplox at a page and it lists every media link on it, in the same screen playlists use. The hard part is telling a download from ordinary navigation, and Riplox does not guess from the address: where an address gives nothing away — no file extension, and a site nobody has an extractor for — it asks the server directly and lets the answer decide. Rows found that way say so. It asks about at most a dozen addresses per page, because a page should not turn into a scan of somebody's website.</p>
+
+        <h3 id="dropfolder">The drop folder <span class="platform-tag">Windows</span></h3>
+        <p>Optional, and off until you point it at a folder. Anything on the PC that can write a file can then queue a download: drop in a text file of links, one per line, or a JSON file, and Riplox picks it up. It is the simplest way to drive Riplox from a script, another program, or a phone syncing a folder — without an API, a token or anything to configure. Files it has read are renamed, never deleted, so nothing of yours disappears.</p>
+
+        <h3 id="schedule">Scheduling <span class="platform-tag">Windows</span></h3>
+        <p>Hold new downloads outside hours you choose — useful where the connection is metered or slower during the day — or give a single download its own start time. Asking for 02:00 means tonight, and the row tells you how long it has been waiting rather than sitting there looking stuck. A download already running is never cut off when the window closes.</p>
+
+        <h3 id="send">Send a video from your phone to your PC <span class="platform-tag">Windows + phone</span></h3>
+        <p>This is the feature no other yt-dlp GUI has. Pair a phone once and Riplox appears in its Share menu; share a link from YouTube, Instagram, TikTok or anywhere else and the download starts on the PC, on the PC's connection and the PC's disk. Nothing is downloaded to the phone first, so it costs no phone storage and no mobile data. There is no Docker to install, no web server to run, no port to open on your router and no account to create — which is what separates it from the self-hosted way of doing this. On the same Wi-Fi the link goes straight from phone to PC and never leaves the building; anywhere else it travels sealed, and the relay that carries it cannot read what is inside. If the PC is switched off when you send, the link waits and downloads the moment Riplox is running again. There is a <a href="/riplox-vs-metube/">full comparison with MeTube and the other approaches</a> if you want the detail.</p>
+
+        <h3 id="tray">Start with Windows, and the tray <span class="platform-tag">Windows</span></h3>
+        <p>Riplox can start with Windows, and when it does it starts into the tray rather than throwing a window at you. Closing the window does not stop anything: downloads carry on, progress shows on the taskbar button, and each finished file arrives as a notification. Quitting from the tray is what actually stops it.</p>
+
+        <h3 id="signin">Signing in for private and age-gated videos <span class="platform-tag">Windows</span></h3>
+        <p>Public videos need nothing. For a private, members-only or age-restricted video that your own account can already open, you sign in through your own browser and Riplox uses that. The sign-in is stored encrypted with Windows DPAPI, one file per site, so a copied file is useless on another machine, and signing out of one site removes only that site's file.</p>
+
+        <h3 id="library">A library of everything you have downloaded <span class="platform-tag">Windows</span></h3>
+        <p>Every finished file in one place, with search, sorting, a filter per site, and buttons to play it or show it in its folder. Several downloaders sell this as part of a premium tier; here it is simply part of the app.</p>
+
+        <h3 id="backup">Backup, export and import <span class="platform-tag">Windows</span></h3>
+        <p>Export your settings and import them on another PC, and export your links as TXT, CSV or JSON. Moving to a new machine, or keeping a copy of what you have collected, does not mean starting again.</p>
+
+        <h3 id="proxy">Proxy support <span class="platform-tag">Windows</span></h3>
+        <p>HTTP, HTTPS and SOCKS proxies are supported, and this is another thing usually sold as premium elsewhere. One detail worth knowing: when a SOCKS proxy is set, Riplox's second route stands aside rather than going around it. The whole point of setting a proxy is that requests do not leave any other way, so it refuses to run rather than quietly bypassing it.</p>
+
+        <h3 id="themes">Light, dark and system themes <span class="platform-tag">Windows</span></h3>
+        <p>A proper dark mode, a light mode, or whichever one Windows is currently using. Themes are another thing that appears behind a subscription elsewhere.</p>
+
+        <h3 id="portable">A portable build <span class="platform-tag">Windows</span></h3>
+        <p>If you would rather not install anything, unzip the portable build and run it — from a USB stick if you like. Settings, history and the phone pairing all live in a Data folder beside the program, and nothing is written anywhere else on the PC.</p>
+
+        <h3 id="engine">An engine that updates itself <span class="platform-tag">Windows</span></h3>
+        <p>Every desktop downloader is a front end for the same engine, so when a site changes how it serves video they all break on the same day. Riplox updates its copy of yt-dlp from inside the app, in one click, without waiting for a new release of Riplox itself and without reinstalling anything. This is the single most important feature in a downloader and the one people only notice when it is missing.</p>
+
+        <h3 id="secondroute">A second way in, for when a site refuses <span class="platform-tag">Windows</span></h3>
+        <p>For the four sites that matter most — YouTube, TikTok, Instagram and Facebook — Riplox has a second route of its own. It runs only after the engine has genuinely failed, so an ordinary download never goes through it and it cannot quietly take over a site the engine handles better. It uses no browser, no signing and no impersonation: a plain request with the headers a browser would send. Any address a site publishes is checked before anything is fetched from it — it must be HTTPS and belong to that site's own network — because those pages carry text other people wrote, and a caption can contain something shaped exactly like a video address.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Riplox for Android — the APK</h2>
+        <p>The same job on the phone, for when the video is already in front of you. Android 8.0 or newer.</p>
+      </div>
+
+      <div class="feat-block reveal">
+
+        <h3 id="android-share">Download from the Share menu of any app <span class="platform-tag">Android</span></h3>
+        <p>There is nothing to copy and nothing to paste. Press Share in YouTube, Instagram, TikTok or anywhere else, pick Riplox, and the download starts. That is the whole interaction, and it is the reason a phone app exists at all when the desktop version can already take a link from your phone.</p>
+
+        <h3 id="android-formats">Formats: 4K video, or audio on its own <span class="platform-tag">Android</span></h3>
+        <p>Choose the exact format and size before the download starts rather than finding out afterwards. Video comes out as MP4, MKV or WEBM up to 4K; audio as MP3, M4A, OPUS, WAV or FLAC, with the cover art already attached. It reaches over a thousand sites — YouTube, Instagram, TikTok, Facebook, X and everything else yt-dlp covers — so it is one app instead of one app per site.</p>
+
+        <h3 id="android-queue">A queue that keeps going without you <span class="platform-tag">Android</span></h3>
+        <p>The queue survives closing the app, and survives a reboot. A failed download retries on its own with a growing gap between attempts rather than hammering the site, and each finished file arrives as a notification. You can start a batch and put the phone in your pocket.</p>
+
+        <h3 id="android-vault">Secret Vault <span class="platform-tag">Android</span></h3>
+        <p>Storage behind your fingerprint or a PIN. What goes into the vault disappears from your gallery, from the app's own history, and from backups — so it is not visible to anything that scans the phone's pictures, and it does not travel to a cloud backup without you knowing.</p>
+
+        <h3 id="android-history">History you can actually search <span class="platform-tag">Android</span></h3>
+        <p>Filter it, select several at once, and delete through a Trash that holds things back before they go for good. You can export your links to a file — password-protected if you want — and load them back later, on this phone or another one.</p>
+
+        <h3 id="android-apk">Why it is an APK and not on Google Play <span class="platform-tag">Android</span></h3>
+        <p>Google Play does not allow apps that download from YouTube, so Riplox for Android is not there and will not be. It comes as an APK from GitHub instead, and every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Android will ask you to allow installing from this source the first time; that permission applies to this install and nothing else. Public videos need no sign-in at all — and for a private or age-restricted video, you sign in on the real site inside a normal web view, so your password never passes through the app.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Which one should you install?</h2>
+        <p>They are not rivals. Most people end up with both, because they answer different moments.</p>
+      </div>
+      <div class="cmp-wrap reveal" style="max-width:900px;margin:0 auto">
+        <table class="cmp">
+          <thead><tr><th scope="col">&nbsp;</th><th scope="col" class="own">Riplox Desktop (.exe)</th><th scope="col">Riplox for Android (.apk)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Highest quality</th><td class="own">Up to 8K</td><td>Up to 4K</td></tr>
+            <tr><th scope="row">Starts from</th><td class="own">A pasted link, the clipboard, a hotkey, a folder, or your phone</td><td>The Android Share menu</td></tr>
+            <tr><th scope="row">Where the file lands</th><td class="own">The PC's disk</td><td>The phone</td></tr>
+            <tr><th scope="row">Uses phone storage and data</th><td class="own"><span class="yes">No, even when sent from the phone</span></td><td>Yes</td></tr>
+            <tr><th scope="row">Playlists and channels</th><td class="own">Whole playlists, channel sections, filtering</td><td>Link by link</td></tr>
+            <tr><th scope="row">Convert, trim, GIF</th><td class="own"><span class="yes">Yes</span></td><td class="no">No</td></tr>
+            <tr><th scope="row">Follow channels</th><td class="own"><span class="yes">Yes</span></td><td class="no">No</td></tr>
+            <tr><th scope="row">Secret Vault</th><td class="own no">No</td><td><span class="yes">Yes</span></td></tr>
+            <tr><th scope="row">Ads, caps, paid tier</th><td class="own"><span class="yes">None</span></td><td><span class="yes">None</span></td></tr>
+            <tr><th scope="row">Licence</th><td class="own">GPL-3.0</td><td>GPL-3.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-note">For a single site done properly there is also <a href="/riplox-tt/">Riplox TT</a> for TikTok and <a href="/riplox-ig/">Riplox IG</a> for Instagram.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Get Riplox</h2>
+        <p>Both free, both open source, no account either way.</p>
+      </div>
+      <div style="text-align:center">
+        <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
+           data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe">Download for Windows</a>
+        <a class="btn btn-ghost btn-lg" href="/riplox-android/" style="margin-left:10px">Get the Android APK</a>
+        <p class="muted" style="margin-top:16px;font-size:.92rem">
+          <a href="/riplox-desktop/">Riplox Desktop page</a> ·
+          <a href="/riplox-vs-metube/">Riplox vs MeTube</a> ·
+          <a href="https://github.com/xniperbuilds/riplox-desktop" target="_blank" rel="noopener">Source on GitHub</a> ·
+          <a href="/riplox-desktop/privacy/">Privacy policy</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true" style="color:#8B7BF7"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+          <span><b>Xniper</b><span>Builds</span></span>
+        </a>
+        <p>An independent studio building free web tools, browser games, Android apps and desktop software.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Products</h5>
+          <a href="/xnipertools/">Xnipertools</a>
+          <a href="/xniperarcade/">XniperArcade</a>
+          <a href="/riplox/">Riplox</a>
+          <a href="/cipherly/">Cipherly</a>
+          <a href="/riplox-tt/">Riplox TT</a>
+          <a href="/riplox-ig/">Riplox IG</a>
+          <a href="/jff/">JFF Stylish Name</a>
+          <a href="/jff-crosshair/">JFF Crosshair Pro</a>
+          <a href="/transport-ledger/">Transport Ledger</a>
+          <a href="/rent-ledger/">Rent Ledger</a>
+          <a href="/riplox-desktop/">Riplox Desktop</a>
+          <a href="/riplox-android/">Riplox for Android</a>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/app-testing/">App testing</a>
+          <a href="/app-testing/#report">Report a bug</a>
+          <a href="https://github.com/xniperbuilds" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="foot-col">
+          <h5>Live</h5>
+          <a href="https://xnipertools.com" target="_blank" rel="noopener">xnipertools.com</a>
+          <a href="https://xniperarcade.me" target="_blank" rel="noopener">xniperarcade.me</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 XniperBuilds. All rights reserved.</span>
+      <span><a href="/riplox-desktop/privacy/" style="color:inherit">Privacy Policy</a> · Built in-house.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
