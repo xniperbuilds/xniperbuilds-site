@@ -12,8 +12,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Riplox Desktop — free video downloader for PC, Windows 10 &amp; 11 | XniperBuilds</title>
-<meta name="description" content="A free, open-source video downloader for PC — Windows 10 and 11. Paste a link from a thousand-plus sites, or share one from your phone and it downloads even if the PC was switched off. No limits, no ads, no account.">
+<title>Riplox Desktop — free yt-dlp GUI for Windows, up to 8K, send videos from your phone | XniperBuilds</title>
+<meta name="description" content="A free, open-source yt-dlp GUI for Windows 10 and 11. Paste a link from a thousand-plus sites, or send one from your phone and the PC downloads it — no Docker, no server, no account. Up to 8K, MP3, whole playlists, convert and GIF, follow channels. Everything other downloaders charge for, free and uncapped.">
 <link rel="canonical" href="https://xniperbuilds.com/riplox-desktop/">
 <link rel="icon" href="/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
@@ -22,8 +22,8 @@
 <meta name="theme-color" content="#3E33A6">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://xniperbuilds.com/riplox-desktop/">
-<meta property="og:title" content="Riplox Desktop — free video downloader for Windows">
-<meta property="og:description" content="Paste a link, pick a quality, keep the file. Free and open source for Windows 10 and 11 — no caps, no account.">
+<meta property="og:title" content="Riplox Desktop — free yt-dlp GUI for Windows">
+<meta property="og:description" content="Paste a link, or send one from your phone and the PC downloads it. A free, open-source yt-dlp GUI for Windows 10 and 11 — no Docker, no caps, no account.">
 <meta property="og:image" content="/png/og-1200x630.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="/png/og-1200x630.png">
@@ -31,6 +31,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<!-- ⚠️ DO NOT PUSH THIS PAGE UNTIL 1.6.0 IS RELEASED.
+     The copy here describes the 8K rung, convert and GIF, a start time, and
+     Following reading the channel's own feed. All of that is built and tested
+     on branch free-features-and-feed and the number below now matches it — but
+     nothing has been released, so every one of those sentences is a claim about
+     software nobody can download yet. This page and the release go up together,
+     in that order, or the page is a lie for as long as the gap lasts. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -38,18 +45,18 @@
   "name": "Riplox Desktop",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows 10, Windows 11",
-  "softwareVersion": "1.5.0",
+  "softwareVersion": "1.6.0",
   "url": "https://xniperbuilds.com/riplox-desktop/",
   "downloadUrl": "https://github.com/xniperbuilds/riplox-desktop/releases/latest",
   "codeRepository": "https://github.com/xniperbuilds/riplox-desktop",
   "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-  "description": "A free, open-source video downloader for Windows. Paste a link, pick a quality, keep the file. No download caps, no account, no bundled software.",
+  "description": "A free, open-source yt-dlp GUI for Windows. Paste a link and keep the file at up to 8K or MP3, or send a link from your phone and the PC downloads it — no Docker, no server, no account. Whole playlists and channel sections, convert and GIF, follow channels for new uploads. No download caps, no ads, no bundled software.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "XniperBuilds", "url": "https://xniperbuilds.com" }
 }
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it really free, or is there a paid version later?","acceptedAnswer":{"@type":"Answer","text":"Free, and there is no other version. No download caps, no daily quota, no trial that expires, no account. The source is published under the GPL-3.0 licence, which means it stays that way — anyone can read exactly what it does, and nobody can take it closed."}},{"@type":"Question","name":"Does the link go to your server when my phone and PC are side by side?","acceptedAnswer":{"@type":"Answer","text":"No. When both are on the same Wi-Fi the link goes straight from the phone to the PC and never leaves your network - you do not have to set that up or turn it on. When they are not on the same network, it goes through a relay that carries a sealed envelope it cannot open, and only your PC holds the key. Either way the video itself is never involved: only what you sent travels — a link, or a short piece of text — and your PC does the downloading on its own connection."}},{"@type":"Question","name":"Do I need the browser extension?","acceptedAnswer":{"@type":"Answer","text":"No. Copy a link and press the shortcut — Ctrl+Shift+D unless another program already owns it, in which case Riplox picks a free pair and shows you which. You can also set your own. It reads the clipboard, it is on by default, and there is nothing to install. The extension adds a right-click menu for links you have not opened and lets you pick a quality before sending. It is on the Chrome Web Store, so adding it is one click, and Riplox has a Browser extension button in its sidebar that opens the same page."}},{"@type":"Question","name":"Can the extension see the pages I visit?","acceptedAnswer":{"@type":"Answer","text":"Not unless you ask it to. It reads the address of a tab only when you send that tab, and it never touches the video itself — Riplox does the downloading. The in-page button is the one part that needs wider access, it is switched off until you turn it on, and turning it off hands that access back."}},{"@type":"Question","name":"Does it work on Windows 10, or only Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Both, on 64-bit, and it behaves the same on each. Setup checks the version before writing anything, so an older PC is told plainly instead of ending up with an app that will not start."}},{"@type":"Question","name":"Windows warned me about the file. Should I be worried?","acceptedAnswer":{"@type":"Answer","text":"That warning appears because the installer is not signed with a code-signing certificate yet — not because anything was found in it. SmartScreen shows it for any new program without an established reputation. Every release page publishes the SHA-256 checksum, which is how you confirm the download is the file we built."}},{"@type":"Question","name":"Where do the files go, and in what format?","acceptedAnswer":{"@type":"Answer","text":"Wherever you point it — the folder is yours to choose and it is remembered. Video is saved as MP4, in H.264 wherever a site offers that resolution in H.264, so it plays in Windows Media Player, on phones and in WhatsApp without hunting for codecs. Where the highest resolution exists only in a newer codec, Riplox takes the resolution. Audio comes out as MP3. You pick the quality each time, from 4K down to 360p."}},{"@type":"Question","name":"A site changed and a download stopped working. Now what?","acceptedAnswer":{"@type":"Answer","text":"Sites change how they serve video, and when that happens it is the download engine that needs updating, not the whole app. One click updates it in place — no waiting for a new release, no reinstall."}},{"@type":"Question","name":"Does it keep downloading if I close the window?","acceptedAnswer":{"@type":"Answer","text":"Yes. Closing the window sends Riplox to the tray and everything carries on, with progress on the taskbar button and a notification as each file lands. Quitting from the tray is what actually stops it."}},{"@type":"Question","name":"If I uninstall it, do I lose my queue and settings?","acceptedAnswer":{"@type":"Answer","text":"Only if you ask to. Uninstalling asks whether to remove your settings, sign-ins, history and unfinished queue as well, and the default answer is no — so reinstalling or upgrading leaves everything where you left it. Downloaded files are never touched either way."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it really free, or is there a paid version later?","acceptedAnswer":{"@type":"Answer","text":"Free, and there is no other version. No download caps, no daily quota, no trial that expires, no account. The source is published under the GPL-3.0 licence, which means it stays that way — anyone can read exactly what it does, and nobody can take it closed."}},{"@type":"Question","name":"Does the link go to your server when my phone and PC are side by side?","acceptedAnswer":{"@type":"Answer","text":"No. When both are on the same Wi-Fi the link goes straight from the phone to the PC and never leaves your network - you do not have to set that up or turn it on. When they are not on the same network, it goes through a relay that carries a sealed envelope it cannot open, and only your PC holds the key. Either way the video itself is never involved: only what you sent travels — a link, or a short piece of text — and your PC does the downloading on its own connection."}},{"@type":"Question","name":"Do I need the browser extension?","acceptedAnswer":{"@type":"Answer","text":"No. Copy a link and press the shortcut — Ctrl+Shift+D unless another program already owns it, in which case Riplox picks a free pair and shows you which. You can also set your own. It reads the clipboard, it is on by default, and there is nothing to install. The extension adds a right-click menu for links you have not opened and lets you pick a quality before sending. It is on the Chrome Web Store, so adding it is one click, and Riplox has a Browser extension button in its sidebar that opens the same page."}},{"@type":"Question","name":"Can the extension see the pages I visit?","acceptedAnswer":{"@type":"Answer","text":"Not unless you ask it to. It reads the address of a tab only when you send that tab, and it never touches the video itself — Riplox does the downloading. The in-page button is the one part that needs wider access, it is switched off until you turn it on, and turning it off hands that access back."}},{"@type":"Question","name":"Does it work on Windows 10, or only Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Both, on 64-bit, and it behaves the same on each. Setup checks the version before writing anything, so an older PC is told plainly instead of ending up with an app that will not start."}},{"@type":"Question","name":"Windows warned me about the file. Should I be worried?","acceptedAnswer":{"@type":"Answer","text":"That warning appears because the installer is not signed with a code-signing certificate yet — not because anything was found in it. SmartScreen shows it for any new program without an established reputation. Every release page publishes the SHA-256 checksum, which is how you confirm the download is the file we built."}},{"@type":"Question","name":"Where do the files go, and in what format?","acceptedAnswer":{"@type":"Answer","text":"Wherever you point it — the folder is yours to choose and it is remembered. Video is saved as MP4, in H.264 wherever a site offers that resolution in H.264, so it plays in Windows Media Player, on phones and in WhatsApp without hunting for codecs. Where the highest resolution exists only in a newer codec, Riplox takes the resolution. Audio comes out as MP3. You pick the quality each time, from 8K down to 360p."}},{"@type":"Question","name":"A site changed and a download stopped working. Now what?","acceptedAnswer":{"@type":"Answer","text":"Sites change how they serve video, and when that happens it is the download engine that needs updating, not the whole app. One click updates it in place — no waiting for a new release, no reinstall."}},{"@type":"Question","name":"Does it keep downloading if I close the window?","acceptedAnswer":{"@type":"Answer","text":"Yes. Closing the window sends Riplox to the tray and everything carries on, with progress on the taskbar button and a notification as each file lands. Quitting from the tray is what actually stops it."}},{"@type":"Question","name":"If I uninstall it, do I lose my queue and settings?","acceptedAnswer":{"@type":"Answer","text":"Only if you ask to. Uninstalling asks whether to remove your settings, sign-ins, history and unfinished queue as well, and the default answer is no — so reinstalling or upgrading leaves everything where you left it. Downloaded files are never touched either way."}}]}
 </script>
 </head>
 <body>
@@ -80,8 +87,13 @@
       <div>
         <div class="crumbs"><a href="/">Home</a> / <a href="/#products">Products</a> / <span style="color:var(--indigo)">Riplox Desktop</span></div>
         <span class="eyebrow" style="margin-top:14px">Windows app</span>
-        <h1>Save any video,<br>right on your PC.</h1>
-        <p class="lead">Paste a link, pick a quality, keep the file. Riplox Desktop downloads video and audio from around a thousand sites — with no caps, no daily quota and no account to create. Copy a link anywhere and it catches it on its own.</p>
+        <h1>Send a video from your phone.<br>Your PC downloads it.</h1>
+        <!-- The old H1 was "Save any video, right on your PC" — true, and the same
+             sentence every downloader on earth writes, which put Riplox in the bucket
+             where it competes with IDM and 4K Video Downloader. The phone-to-PC claim is
+             the one no competitor can make, and "send from your phone" is how people
+             actually type it. The paste-a-link job is still first in the lead below. -->
+        <p class="lead">Riplox Desktop is a free, open-source <strong>yt-dlp GUI for Windows</strong>. Paste a link and keep the file — up to 8K, or MP3 — or pair your phone once and share links straight from any app, with no Docker, no server to run and no account. Around a thousand sites, no caps, no daily quota, no ads.</p>
         <div class="phero-cta">
           <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
              data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe" data-dl-note="#dl-note">Download for Windows</a>
@@ -89,7 +101,7 @@
         </div>
         <!-- The version history is not decoration. VideoHelp and Softpedia both
              refuse software that does not publish one, and this page had none. -->
-        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Windows 10 &amp; 11 · Open source (GPL-3.0) · SHA-256 published · <a href="https://github.com/xniperbuilds/riplox-desktop/releases">Version history</a> · <a href="/riplox-desktop/privacy/" style="color:inherit;text-decoration:underline">Privacy policy</a> <span id="dl-note"></span></p>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Windows 10 &amp; 11 · Open source (GPL-3.0) · SHA-256 published · <a href="/riplox-features/">Every feature explained</a> · <a href="https://github.com/xniperbuilds/riplox-desktop/releases">Version history</a> · <a href="/riplox-desktop/privacy/" style="color:inherit;text-decoration:underline">Privacy policy</a> <span id="dl-note"></span></p>
         <!-- Plain link on purpose: no data-dl, so it costs no GitHub API call.
              The API allows 60 an hour per IP and this page already spends one. -->
         <!-- The extension was mentioned twice on this page and visible in
@@ -123,7 +135,7 @@
         </div>
         <div class="feat reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/></svg></div>
-          <h4>4K down to 360p, or MP3</h4>
+          <h4>8K down to 360p, or MP3</h4>
           <p>Pick the quality you want, or take the audio only. Whole playlists and channels queue in one go.</p>
         </div>
         <div class="feat reveal">
@@ -143,7 +155,7 @@
         </div>
       </div>
       <div class="chips reveal">
-        <span class="chip">Windows 10 &amp; 11</span><span class="chip">4K</span><span class="chip">MP3</span>
+        <span class="chip">Windows 10 &amp; 11</span><span class="chip">8K</span><span class="chip">MP3</span>
         <span class="chip">Playlists</span><span class="chip">Clipboard</span><span class="chip">Open source</span>
       </div>
       <p class="muted" style="margin-top:26px;font-size:.92rem;max-width:760px">Files are saved as MP4, in H.264 wherever a site offers that resolution in H.264, so they open in Windows Media Player, WhatsApp and on phones without extra codecs. The installer contains the app and nothing else — no toolbars, no offers, no adware. Downloading is subject to the terms of the site you download from and to the copyright of the material.</p>
@@ -159,7 +171,7 @@
       <div class="prose reveal">
         <p>You find something on your phone. The video belongs on the computer — the big screen, the drive with room on it, the folder everything else lives in. So you email yourself the link, or message it to yourself, and later you remember to go and fetch it. Usually you don't.</p>
         <p>Riplox has a postbox instead. Share the link from your phone the way you share anything else and it goes into a queue. If the PC is on, the download starts within seconds. <strong>If the PC is off, asleep, or in another city, the link waits</strong> — and the moment Riplox is running again, everything that piled up downloads at once. Share eleven videos overnight and eleven files are waiting in the morning.</p>
-        <p>This is worth being precise about, because most tools that claim to connect a phone and a PC need both ends awake, on the same Wi-Fi, and able to find each other. Riplox needs none of that. There is no discovery step, no network to join, and nothing to leave open. The link is encrypted on your phone and only your PC can read it — the relay in between carries a sealed envelope and cannot open it.</p>
+        <p>This is worth being precise about, because most tools that claim to connect a phone and a PC need both ends awake, on the same Wi-Fi, and able to find each other. Riplox needs none of that. There is no discovery step, no network to join, and nothing to leave open. The link is encrypted on your phone and only your PC can read it — the relay in between carries a sealed envelope and cannot open it. <a href="/riplox-vs-metube/">See how this compares with MeTube and the other ways of doing it</a>.</p>
         <p><strong>And when you are on the same Wi-Fi, it does not use the relay at all.</strong> Riplox does not <em>need</em> both ends on one network — that is the point of everything above — but when they happen to be, the link goes straight from your phone to your PC and never leaves the building. You do nothing to arrange it: there is no address to type, no network to set up, nothing to switch on. Your PC quietly mentions where it is inside the same sealed reply it already sends, so a laptop that moves between home and work sorts itself out on the next share. Riplox marks those shares <strong>on your network</strong> when they arrive, so it is something you can see rather than something we tell you.</p>
         <h3>From the browser you are already in</h3>
         <p>Most of the time the video is in a tab in front of you and the phone has nothing to do with it. For that, Riplox watches the clipboard: copy a link from the address bar and press <strong>Ctrl+Shift+D</strong>, and it is queued without switching windows. If another program already owns those keys, Riplox takes a free pair instead and shows you which — or you can set your own. There is nothing to install and nothing to switch on — it works from the moment Riplox is running. If another program has already claimed those keys, Riplox takes a different pair and shows you which one in Settings, rather than leaving you pressing keys that do nothing.</p>
@@ -169,9 +181,55 @@
         <h3>What you need</h3>
         <p>A 64-bit Windows 10 or Windows 11 PC. That is the whole list. Riplox installs for your user account, so it never asks for administrator rights, and there is no server, no subscription and no account of any kind. Older Windows is not supported, and setup says so plainly rather than installing something that cannot start.</p>
         <h3>What it does not do</h3>
-        <p>It does not upload anything about you, show ads, or bundle a second program with the installer. It does not download by itself — watching a channel notifies you, and you decide. It will not get past a paywall or reach a private video your own account cannot see, and it is not a torrent client or a general file downloader. Those are deliberate gaps, not missing features.</p>
+        <p>It does not upload anything about you, show ads, or bundle a second program with the installer. It does not download anything on its own unless you have switched that on: following a channel notifies you and waits, and the automatic option is off until you turn it on, capped when you do. It will not get past a paywall or reach a private video your own account cannot see, and it is not a torrent client or a general file downloader. Those are deliberate gaps, not missing features.</p>
         <h3>Instagram and TikTok on the PC</h3>
         <p>Riplox Desktop takes Instagram and TikTok links alongside everything else, so there is no need for a separate Instagram video downloader for PC or a second app for TikTok. The two Android apps exist for the phone, where a share sheet beats copying a link. On Windows, one app covers all of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Added Sept 2026. Twenty-six things Riplox already does were written down
+       nowhere a person or a search engine would find them, which is why it never
+       appeared in an answer to "best free video downloader". This section is that
+       list, in the words people actually use. -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>What other downloaders charge for</h2>
+        <p>Free here means free — no daily cap, no trial that expires, no pro tier, no account. This is the list of things the paid ones put behind a licence.</p>
+      </div>
+      <div class="cmp-wrap reveal">
+        <table class="cmp">
+          <thead>
+            <tr><th scope="col">Commonly limited or sold as premium</th><th scope="col" class="own">In Riplox</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">A daily download limit</th><td class="own"><span class="yes">No cap</span></td></tr>
+            <tr><th scope="row">One download at a time</th><td class="own">As many at once as you set</td></tr>
+            <tr><th scope="row">Only the first few videos of a playlist</th><td class="own">The whole playlist, with filtering and range select</td></tr>
+            <tr><th scope="row">Only the first few videos of a channel</th><td class="own">The whole section — Videos, Shorts, Live</td></tr>
+            <tr><th scope="row">1080p unless you pay</th><td class="own"><span class="yes">Up to 8K where a site offers it</span></td></tr>
+            <tr><th scope="row">Ads in the free build</th><td class="own"><span class="yes">None, ever</span></td></tr>
+            <tr><th scope="row">Themes and a media library as a subscription</th><td class="own">Both, free</td></tr>
+            <tr><th scope="row">Proxy support as a premium feature</th><td class="own">HTTP, HTTPS and SOCKS</td></tr>
+            <tr><th scope="row">Private, members-only or age-gated video as premium</th><td class="own">Sign in through your own browser</td></tr>
+            <tr><th scope="row">Converting a finished file, or making a GIF</th><td class="own">Built in — convert, GIF and shrink</td></tr>
+            <tr><th scope="row">Trimming a clip</th><td class="own">Without re-encoding the whole file</td></tr>
+            <tr><th scope="row">Scheduling a download for later</th><td class="own">A start time per download</td></tr>
+            <tr><th scope="row">Watching channels for new uploads</th><td class="own">Following — reads the channel's own feed</td></tr>
+            <tr><th scope="row">Subtitles, chapters, SponsorBlock</th><td class="own">All three, where the site provides them</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-note">Riplox is GPL-3.0. There is no paid version to upgrade to, and the licence means there cannot quietly be one later.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="prose reveal">
+        <h3>Following: new uploads without watching for them</h3>
+        <p>Follow a channel or a playlist and Riplox checks it for you, reading the channel's own feed rather than scraping the page — so checks are cheap and can run as often as every fifteen minutes. New uploads appear in a list. If you want them fetched without being asked, that is opt-in, capped, and off until you turn it on. Each channel can carry its own quality, folder and title rules, and the whole list exports and imports.</p>
       </div>
     </div>
   </section>
@@ -208,7 +266,7 @@
         </details>
         <details>
           <summary>Where do the files go, and in what format?</summary>
-          <p>Wherever you point it — the folder is yours to choose and it is remembered. Video is saved as MP4, in H.264 wherever a site offers that resolution in H.264, so it plays in Windows Media Player, on phones and in WhatsApp without hunting for codecs. Where the highest resolution exists only in a newer codec, Riplox takes the resolution. Audio comes out as MP3. You pick the quality each time, from 4K down to 360p.</p>
+          <p>Wherever you point it — the folder is yours to choose and it is remembered. Video is saved as MP4, in H.264 wherever a site offers that resolution in H.264, so it plays in Windows Media Player, on phones and in WhatsApp without hunting for codecs. Where the highest resolution exists only in a newer codec, Riplox takes the resolution. Audio comes out as MP3. You pick the quality each time, from 8K down to 360p.</p>
         </details>
         <details>
           <summary>A site changed and a download stopped working. Now what?</summary>

@@ -87,18 +87,21 @@
           <li><strong>Settings</strong> — your download folder, chosen quality, and the rest of your preferences.</li>
           <li><strong>Download history and queue</strong> — the title, link and file location of what you have downloaded, so you can find or repeat it. You can delete any entry or clear the list.</li>
           <li><strong>The pairing with your phone</strong> — a key shared between your phone and this PC, if you use Send.</li>
+          <li><strong>Channels you follow, if you use Following</strong> — the channel addresses you added, the options you set for each, and the ids of the videos already seen, so the same upload is not offered twice. This list stays on your PC and is never sent anywhere.</li>
           <li><strong>Site sign-in, only if you choose it</strong> — if you sign in to a site so Riplox can fetch something that needs an account, those cookies are stored <strong>encrypted with Windows DPAPI</strong>, one file per site, so a copied file is useless on another machine. Signing out of one site removes only that file.</li>
           <li><strong>Downloaded files</strong> — saved wherever you point Riplox. These are your files and Riplox never sends them anywhere.</li>
         </ul>
         <p>Ordinarily this lives in your Windows user folder. If you run the <strong>portable</strong> build, all of it stays in a <code>Data</code> folder beside the program instead, and nothing is written elsewhere on the PC.</p>
 
         <h2>Network use</h2>
-        <p>Riplox connects to the internet for four things, and nothing else:</p>
+        <p>Riplox connects to the internet for six things, and nothing else:</p>
         <ul>
           <li><strong>The site you asked for</strong> — to fetch the video you pasted or sent.</li>
           <li><strong>Keeping its download engine current</strong> — Riplox uses the open-source <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">yt-dlp</a> and updates its own copy so links keep working when sites change.</li>
           <li><strong>Checking whether a newer Riplox exists</strong> — it asks GitHub's public releases API for the latest version number. Nothing about you is sent with that request.</li>
           <li><strong>The Send relay</strong>, described next, and only if you turn Send on.</li>
+          <li><strong>Channels you follow</strong> — if you use Following, Riplox reads each channel's own public feed on a timer to see whether anything new was posted. For YouTube that is the channel's <code>feeds/videos.xml</code> address, requested straight from YouTube. It is a plain read of a public page, nothing about you is sent with it, and Riplox makes these requests only for channels you added yourself. Follow nothing and none of them happen.</li>
+          <li><strong>Asking about a link on a page</strong> — when you use <em>Find on a page</em>, addresses that give nothing away (no file extension, or one nobody recognises) are asked about directly, so Riplox can tell a download from a page rather than guessing from the address. It asks at most a dozen per page and reads only the answer's headers, never the page behind it. This happens only when you run Find on a page.</li>
         </ul>
 
         <h2>Send, and what the relay can see</h2>

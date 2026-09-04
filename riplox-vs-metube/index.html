@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XG0JQC6P51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XG0JQC6P51');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riplox vs MeTube — send a video from your phone to your PC, without Docker | XniperBuilds</title>
+<meta name="description" content="An honest comparison of the ways to send a video link from your phone and have your PC download it: Riplox, MeTube, yt-dlp Web UI and Seal. MeTube needs Docker; Riplox is a Windows installer with a built-in Android share. Where each one wins.">
+<link rel="canonical" href="https://xniperbuilds.com/riplox-vs-metube/">
+<link rel="icon" href="/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#3E33A6">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://xniperbuilds.com/riplox-vs-metube/">
+<meta property="og:title" content="Riplox vs MeTube — sending videos from your phone to your PC">
+<meta property="og:description" content="MeTube documents Docker and Docker Compose only. Riplox is a Windows installer with a built-in Android share. An honest table, including where MeTube is the better choice.">
+<meta property="og:image" content="/png/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/png/og-1200x630.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can a normal Windows program receive a video link from my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Riplox is an ordinary Windows installer that pairs with your phone once, after which Riplox appears in your phone's Share menu. Sharing a link from any app sends it to the PC, which downloads the video on its own connection. No Docker, no web server and no port opened on your router are involved."}},
+{"@type":"Question","name":"Do I need Docker to send videos from my phone to my PC?","acceptedAnswer":{"@type":"Answer","text":"Not with Riplox, which installs like any other Windows program. MeTube does need it: the project documents two installation methods, Docker and Docker Compose, and no plain executable. If you already run Docker, or you want this on a NAS or a Linux machine, MeTube is a good choice. If you are on Windows and do not want to run a container, Riplox does the same job without one."}},
+{"@type":"Question","name":"What is the difference between Riplox and MeTube?","acceptedAnswer":{"@type":"Answer","text":"Both are free, open source and built on yt-dlp. MeTube is a self-hosted web interface: you run it in Docker and open it in a browser, including your phone's browser. Riplox is a Windows desktop application with a paired phone connection, so sharing works from your phone's own Share menu rather than through a browser tab. MeTube runs anywhere Docker runs; Riplox is Windows only."}},
+{"@type":"Question","name":"Is sending a link from my phone to my PC private?","acceptedAnswer":{"@type":"Answer","text":"With Riplox, pairing is end-to-end encrypted and no port is opened on your network. Only the link travels — the video itself is never sent between the phone and the PC, because the PC downloads it directly on its own connection."}},
+{"@type":"Question","name":"Which is better, downloading on the phone or on the PC?","acceptedAnswer":{"@type":"Answer","text":"Downloading on the PC saves your phone's storage and mobile data, and it is the faster route for large files such as 4K video. Android apps like Seal and YTDLnis download onto the phone first, after which you still have to transfer the file to the PC with something like Quick Share or LocalSend. That is two steps instead of one, and the file passes through the phone."}}]}
+</script>
+<style>
+  /* .cmp / .prose / .callout live in /styles.css. This table has five columns
+     rather than two, so it needs more room before it starts scrolling. */
+  table.cmp{min-width:780px}
+  table.cmp thead th,table.cmp tbody th{white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+      <span><b>Xniper</b><span>Builds</span></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="/#products">Products</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
+         data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe">Download</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="phero">
+    <div class="hero-orbs"><span class="orb a"></span><span class="orb b"></span></div>
+    <div class="wrap phero-grid">
+      <div>
+        <div class="crumbs"><a href="/">Home</a> / <a href="/riplox-desktop/">Riplox Desktop</a> / <span style="color:var(--indigo)">vs MeTube</span></div>
+        <span class="eyebrow" style="margin-top:14px">Comparison</span>
+        <h1>Riplox vs MeTube:<br>phone to PC, without Docker.</h1>
+        <p class="lead">Both are free, open source and built on yt-dlp. Both let you send a video link from your phone and have the computer download it. The difference is what you have to run to get there — and there is one job MeTube does better, which is further down this page.</p>
+        <div class="phero-cta">
+          <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
+             data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe" data-dl-note="#dl-note">Download Riplox for Windows</a>
+          <a class="btn btn-ghost btn-lg" href="/riplox-desktop/">What Riplox does</a>
+        </div>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Windows 10 &amp; 11 · Open source (GPL-3.0) <span id="dl-note"></span></p>
+      </div>
+      <div class="pvisual">
+        <div class="big-emblem"><img src="/logos/riplox-desktop.png" alt="Riplox Desktop logo"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>The four ways to do this</h2>
+        <p>Every option below is free. They differ in what you install and how many steps stand between you and the file.</p>
+      </div>
+
+      <div class="cmp-wrap reveal">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col">&nbsp;</th>
+              <th scope="col" class="own">Riplox</th>
+              <th scope="col">MeTube</th>
+              <th scope="col">yt-dlp Web UI</th>
+              <th scope="col">Seal / YTDLnis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">What you install on the PC</th>
+              <td class="own">A Windows installer, or a portable build</td>
+              <td>Docker or Docker Compose</td>
+              <td>A self-hosted server</td>
+              <td>Nothing — plus a transfer tool</td>
+            </tr>
+            <tr>
+              <th scope="row">Sending from Android</th>
+              <td class="own"><span class="yes">Built-in Share menu</span></td>
+              <td class="no">No native path</td>
+              <td class="no">Phone browser</td>
+              <td>App's own Share target</td>
+            </tr>
+            <tr>
+              <th scope="row">Sending from iPhone</th>
+              <td class="no">Not yet</td>
+              <td>A third-party Shortcut</td>
+              <td class="no">Phone browser</td>
+              <td class="no">Android only</td>
+            </tr>
+            <tr>
+              <th scope="row">Steps to get the file on the PC</th>
+              <td class="own"><span class="yes">One — share it</span></td>
+              <td>One, once it is running</td>
+              <td>One, once it is running</td>
+              <td>Two — download, then transfer</td>
+            </tr>
+            <tr>
+              <th scope="row">Uses the phone's storage and data</th>
+              <td class="own"><span class="yes">No</span></td>
+              <td class="yes">No</td>
+              <td class="yes">No</td>
+              <td class="no">Yes, for every file</td>
+            </tr>
+            <tr>
+              <th scope="row">Runs a server / opens a port</th>
+              <td class="own"><span class="yes">No</span></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <th scope="row">Account needed</th>
+              <td class="own"><span class="yes">No</span></td>
+              <td class="yes">No</td>
+              <td class="yes">No</td>
+              <td class="yes">No</td>
+            </tr>
+            <tr>
+              <th scope="row">Pairing is end-to-end encrypted</th>
+              <td class="own"><span class="yes">Yes</span></td>
+              <td>Your own network exposure</td>
+              <td>Your own network exposure</td>
+              <td>n/a</td>
+            </tr>
+            <tr>
+              <th scope="row">Where it runs</th>
+              <td class="own">Windows 10 &amp; 11</td>
+              <td><span class="yes">Anywhere Docker runs — NAS, Linux, Mac</span></td>
+              <td>Anywhere the server runs</td>
+              <td>Android</td>
+            </tr>
+            <tr>
+              <th scope="row">Licence</th>
+              <td class="own">GPL-3.0</td>
+              <td>Open source</td>
+              <td>Open source</td>
+              <td>Open source</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-note">MeTube's installation methods are taken from the project's own documentation, which lists Docker and Docker Compose and no plain executable. Checked September 2026.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <div class="prose reveal">
+
+        <h3>Where MeTube is the better choice</h3>
+        <p>If you already run Docker, or you want this on a NAS, a Raspberry Pi, a Linux box or a Mac, MeTube is the right answer and Riplox is not an option at all. Riplox is a Windows program. MeTube runs anywhere a container runs, it has been maintained for years, and its browser interface works from any device on the network without pairing anything.</p>
+        <p>It is also the better fit if you want the download queue to live on a machine that is always on, separate from the computer you actually use.</p>
+
+        <div class="callout">
+          <p><strong>The honest summary:</strong> MeTube is a self-hosted service. Riplox is a desktop app. If you want a service, use MeTube. If you want a program you install on your Windows PC and forget about, that is what Riplox is for.</p>
+        </div>
+
+        <h3>Where Riplox is the better choice</h3>
+        <p>The gap is setup and the phone. MeTube's own documentation lists two ways in, Docker and Docker Compose, and getting a link there from a phone means opening your PC's local address in the phone's browser — or installing a Shortcut somebody else wrote, on iOS only. There is no Android share target.</p>
+        <p>Riplox installs the way any Windows program installs. You pair the phone once, and after that Riplox is in the Android Share menu next to everything else. You share a link and the PC starts downloading. Nothing to run, nothing to keep running, no address to remember, no port opened on your router, and the pairing itself is end-to-end encrypted. Only the link travels — the video is never sent between the two devices, because the PC fetches it directly.</p>
+
+        <h3>What about downloading on the phone instead?</h3>
+        <p>Seal and YTDLnis are good Android apps and they are genuinely easy — the link goes straight into the app from the Share menu. The catch is where the file ends up. It lands on the phone, using the phone's storage and the phone's data, and then you still have to move it to the PC with Quick Share or LocalSend. For a short clip that is fine. For a 4K video or a whole playlist it is the slow way round.</p>
+
+        <h3>What they have in common</h3>
+        <p>All four are free, none of them charge for a "pro" tier, and all of them use <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">yt-dlp</a> underneath — which is why they all support roughly the same list of sites. Riplox keeps its copy of that engine updated from inside the app, so a site changing how it serves video does not mean waiting for a new release.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Get Riplox Desktop</h2>
+        <p>Free, open source, Windows 10 and 11. No account, no caps, no ads.</p>
+      </div>
+      <div style="text-align:center">
+        <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
+           data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe">Download for Windows</a>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">
+          <a href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Portable.zip">Portable version</a> ·
+          <a href="https://github.com/xniperbuilds/riplox-desktop" target="_blank" rel="noopener">Source on GitHub</a> ·
+          <a href="/riplox-desktop/">Full feature list</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true" style="color:#8B7BF7"><path d="M16 56 Q50 18 84 56" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="72" r="6" fill="currentColor"/><circle cx="50" cy="76" r="6" fill="currentColor"/><circle cx="68" cy="72" r="6" fill="currentColor"/></svg>
+          <span><b>Xniper</b><span>Builds</span></span>
+        </a>
+        <p>An independent studio building free web tools, browser games, Android apps and desktop software.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Products</h5>
+          <a href="/xnipertools/">Xnipertools</a>
+          <a href="/xniperarcade/">XniperArcade</a>
+          <a href="/riplox/">Riplox</a>
+          <a href="/cipherly/">Cipherly</a>
+          <a href="/riplox-tt/">Riplox TT</a>
+          <a href="/riplox-ig/">Riplox IG</a>
+          <a href="/jff/">JFF Stylish Name</a>
+          <a href="/jff-crosshair/">JFF Crosshair Pro</a>
+          <a href="/transport-ledger/">Transport Ledger</a>
+          <a href="/rent-ledger/">Rent Ledger</a>
+          <a href="/riplox-desktop/">Riplox Desktop</a>
+          <a href="/riplox-android/">Riplox for Android</a>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/app-testing/">App testing</a>
+          <a href="/app-testing/#report">Report a bug</a>
+          <a href="https://github.com/xniperbuilds" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="foot-col">
+          <h5>Live</h5>
+          <a href="https://xnipertools.com" target="_blank" rel="noopener">xnipertools.com</a>
+          <a href="https://xniperarcade.me" target="_blank" rel="noopener">xniperarcade.me</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 XniperBuilds. All rights reserved.</span>
+      <span><a href="/riplox-desktop/privacy/" style="color:inherit">Privacy Policy</a> · Built in-house.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
