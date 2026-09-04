@@ -17,11 +17,23 @@
     });
   }
 
+  // A threshold of 0.12 asks for 12% of the element's area to be on screen.
+  // For anything taller than about eight screens that ratio can never be
+  // reached - the viewport is simply too small a slice of it - so the element
+  // stays at opacity 0 and the content is invisible for ever. That is what
+  // happened to the features page, where one block holds every feature.
+  // So: still 12% for ordinary elements, but anything taller than the window
+  // reveals as soon as it is on screen at all.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
-      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      if (!en.isIntersecting) return;
+      var tallerThanScreen = en.boundingClientRect.height > window.innerHeight;
+      if (tallerThanScreen || en.intersectionRatio >= 0.12) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: [0, 0.12] });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
   // Say which version and how big, under the download buttons.

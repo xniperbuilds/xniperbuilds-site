@@ -31,13 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
-<!-- ⚠️ DO NOT PUSH THIS PAGE UNTIL 1.6.0 IS RELEASED.
-     The copy here describes the 8K rung, convert and GIF, a start time, and
-     Following reading the channel's own feed. All of that is built and tested
-     on branch free-features-and-feed and the number below now matches it — but
-     nothing has been released, so every one of those sentences is a claim about
-     software nobody can download yet. This page and the release go up together,
-     in that order, or the page is a lie for as long as the gap lasts. -->
+<!-- 1.6.0 is released; this page and that release went up together. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,11 +91,14 @@
         <div class="phero-cta">
           <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox-desktop/releases/latest/download/Riplox_Setup.exe" download target="_blank" rel="noopener"
              data-dl="xniperbuilds/riplox-desktop" data-dl-file="Riplox_Setup.exe" data-dl-note="#dl-note">Download for Windows</a>
-          <a class="btn btn-ghost btn-lg" href="https://github.com/xniperbuilds/riplox-desktop" target="_blank" rel="noopener">View on GitHub</a>
+          <!-- These two were links buried in a paragraph, which is the same as
+               not having them. Both pages exist to be read before installing. -->
+          <a class="btn btn-ghost btn-lg" href="/riplox-features/">All features</a>
+          <a class="btn btn-ghost btn-lg" href="/riplox-vs-metube/">vs MeTube</a>
         </div>
         <!-- The version history is not decoration. VideoHelp and Softpedia both
              refuse software that does not publish one, and this page had none. -->
-        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Windows 10 &amp; 11 · Open source (GPL-3.0) · SHA-256 published · <a href="/riplox-features/">Every feature explained</a> · <a href="https://github.com/xniperbuilds/riplox-desktop/releases">Version history</a> · <a href="/riplox-desktop/privacy/" style="color:inherit;text-decoration:underline">Privacy policy</a> <span id="dl-note"></span></p>
+        <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Windows 10 &amp; 11 · Open source (GPL-3.0) · SHA-256 published · <a href="https://github.com/xniperbuilds/riplox-desktop" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/xniperbuilds/riplox-desktop/releases">Version history</a> · <a href="/riplox-desktop/privacy/" style="color:inherit;text-decoration:underline">Privacy policy</a> <span id="dl-note"></span></p>
         <!-- Plain link on purpose: no data-dl, so it costs no GitHub API call.
              The API allows 60 an hour per IP and this page already spends one. -->
         <!-- The extension was mentioned twice on this page and visible in
@@ -168,7 +165,7 @@
         <h2>Send a link from your phone — the PC can be switched off</h2>
         <p>The part of Riplox that browser tools and other downloaders do not do.</p>
       </div>
-      <div class="prose reveal">
+      <div class="prose">
         <p>You find something on your phone. The video belongs on the computer — the big screen, the drive with room on it, the folder everything else lives in. So you email yourself the link, or message it to yourself, and later you remember to go and fetch it. Usually you don't.</p>
         <p>Riplox has a postbox instead. Share the link from your phone the way you share anything else and it goes into a queue. If the PC is on, the download starts within seconds. <strong>If the PC is off, asleep, or in another city, the link waits</strong> — and the moment Riplox is running again, everything that piled up downloads at once. Share eleven videos overnight and eleven files are waiting in the morning.</p>
         <p>This is worth being precise about, because most tools that claim to connect a phone and a PC need both ends awake, on the same Wi-Fi, and able to find each other. Riplox needs none of that. There is no discovery step, no network to join, and nothing to leave open. The link is encrypted on your phone and only your PC can read it — the relay in between carries a sealed envelope and cannot open it. <a href="/riplox-vs-metube/">See how this compares with MeTube and the other ways of doing it</a>.</p>
@@ -198,7 +195,7 @@
         <h2>What other downloaders charge for</h2>
         <p>Free here means free — no daily cap, no trial that expires, no pro tier, no account. This is the list of things the paid ones put behind a licence.</p>
       </div>
-      <div class="cmp-wrap reveal">
+      <div class="cmp-wrap">
         <table class="cmp">
           <thead>
             <tr><th scope="col">Commonly limited or sold as premium</th><th scope="col" class="own">In Riplox</th></tr>
@@ -227,7 +224,7 @@
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <div class="prose reveal">
+      <div class="prose">
         <h3>Following: new uploads without watching for them</h3>
         <p>Follow a channel or a playlist and Riplox checks it for you, reading the channel's own feed rather than scraping the page — so checks are cheap and can run as often as every fifteen minutes. New uploads appear in a list. If you want them fetched without being asked, that is opt-in, capped, and off until you turn it on. Each channel can carry its own quality, folder and title rules, and the whole list exports and imports.</p>
       </div>
