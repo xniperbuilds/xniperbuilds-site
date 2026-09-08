@@ -48,7 +48,7 @@
 }
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it free, and are there ads?","acceptedAnswer":{"@type":"Answer","text":"Free, with no ads anywhere in it, no paid tier, no trial and no account to create. It is open source under GPL-3.0, so anyone can read exactly what it does, and nobody can take it closed."}},{"@type":"Question","name":"Why is it an APK instead of a Play Store app?","acceptedAnswer":{"@type":"Answer","text":"Google Play does not allow apps that download from YouTube, so this is distributed as an APK from GitHub. Every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Android will ask you to allow installing from this source the first time, and that permission applies to this install only."}},{"@type":"Question","name":"Which sites does it work with?","acceptedAnswer":{"@type":"Answer","text":"Over a thousand — YouTube, Instagram, TikTok, Facebook, X and everything else the yt-dlp project supports. If a site changes and a download breaks, updating the app is what fixes it."}},{"@type":"Question","name":"Does the download stop if I close the app?","acceptedAnswer":{"@type":"Answer","text":"No. The queue survives closing the app and even a reboot, and retries by itself with a growing gap between attempts. You get a notification as each file lands."}},{"@type":"Question","name":"What is the Secret Vault?","acceptedAnswer":{"@type":"Answer","text":"Storage locked behind your fingerprint or a PIN. Files moved into it disappear from your gallery, from the app's own history and from backups. It is meant for things you would rather not have appear while someone is scrolling your photos."}},{"@type":"Question","name":"Does signing in give the app my password?","acceptedAnswer":{"@type":"Answer","text":"No. Signing in happens on the real site inside a normal web view, so your password never passes through the app. It only matters for private, age-restricted or guest-blocked videos that your own account can already see."}},{"@type":"Question","name":"Can it download to my PC instead?","acceptedAnswer":{"@type":"Answer","text":"That is a different app in the same family. Riplox Desktop runs on Windows, and you can share a link to it from your phone — it downloads on the PC even if the PC was switched off when you sent it."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it free, and are there ads?","acceptedAnswer":{"@type":"Answer","text":"Free, with no ads anywhere in it, no paid tier, no trial and no account to create. It is open source under GPL-3.0, so anyone can read exactly what it does, and nobody can take it closed."}},{"@type":"Question","name":"Why is it an APK instead of a Play Store app?","acceptedAnswer":{"@type":"Answer","text":"Google Play does not allow apps that download from YouTube, so this is distributed as an APK from GitHub. Every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Chrome asks whether to keep an APK once it has downloaded — choose Keep, or it sits at 100% and never finishes. Android will then ask you to allow installing from this source the first time, and that permission applies to this install only."}},{"@type":"Question","name":"Which sites does it work with?","acceptedAnswer":{"@type":"Answer","text":"Over a thousand — YouTube, Instagram, TikTok, Facebook, X and everything else the yt-dlp project supports. If a site changes and a download breaks, updating the app is what fixes it."}},{"@type":"Question","name":"Does the download stop if I close the app?","acceptedAnswer":{"@type":"Answer","text":"No. The queue survives closing the app and even a reboot, and retries by itself with a growing gap between attempts. You get a notification as each file lands."}},{"@type":"Question","name":"What is the Secret Vault?","acceptedAnswer":{"@type":"Answer","text":"Storage locked behind your fingerprint or a PIN. Files moved into it disappear from your gallery, from the app's own history and from backups. It is meant for things you would rather not have appear while someone is scrolling your photos."}},{"@type":"Question","name":"Does signing in give the app my password?","acceptedAnswer":{"@type":"Answer","text":"No. Signing in happens on the real site inside a normal web view, so your password never passes through the app. It only matters for private, age-restricted or guest-blocked videos that your own account can already see."}},{"@type":"Question","name":"Can it download to my PC instead?","acceptedAnswer":{"@type":"Answer","text":"That is a different app in the same family. Riplox Desktop runs on Windows, and you can share a link to it from your phone — it downloads on the PC even if the PC was switched off when you sent it."}},{"@type":"Question","name":"The download stops at 100% and never finishes.","acceptedAnswer":{"@type":"Answer","text":"Chrome asks whether to keep an APK once every byte has arrived, and until that is answered the download sits at 100%. Open Chrome's downloads, or pull down the notification, and choose Keep. If the prompt has already gone, cancel that entry, delete any half-finished Riplox.apk from your Downloads folder and start it again."}}]}
 </script>
 </head>
 <body>
@@ -63,7 +63,7 @@
       <a href="/#products">Products</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-      <a class="btn btn-primary nav-cta" href="https://github.com/xniperbuilds/riplox/releases/latest/download/Riplox.apk" download target="_blank" rel="noopener"
+      <a class="btn btn-primary nav-cta" href="https://github.com/xniperbuilds/riplox/releases/latest/download/Riplox.apk" download
          data-dl="xniperbuilds/riplox" data-dl-file="Riplox.apk">Download</a>
     </nav>
     <button class="menu-btn" aria-label="Menu" aria-controls="nav">
@@ -82,11 +82,12 @@
         <h1>A free video downloader<br>that lives on your phone.</h1>
         <p class="lead">Over a thousand sites, up to 4K, or just the audio as MP3 with the cover art attached. Share a link from any app and the download starts on its own — no ads anywhere, no account, nothing to pay for later.</p>
         <div class="phero-cta">
-          <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox/releases/latest/download/Riplox.apk" download target="_blank" rel="noopener"
+          <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/riplox/releases/latest/download/Riplox.apk" download
              data-dl="xniperbuilds/riplox" data-dl-file="Riplox.apk" data-dl-note="#dl-note">Download APK</a>
           <a class="btn btn-ghost btn-lg" href="https://github.com/xniperbuilds/riplox" target="_blank" rel="noopener">View on GitHub</a>
         </div>
         <p class="muted" style="margin-top:14px;font-size:.92rem">Free · Android 8.0+ · Open source (GPL-3.0) · No ads <span id="dl-note"></span></p>
+        <p class="muted" style="margin-top:6px;font-size:.85rem;opacity:.8">When it finishes, Chrome asks whether to keep the APK — choose <strong>Keep</strong>.</p>
       </div>
       <div class="pvisual">
         <div class="big-emblem e-riplox"><img src="/logos/riplox.svg" alt="Riplox logo"></div>
@@ -152,7 +153,7 @@
         <h3>What you need</h3>
         <p>Android 8.0 or newer. Nothing else — no sign-in, no Google account, no permission beyond storing what you asked it to save.</p>
         <h3>Why an APK instead of the Play Store</h3>
-        <p>Google Play does not allow apps that download from YouTube, so this is not there and will not be. It comes as an APK from GitHub instead, and every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Android asks you to allow installing from this source the first time; that applies to this install and nothing else.</p>
+        <p>Google Play does not allow apps that download from YouTube, so this is not there and will not be. It comes as an APK from GitHub instead, and every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Chrome asks whether to keep an APK once it has downloaded — choose Keep, or it sits at 100% and never finishes. Android then asks you to allow installing from this source the first time; that applies to this install and nothing else.</p>
         <h3>Signing in, only when it matters</h3>
         <p>Public videos need no sign-in at all. For a private, age-restricted or guest-blocked video, you can sign in on the real site inside a normal web view — your password never passes through the app, and it only ever reaches what your own account can already open.</p>
         <h3>Want it on the computer instead?</h3>
@@ -174,7 +175,7 @@
         </details>
         <details>
           <summary>Why is it an APK instead of a Play Store app?</summary>
-          <p>Google Play does not allow apps that download from YouTube, so this is distributed as an APK from GitHub. Every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Android will ask you to allow installing from this source the first time, and that permission applies to this install only.</p>
+          <p>Google Play does not allow apps that download from YouTube, so this is distributed as an APK from GitHub. Every release publishes a SHA-256 checksum so you can confirm the file is the one we built. Chrome asks whether to keep an APK once it has downloaded — choose Keep, or it sits at 100% and never finishes. Android will then ask you to allow installing from this source the first time, and that permission applies to this install only.</p>
         </details>
         <details>
           <summary>Which sites does it work with?</summary>
@@ -196,6 +197,10 @@
           <summary>Can it download to my PC instead?</summary>
           <p>That is a different app in the same family. <a href="/riplox-desktop/">Riplox Desktop</a> runs on Windows, and you can share a link to it from your phone — it downloads on the PC even if the PC was switched off when you sent it.</p>
         </details>
+        <details>
+          <summary>The download stops at 100% and never finishes.</summary>
+          <p>Chrome asks whether to keep an APK once every byte has arrived, and until that is answered the download sits at 100%. Open Chrome's downloads, or pull down the notification, and choose Keep. If the prompt has already gone, cancel that entry, delete any half-finished Riplox.apk from your Downloads folder and start it again.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -205,10 +210,10 @@
       <div class="cta-inner reveal">
         <h2>Get Riplox for Android</h2>
         <p>One tap and the APK downloads. Free, open source, no account.</p>
-        <a class="btn btn-ondark btn-lg" href="https://github.com/xniperbuilds/riplox/releases/latest/download/Riplox.apk" download target="_blank" rel="noopener"
+        <a class="btn btn-ondark btn-lg" href="https://github.com/xniperbuilds/riplox/releases/latest/download/Riplox.apk" download
            data-dl="xniperbuilds/riplox" data-dl-file="Riplox.apk" data-dl-note="#dl-note-2">Download APK</a>
         <a class="btn btn-ondark-ghost btn-lg" href="https://github.com/xniperbuilds/riplox" target="_blank" rel="noopener">View on GitHub</a>
-        <p class="muted" style="margin-top:16px;font-size:.85rem;opacity:.8"><span id="dl-note-2"></span> Android will ask you to allow installing from this source the first time. Every release publishes a SHA-256 checksum so you can confirm the file is ours.</p>
+        <p class="muted" style="margin-top:16px;font-size:.85rem;opacity:.8"><span id="dl-note-2"></span> Chrome asks whether to keep the APK when it finishes — choose Keep. Android will then ask you to allow installing from this source the first time. Every release publishes a SHA-256 checksum so you can confirm the file is ours.</p>
       </div>
     </div>
   </section>
