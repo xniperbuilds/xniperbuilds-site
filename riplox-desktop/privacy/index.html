@@ -95,10 +95,11 @@
         <p>Ordinarily this lives in your Windows user folder. If you run the <strong>portable</strong> build, all of it stays in a <code>Data</code> folder beside the program instead, and nothing is written elsewhere on the PC.</p>
 
         <h2>Network use</h2>
-        <p>Riplox connects to the internet for six things, and nothing else:</p>
+        <p>Riplox connects to the internet for seven things, and nothing else:</p>
         <ul>
           <li><strong>The site you asked for</strong> — to fetch the video you pasted or sent.</li>
           <li><strong>Keeping its download engine current</strong> — Riplox uses the open-source <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">yt-dlp</a> and updates its own copy so links keep working when sites change.</li>
+          <li><strong>The YouTube helper</strong> — YouTube sometimes asks a downloader to prove it is not a bot. Riplox answers that with a small open-source program, <a href="https://github.com/jim60105/bgutil-ytdlp-pot-provider-rs" target="_blank" rel="noopener">bgutil-pot</a>, which it fetches once from GitHub (about 44 MB) and then runs on your own PC, listening only to itself. <strong>A new install fetches it on its own, without asking</strong> — which is why it is written here rather than left to be discovered. It is checked against a published SHA-256 before it is allowed to run, nothing about you is sent to it or with it, and you can turn it off or remove it under Settings → YouTube.</li>
           <li><strong>Checking whether a newer Riplox exists</strong> — it asks GitHub's public releases API for the latest version number. Nothing about you is sent with that request.</li>
           <li><strong>The Send relay</strong>, described next, and only if you turn Send on.</li>
           <li><strong>Channels you follow</strong> — if you use Following, Riplox reads each channel's own public feed on a timer to see whether anything new was posted. For YouTube that is the channel's <code>feeds/videos.xml</code> address, requested straight from YouTube. It is a plain read of a public page, nothing about you is sent with it, and Riplox makes these requests only for channels you added yourself. Follow nothing and none of them happen.</li>
