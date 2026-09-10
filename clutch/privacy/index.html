@@ -71,7 +71,7 @@
         <div class="crumbs"><a href="/">Home</a> / <a href="/clutch/">Clutch</a> / <span style="color:var(--indigo)">Privacy</span></div>
         <span class="eyebrow" style="margin-top:14px">Legal</span>
         <h1 style="font-size:clamp(2rem,4vw,2.6rem);font-weight:700;margin:12px 0 0">Privacy Policy</h1>
-        <p class="updated">Last updated: 19 July 2026</p>
+        <p class="updated">Last updated: 10 September 2026</p>
 
         <p style="margin-top:22px">Clutch is an honest, on-device game optimizer for Android, published by XniperBuilds. Privacy is built into how it works, so this policy is short and plain.</p>
 
@@ -93,13 +93,14 @@
         <p>This is a permitted "app network restriction" use of VpnService, not a data-collection or content-filtering VPN.</p>
 
         <h2>Your content and settings</h2>
-        <p>Your preferences — the apps you choose to block, your toggles and your device report — are stored only on your own device. This information never leaves your phone and is never sent to us or to any third party.</p>
+        <p>Your preferences — the apps you choose to block, the games you select, your toggles and your device report — are stored only on your own device. This information never leaves your phone and is never sent to us or to any third party.</p>
+        <p>Clutch also keeps a <strong>local session history</strong>: for your most recent sessions it saves the readings it took while you played (ping, jitter, packet loss, battery temperature, memory use, how long the session ran, and how much data the blocked apps used). This is written to Clutch's own private storage on your phone, is capped to your last 20 sessions, and you can erase it at any time with the <em>Clear</em> button on the Match Report screen. It is never uploaded, and we never see it.</p>
 
         <h2>Permissions</h2>
         <ul>
           <li><strong>VPN (BIND_VPN_SERVICE)</strong> — powers the local bandwidth firewall described above. Local-only; no traffic is routed or uploaded.</li>
-          <li><strong>Display over other apps</strong> — draws the floating stats panel and gesture-lock layer over your game. Nothing is captured or recorded.</li>
-          <li><strong>Usage access</strong> — lets Clutch detect which game is in the foreground and list installed apps so you can choose what to block. Read on-device only; never transmitted.</li>
+          <li><strong>Display over other apps</strong> — draws the floating stats panel over your game. Nothing is captured or recorded.</li>
+          <li><strong>Usage access</strong> — three read-only uses, all on your device: detecting which game is in the foreground (so the session can start and stop by itself), listing installed apps so you can choose what to block, and reading Android's own per-app data counters so Clutch can show you which apps actually used your bandwidth. Nothing is transmitted.</li>
           <li><strong>Notifications &amp; Do Not Disturb</strong> — used to run the foreground game session and to silence interruptions during a match. Managed by Android on your device.</li>
           <li><strong>Foreground service</strong> — keeps your game session (firewall + focus) alive while you play; started and stopped by you.</li>
         </ul>
