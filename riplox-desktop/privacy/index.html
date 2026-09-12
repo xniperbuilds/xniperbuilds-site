@@ -70,16 +70,17 @@
         <div class="crumbs"><a href="/">Home</a> / <a href="/riplox-desktop/">Riplox Desktop</a> / <span style="color:var(--indigo)">Privacy</span></div>
         <span class="eyebrow" style="margin-top:14px">Legal</span>
         <h1 style="font-size:clamp(2rem,4vw,2.6rem);font-weight:700;margin:12px 0 0">Privacy Policy</h1>
-        <p class="updated">Riplox Desktop · Last updated: 25 August 2026</p>
+        <p class="updated">Riplox Desktop · Last updated: 12 September 2026</p>
 
         <p style="margin-top:22px">Riplox Desktop is a free, open-source video downloader for Windows, published by XniperBuilds under the GPL&nbsp;v3. It runs on your own PC, and this policy covers the program, its browser extension, and the Send feature that lets your phone hand a link to your PC.</p>
 
         <div class="callout">
-          <p><strong>The short version:</strong> No account, no ads, and no analytics of any kind. We run no servers that receive your data. Your settings, history and downloaded files stay on your PC. When you send a link from your phone, it travels inside an envelope that is encrypted before it leaves the phone — the relay that carries it cannot read what is inside.</p>
+          <p><strong>The short version:</strong> No account, no ads, and no analytics of any kind. Your settings, history and downloaded files stay on your PC. One feature reaches a server of ours and only one &mdash; the <strong>Board</strong>, a public room of links, described below &mdash; and only while you have it open; open Riplox and never open the Board and nothing of yours reaches us at all. When you send a link from your phone, it travels inside an envelope that is encrypted before it leaves the phone — the relay that carries it cannot read what is inside.</p>
         </div>
 
         <h2>Data we collect</h2>
-        <p>None. There is no sign-up and no login to Riplox. We do not collect your name, email, phone number, location, IP address, download history or usage analytics, and we operate no servers that receive personal data. The program contains <strong>no analytics or telemetry code, no advertising SDK, and no third-party trackers</strong> — it shows no ads at all. It is open source, so this is checkable rather than something you have to take our word for.</p>
+        <p>Nothing, unless you post to the Board. There is no sign-up and no login to Riplox. We do not collect your name, email, phone number, location, download history or usage analytics. The program contains <strong>no analytics or telemetry code, no advertising SDK, and no third-party trackers</strong> — it shows no ads at all. It is open source, so this is checkable rather than something you have to take our word for.</p>
+        <p>The Board is the exception, and it is set out in full further down rather than summarised away here. Posting a link sends us that link, its title, and a random identifier for your copy of Riplox that is stored only as a salted hash. As with any request to any website, your IP address reaches the server that answers; it is kept only as a salted hash, for counting how often one place is posting, and it is never shown to anybody or stored beside anything that could name you.</p>
 
         <h2>Data stored on your PC</h2>
         <p>To work at all, Riplox keeps a few things <strong>on your own computer only</strong>:</p>
@@ -95,13 +96,14 @@
         <p>Ordinarily this lives in your Windows user folder. If you run the <strong>portable</strong> build, all of it stays in a <code>Data</code> folder beside the program instead, and nothing is written elsewhere on the PC.</p>
 
         <h2>Network use</h2>
-        <p>Riplox connects to the internet for seven things, and nothing else:</p>
+        <p>Riplox connects to the internet for eight things, and nothing else:</p>
         <ul>
           <li><strong>The site you asked for</strong> — to fetch the video you pasted or sent.</li>
           <li><strong>Keeping its download engine current</strong> — Riplox uses the open-source <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">yt-dlp</a> and updates its own copy so links keep working when sites change.</li>
           <li><strong>The YouTube helper</strong> — YouTube sometimes asks a downloader to prove it is not a bot. Riplox answers that with a small open-source program, <a href="https://github.com/jim60105/bgutil-ytdlp-pot-provider-rs" target="_blank" rel="noopener">bgutil-pot</a>, which it fetches once from GitHub (about 44 MB) and then runs on your own PC, listening only to itself. <strong>A new install fetches it on its own, without asking</strong> — which is why it is written here rather than left to be discovered. It is checked against a published SHA-256 before it is allowed to run, nothing about you is sent to it or with it, and you can turn it off or remove it under Settings → YouTube.</li>
           <li><strong>Checking whether a newer Riplox exists</strong> — it asks GitHub's public releases API for the latest version number. Nothing about you is sent with that request.</li>
           <li><strong>The Send relay</strong>, described next, and only if you turn Send on.</li>
+          <li><strong>The Board</strong>, described below, and only while it is open on your screen. Never open it and Riplox never contacts it.</li>
           <li><strong>Channels you follow</strong> — if you use Following, Riplox reads each channel's own public feed on a timer to see whether anything new was posted. For YouTube that is the channel's <code>feeds/videos.xml</code> address, requested straight from YouTube. It is a plain read of a public page, nothing about you is sent with it, and Riplox makes these requests only for channels you added yourself. Follow nothing and none of them happen.</li>
           <li><strong>Asking about a link on a page</strong> — when you use <em>Find on a page</em>, addresses that give nothing away (no file extension, or one nobody recognises) are asked about directly, so Riplox can tell a download from a page rather than guessing from the address. It asks at most a dozen per page and reads only the answer's headers, never the page behind it. This happens only when you run Find on a page.</li>
         </ul>
@@ -114,6 +116,14 @@
           <li><strong>Anywhere else</strong>, it passes through our relay at <code>relay.xniperbuilds.com</code>. The link is sealed with <strong>AES-GCM</strong> using the key your phone and PC agreed at pairing, <em>before</em> it leaves the phone. The relay holds and forwards that sealed envelope; it does not have the key and cannot read the link, the quality you chose, or anything else inside.</li>
         </ul>
         <p>The relay keeps a message only until your PC collects it. We do not log the contents of messages, because we could not read them if we tried.</p>
+
+        <h2>The Board</h2>
+        <p>The Board is one public room inside Riplox where people post links, and it is the only part of the program that sends anything to us. It is links and nothing else: there is no message box, no profile and no reply, and only YouTube, TikTok, Instagram, X and Snapchat Spotlight links are accepted.</p>
+        <p><strong>Only while you are looking.</strong> The connection opens when the Board is on your screen and closes a minute after you leave it. A copy of Riplox whose Board is never opened never contacts it at all.</p>
+        <p><strong>What we get when you post.</strong> The link, rebuilt &mdash; our server reads the platform and the content id out of what you pasted and builds a clean address from its own table, so the address you typed, including anything attached to it that was tracking you, is neither stored nor shown to anybody. The title goes with it, read by your own PC from a site you had already chosen to open, so that nobody reading the Board has to fetch anything from that platform. A random identifier for your copy of Riplox is sent too, stored only as a salted hash; it is not a name or an account, it is not derived from anything about your machine, and deleting it gives you a new one. Your IP address reaches the server the way it reaches any website, and is kept only as a salted hash for counting.</p>
+        <p><strong>What we get when you only read.</strong> Nothing you did not already send by opening a connection: the rows themselves are the same for everybody, and reading them never tells a platform who is looking, because nothing is fetched from one.</p>
+        <p><strong>Public, and meant to stay.</strong> Everything posted is visible to everyone running Riplox with the Board open, and a link is never deleted &mdash; including by the person who posted it. Post one only if you are content for it to stay readable.</p>
+        <p><strong>Reporting.</strong> Every row has Report. Pressing it hides that row for you straight away, without waiting for anyone else to agree. When three different copies of Riplox, from three different places, have reported the same link, it is hidden for everyone. We can also hide a link, stop the Board taking new ones, or close it altogether, at any time.</p>
 
         <h2>The browser extension</h2>
         <p>The Riplox extension adds a button that sends the page you are looking at to Riplox on the same PC.</p>
