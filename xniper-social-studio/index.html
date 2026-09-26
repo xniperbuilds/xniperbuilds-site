@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Xniper Social Studio — Social Media Design Skill for Claude Code</title>
-<meta name="description" content="Free, open-source Claude Code skill that turns a text brief into post-ready carousels, stories, thumbnails and promo videos — exact sizes, checked by a release gate.">
+<meta name="description" content="A premium Claude Code skill that turns a text brief into post-ready carousels, stories, thumbnails and promo videos — exact sizes, checked by a release gate. $29 one-time.">
 <link rel="canonical" href="https://xniperbuilds.com/xniper-social-studio/">
 <link rel="icon" href="/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="XniperBuilds">
 <meta property="og:url" content="https://xniperbuilds.com/xniper-social-studio/">
 <meta property="og:title" content="Xniper Social Studio — brief in, post-ready graphics out">
-<meta property="og:description" content="An open-source Claude Code skill for carousels, stories, thumbnails and promo videos — rendered to exact-size PNG and MP4 and checked by a release gate.">
+<meta property="og:description" content="A premium Claude Code skill for carousels, stories, thumbnails and promo videos — rendered to exact-size PNG and MP4 and checked by a release gate.">
 <meta property="og:image" content="https://xniperbuilds.com/xniper-social-studio/img/og-1200x630.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@
 <meta property="og:video:height" content="1080">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Xniper Social Studio — brief in, post-ready graphics out">
-<meta name="twitter:description" content="Open-source Claude Code skill: carousels, stories, thumbnails and promo videos from one brief, checked by a release gate.">
+<meta name="twitter:description" content="Premium Claude Code skill: carousels, stories, thumbnails and promo videos from one brief, checked by a release gate. $29 one-time.">
 <meta name="twitter:image" content="https://xniperbuilds.com/xniper-social-studio/img/og-1200x630.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@
   .band .eyebrow{background:rgba(139,123,247,.14);border-color:rgba(139,123,247,.3);color:#CFC9FF}
   .player{border-radius:18px;overflow:hidden;background:#000;box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08)}
   .player video{display:block;width:100%;height:auto;background:#000}
-  .reels{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:28px;align-items:center;margin-top:34px}
+  .reels{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start;margin-top:34px}
   .reels .note h3{font-size:1.5rem;font-weight:700;color:#fff}
   .reels .note p{color:#AAA5D8;margin-top:12px;font-size:1rem}
   .reels .note ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
@@ -83,41 +83,191 @@
   .faq-list summary:after{content:"+";color:var(--indigo);font-size:1.4rem;line-height:1}
   .faq-list details[open] summary:after{content:"–"}
   .faq-list details p{color:var(--muted);margin-top:12px}
+
+  .reels .note{grid-column:1/-1;max-width:780px}
+  .price{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 28px;box-shadow:var(--shadow)}
+  .price .amt{font-family:var(--font-head);font-weight:800;font-size:3rem;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+  .price .amt span{font-size:1rem;font-weight:600;color:var(--muted);margin-left:10px;letter-spacing:0}
+  .price ul{list-style:none;margin:22px 0 24px;padding:0;display:grid;gap:10px}
+  .price li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-2)}
+  .price li:before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--violet-soft) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 12.5l4 4 8-9' fill='none' stroke='%233E33A6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/12px no-repeat}
+  .price .btn{width:100%;justify-content:center}
+  .price .fine{font-size:.88rem;color:var(--muted);margin-top:14px}
+  .dm-overlay{position:fixed;inset:0;background:rgba(22,24,29,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .dm-overlay.open{display:flex}
+  .dm{background:#fff;border-radius:22px;max-width:520px;width:100%;padding:30px 28px 24px;box-shadow:var(--shadow-lg);position:relative;max-height:92vh;overflow:auto}
+  .dm h3{font-size:1.4rem;font-weight:700;padding-right:36px}
+  .dm .dm-sub{color:var(--muted);font-size:.95rem;margin-top:6px}
+  .dm-close{position:absolute;top:14px;right:14px;background:var(--violet-soft);border:0;width:36px;height:36px;border-radius:10px;cursor:pointer;color:var(--indigo);font-size:16px;font-family:inherit}
+  .dm label{display:block;font-family:var(--font-head);font-weight:600;font-size:.85rem;margin:16px 0 6px;color:var(--ink-2)}
+  .dm input,.dm textarea,.dm select{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink);outline:none;transition:border .15s;box-sizing:border-box}
+  .dm input:focus,.dm textarea:focus,.dm select:focus{border-color:var(--bright)}
+  .dm textarea{min-height:90px;resize:vertical}
+  .dm-send{margin-top:20px;width:100%;justify-content:center}
+  .dm-msg{margin-top:12px;font-size:.92rem;min-height:20px;text-align:center}
+  .dm-msg.ok{color:#1a7f37}.dm-msg.err{color:#c62828}
+  .dm-alt{text-align:center;color:var(--muted);font-size:.85rem;margin-top:10px}
+  .dm-alt a{color:var(--indigo);font-weight:600}
   @media(max-width:980px){.gallery{grid-template-columns:repeat(3,1fr)}.reels{grid-template-columns:1fr 1fr}.reels .note{grid-column:1/-1}}
   @media(max-width:820px){.install{grid-template-columns:1fr}}
   @media(max-width:560px){.gallery{grid-template-columns:repeat(2,1fr);gap:14px}.reels{grid-template-columns:1fr}.band{padding:64px 0}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
- {"@type":"SoftwareApplication","@id":"https://xniperbuilds.com/xniper-social-studio/#app","name":"Xniper Social Studio",
-  "description":"An open-source skill for Claude Code that turns a text brief into post-ready social media graphics and promo videos: carousels, stories, thumbnails and reels, rendered to exact-size PNG and MP4 and checked by a release gate.",
-  "applicationCategory":"DesignApplication","applicationSubCategory":"Claude Code skill","operatingSystem":"Windows, macOS, Linux",
-  "softwareVersion":"1.24.0","license":"https://opensource.org/licenses/MIT","isAccessibleForFree":true,
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-  "url":"https://xniperbuilds.com/xniper-social-studio/","downloadUrl":"https://github.com/xniperbuilds/xniper-social-studio",
-  "image":"https://xniperbuilds.com/xniper-social-studio/img/og-1200x630.jpg",
-  "screenshot":"https://xniperbuilds.com/xniper-social-studio/img/gallery.jpg",
-  "publisher":{"@type":"Organization","name":"XniperBuilds","url":"https://xniperbuilds.com/","sameAs":["https://github.com/xniperbuilds"]}},
- {"@type":"SoftwareSourceCode","name":"xniper-social-studio","codeRepository":"https://github.com/xniperbuilds/xniper-social-studio","programmingLanguage":"Python","license":"https://opensource.org/licenses/MIT","targetProduct":{"@id":"https://xniperbuilds.com/xniper-social-studio/#app"}},
- {"@type":"VideoObject","name":"Xniper Social Studio — promo","description":"A 25-second promo for Xniper Social Studio, made with the skill's own promo engine: a brief becomes planned slides, real screenshots, every network's size and a release gate.",
-  "thumbnailUrl":"https://xniperbuilds.com/xniper-social-studio/media/xss-promo-16x9.jpg","uploadDate":"2026-09-26","duration":"PT25S",
-  "contentUrl":"https://xniperbuilds.com/xniper-social-studio/media/xss-promo-16x9.mp4","embedUrl":"https://xniperbuilds.com/xniper-social-studio/#promo"},
- {"@type":"VideoObject","name":"Sample app promo (fictional brand) — made with Xniper Social Studio","description":"An 18-second vertical app promo for a fictional fitness app, made from one storyboard: voice-over, captions, music and the app's own screens in a phone frame.",
-  "thumbnailUrl":"https://xniperbuilds.com/xniper-social-studio/media/northpeak-promo-9x16.jpg","uploadDate":"2026-09-26","duration":"PT18S",
-  "contentUrl":"https://xniperbuilds.com/xniper-social-studio/media/northpeak-promo-9x16.mp4","embedUrl":"https://xniperbuilds.com/xniper-social-studio/#promo"},
- {"@type":"BreadcrumbList","itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Home","item":"https://xniperbuilds.com/"},
-  {"@type":"ListItem","position":2,"name":"Open Source","item":"https://xniperbuilds.com/open-source/"},
-  {"@type":"ListItem","position":3,"name":"Xniper Social Studio","item":"https://xniperbuilds.com/xniper-social-studio/"}]},
- {"@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"What is Xniper Social Studio?","acceptedAnswer":{"@type":"Answer","text":"A free, open-source skill for Claude Code. You describe a post in plain language and it plans the slides, builds them in HTML and CSS, renders exact-size PNGs, and runs a release gate that refuses the generic template look. It also makes 15–30 second promo videos from one storyboard."}},
-  {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is MIT-licensed and free to use, read and fork on GitHub."}},
-  {"@type":"Question","name":"What do I need to run it?","acceptedAnswer":{"@type":"Answer","text":"Claude Code and Python 3.9 or newer. The skill installs Pillow, Playwright with Chromium, edge-tts and a static ffmpeg build by itself the first time it needs them."}},
-  {"@type":"Question","name":"Which networks and sizes does it cover?","acceptedAnswer":{"@type":"Answer","text":"Instagram, Facebook, LinkedIn, X, Threads, TikTok, YouTube and Pinterest. Every post is rendered as a 4:5 master with a 9:16 and a 1:1 derived from it, and it builds platform canvases such as a 1280×720 thumbnail or a 1200×630 link image directly."}},
-  {"@type":"Question","name":"Can it make videos?","acceptedAnswer":{"@type":"Answer","text":"Yes. promo.py turns a storyboard into a voiced, captioned MP4 per language and per size (9:16, 16:9 or 1:1) with music and sound effects, and a gate measures the rendered frames. A finished carousel can also become a reel in one command."}},
-  {"@type":"Question","name":"Can it post to Instagram for me?","acceptedAnswer":{"@type":"Answer","text":"publish.py posts carousels, single images and reels through the Instagram API with Instagram Login, so no Facebook Page is needed, and it can pull reach, saves and shares back after 48 hours. Every command has a dry-run mode."}}
- ]}
-]}
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://xniperbuilds.com/xniper-social-studio/#app",
+   "name": "Xniper Social Studio",
+   "description": "A premium skill for Claude Code that turns a text brief into post-ready social media graphics and promo videos: carousels, stories, thumbnails and reels, rendered to exact-size PNG and MP4 and checked by a release gate.",
+   "applicationCategory": "DesignApplication",
+   "applicationSubCategory": "Claude Code skill",
+   "operatingSystem": "Windows, macOS, Linux",
+   "softwareVersion": "1.24.0",
+   "offers": {
+    "@type": "Offer",
+    "price": "29.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://xniperbuilds.com/xniper-social-studio/#buy"
+   },
+   "url": "https://xniperbuilds.com/xniper-social-studio/",
+   "image": "https://xniperbuilds.com/xniper-social-studio/img/og-1200x630.jpg",
+   "screenshot": "https://xniperbuilds.com/xniper-social-studio/img/gallery.jpg",
+   "publisher": {
+    "@type": "Organization",
+    "name": "XniperBuilds",
+    "url": "https://xniperbuilds.com/",
+    "sameAs": [
+     "https://github.com/xniperbuilds"
+    ]
+   }
+  },
+  {
+   "@type": "VideoObject",
+   "name": "Xniper Social Studio — promo",
+   "description": "A 25-second promo for Xniper Social Studio, made with the skill's own promo engine: a brief becomes planned slides, real screenshots, every network's size and a release gate.",
+   "thumbnailUrl": "https://xniperbuilds.com/xniper-social-studio/media/xss-promo-16x9.jpg",
+   "uploadDate": "2026-09-27",
+   "duration": "PT25S",
+   "contentUrl": "https://xniperbuilds.com/xniper-social-studio/media/xss-promo-16x9.mp4",
+   "embedUrl": "https://xniperbuilds.com/xniper-social-studio/#promo"
+  },
+  {
+   "@type": "VideoObject",
+   "name": "Sample app promo (fictional brand) — made with Xniper Social Studio",
+   "description": "An 18-second vertical app promo for a fictional fitness app, made from one storyboard: voice-over, captions, music and the app's own screens in a phone frame.",
+   "thumbnailUrl": "https://xniperbuilds.com/xniper-social-studio/media/northpeak-promo-9x16.jpg",
+   "uploadDate": "2026-09-26",
+   "duration": "PT18S",
+   "contentUrl": "https://xniperbuilds.com/xniper-social-studio/media/northpeak-promo-9x16.mp4",
+   "embedUrl": "https://xniperbuilds.com/xniper-social-studio/#promo"
+  },
+  {
+   "@type": "VideoObject",
+   "name": "Riplox TT launch film — made with Xniper Social Studio",
+   "description": "An 18-second vertical launch film for Riplox TT, the XniperBuilds Android app: saving a TikTok goes from four steps to one tap on Share.",
+   "thumbnailUrl": "https://xniperbuilds.com/xniper-social-studio/media/riplox-tt-promo-en-9x16.jpg",
+   "uploadDate": "2026-09-27",
+   "duration": "PT18S",
+   "contentUrl": "https://xniperbuilds.com/xniper-social-studio/media/riplox-tt-promo-en-9x16.mp4",
+   "embedUrl": "https://xniperbuilds.com/xniper-social-studio/#promo"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://xniperbuilds.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Products",
+     "item": "https://xniperbuilds.com/#products"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Xniper Social Studio",
+     "item": "https://xniperbuilds.com/xniper-social-studio/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is Xniper Social Studio?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A premium skill for Claude Code. You describe a post in plain language and it plans the slides, builds them in HTML and CSS, renders exact-size PNGs, and runs a release gate that refuses the generic template look. It also makes 15–30 second promo videos from one storyboard."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does it cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "$29, one time. Every 1.x update is included, and there is no subscription."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I get it after I order?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Send the order form and we reply by email with payment options. Once the payment lands you receive a download link: the skill as a zip, a two-minute install guide and the licence."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I use it for client work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The commercial licence covers your own work and paid work for your clients, and what you make with it is yours. One licence is one person, or one seat in a company."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need to run it?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Claude Code and Python 3.9 or newer. The skill installs Pillow, Playwright with Chromium, edge-tts and a static ffmpeg build by itself the first time it needs them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which networks and sizes does it cover?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Instagram, Facebook, LinkedIn, X, Threads, TikTok, YouTube and Pinterest. Every post is rendered as a 4:5 master with a 9:16 and a 1:1 derived from it, and it builds platform canvases such as a 1280×720 thumbnail or a 1200×630 link image directly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can it make videos?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. It turns a storyboard into a voiced, captioned MP4 per language and per size (9:16, 16:9 or 1:1) with music and sound effects, and a gate measures the rendered frames. A finished carousel can also become a reel in one command."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can it post to Instagram for me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It posts carousels, single images and reels through the Instagram API with Instagram Login, so no Facebook Page is needed, and it can pull reach, saves and shares back after 48 hours. Every command has a dry-run mode."
+     }
+    }
+   ]
+  }
+ ]
+}
 </script>
 </head>
 <body>
@@ -133,7 +283,7 @@
       <a href="/open-source/">Open Source</a>
       <a href="/#about">About</a>
       <a href="/#contact">Contact</a>
-      <a class="btn btn-primary nav-cta" href="https://github.com/xniperbuilds/xniper-social-studio" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-primary nav-cta js-buy" href="#buy">Buy — $29</a>
     </nav>
     <button class="menu-btn" aria-label="Menu" aria-controls="nav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -146,16 +296,16 @@
   <section class="phero">
     <div class="wrap">
       <div>
-        <div class="crumbs"><a href="/">Home</a> / <a href="/open-source/">Open Source</a> / Xniper Social Studio</div>
+        <div class="crumbs"><a href="/">Home</a> / <a href="/#products">Products</a> / Xniper Social Studio</div>
         <h1>Xniper Social Studio</h1>
-        <p class="lead">A free, open-source skill for <b>Claude Code</b> that turns a plain-text brief into post-ready social media graphics and promo videos — carousels, stories, thumbnails and reels, rendered to exact-size PNG and MP4 and checked by a release gate before anything is posted.</p>
+        <p class="lead">A premium skill for <b>Claude Code</b> that turns a plain-text brief into post-ready social media graphics and promo videos — carousels, stories, thumbnails and reels, rendered to exact-size PNG and MP4 and checked by a release gate before anything is posted.</p>
         <div class="phero-cta">
-          <a class="btn btn-primary btn-lg" href="https://github.com/xniperbuilds/xniper-social-studio" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-primary btn-lg js-buy" href="#buy">Buy — $29</a>
           <a class="btn btn-ghost btn-lg" href="#promo">Watch the promo</a>
         </div>
-        <div class="meta"><span>MIT licence</span><span>v1.24.0</span><span>69 templates</span><span>37 art directions</span><span>90 font pairings</span></div>
+        <div class="meta"><span>$29 one-time</span><span>v1.24.0</span><span>69 templates</span><span>37 art directions</span><span>90 font pairings</span></div>
       </div>
-      <div class="heroshot"><img src="img/hero.jpg" width="1280" height="640" alt="Xniper Social Studio: open-source skill for Claude Code, with carousel slides for five brands floating in 3D"></div>
+      <div class="heroshot"><img src="img/hero.jpg" width="1280" height="640" alt="Xniper Social Studio: premium skill for Claude Code, with carousel slides for five brands floating in 3D"></div>
     </div>
   </section>
 
@@ -165,7 +315,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Promo videos</span>
         <h2>Made with the skill itself</h2>
-        <p>Both films come out of <code>promo.py</code>: one storyboard in, a voiced and captioned MP4 per size out — music, sound on the cuts, and a gate that measures every frame.</p>
+        <p>Every film here was made with the skill: HTML scenes rendered frame by frame, a voice-over with word-timed captions, music and sound on the cuts — and a gate that measures the frames before anything ships.</p>
       </div>
       <div class="player reveal">
         <video controls playsinline preload="metadata" poster="media/xss-promo-16x9.jpg" width="1920" height="1080" title="Xniper Social Studio promo, 16:9">
@@ -174,8 +324,8 @@
       </div>
       <div class="reels">
         <div class="note reveal">
-          <h3>Every size from one storyboard</h3>
-          <p>The same film cut for a feed and for Reels, TikTok and Shorts — and a sample app promo for a fictional fitness brand, built from its own app screens.</p>
+          <h3>One storyboard, every size — and real launches</h3>
+          <p>The same film cut for a feed and for Reels, TikTok and Shorts, a sample app promo for a fictional fitness brand, and the launch film for our own Android app, Riplox TT.</p>
           <ul><li>Voice-over and burned captions, word-timed</li><li>Text kept above the Reels 35% safe line</li><li>Loudness normalised to −14 LUFS</li></ul>
         </div>
         <div class="reel reveal">
@@ -185,6 +335,10 @@
         <div class="reel reveal">
           <div class="player"><video controls playsinline preload="metadata" poster="media/northpeak-promo-9x16.jpg" width="1080" height="1920" title="Sample app promo for a fictional fitness app, 9:16"><source src="media/northpeak-promo-9x16.mp4" type="video/mp4"></video></div>
           <div class="cap"><b>Sample app promo</b> · fictional brand · 18 s</div>
+        </div>
+        <div class="reel reveal">
+          <div class="player"><video controls playsinline preload="metadata" poster="media/riplox-tt-promo-en-9x16.jpg" width="1080" height="1920" title="Riplox TT launch film, 9:16"><source src="media/riplox-tt-promo-en-9x16.mp4" type="video/mp4"></video></div>
+          <div class="cap"><b>Riplox TT</b> · our Android app · 18 s</div>
         </div>
       </div>
     </div>
@@ -232,18 +386,27 @@
     </div>
   </section>
 
-  <!-- INSTALL -->
-  <section class="section" id="install" style="padding-top:0">
+  <!-- PRICING -->
+  <section class="section" id="buy" style="padding-top:0">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Install</span>
-        <h2>Two commands in Claude Code</h2>
+        <span class="eyebrow">Pricing</span>
+        <h2>One price. Every 1.x update.</h2>
       </div>
       <div class="install">
-        <div class="reveal"><h3>From the plugin marketplace</h3><p>Recommended. Update later with <code>/plugin marketplace update xniperbuilds-social-studio</code>.</p>
-          <div class="code">/plugin marketplace add xniperbuilds/xniper-social-studio<br>/plugin install xniper-social-studio@xniperbuilds-social-studio</div>
-          <p style="margin-top:12px;font-size:.92rem;overflow-wrap:anywhere">An SSH host-key error on the first line? Use the HTTPS address instead: <code>/plugin marketplace add https://github.com/xniperbuilds/xniper-social-studio.git</code></p></div>
-        <div class="reveal"><h3>Then just ask</h3><p>Plain language is enough — the skill picks the look, the sizes and the tools.</p>
+        <div class="price reveal">
+          <div class="amt">$29<span>one-time</span></div>
+          <ul>
+            <li>The whole skill — 69 templates, 37 art directions, the promo-video engine and the release gate</li>
+            <li>Every 1.x update, sent to you as a new zip</li>
+            <li>A two-minute install guide</li>
+            <li>A commercial licence — use it for your clients' work too</li>
+            <li>Support by email</li>
+          </ul>
+          <a class="btn btn-primary btn-lg js-buy" href="#buy">Buy now</a>
+          <p class="fine">Send the order form and we reply by email with payment options. The download link follows as soon as the payment lands.</p>
+        </div>
+        <div class="reveal"><h3>Then just ask</h3><p>Copy one folder into Claude Code's skills directory, then describe the post in plain language — the skill picks the look, the sizes and the tools.</p>
           <div class="code"><span class="c"># in Claude Code</span><br>Make a 5-slide Instagram carousel<br>about our new pricing, bold and clean.<br><span class="c"># → planned, rendered, gated PNGs</span></div></div>
       </div>
     </div>
@@ -254,12 +417,14 @@
     <div class="wrap">
       <div class="section-head reveal"><span class="eyebrow">FAQ</span><h2>Questions, answered</h2></div>
       <div class="faq-list">
-        <details class="reveal" open><summary>What is Xniper Social Studio?</summary><p>A free, open-source skill for Claude Code. You describe a post in plain language and it plans the slides, builds them in HTML and CSS, renders exact-size PNGs, and runs a release gate that refuses the generic template look. It also makes 15–30 second promo videos from one storyboard.</p></details>
-        <details class="reveal"><summary>Is it free?</summary><p>Yes. It is MIT-licensed and free to use, read and fork on GitHub.</p></details>
+        <details class="reveal" open><summary>What is Xniper Social Studio?</summary><p>A premium skill for Claude Code. You describe a post in plain language and it plans the slides, builds them in HTML and CSS, renders exact-size PNGs, and runs a release gate that refuses the generic template look. It also makes 15–30 second promo videos from one storyboard.</p></details>
+        <details class="reveal"><summary>How much does it cost?</summary><p>$29, one time. Every 1.x update is included, and there is no subscription.</p></details>
+        <details class="reveal"><summary>How do I get it after I order?</summary><p>Send the order form and we reply by email with payment options. Once the payment lands you receive a download link: the skill as a zip, a two-minute install guide and the licence.</p></details>
+        <details class="reveal"><summary>Can I use it for client work?</summary><p>Yes. The commercial licence covers your own work and paid work for your clients, and what you make with it is yours. One licence is one person, or one seat in a company.</p></details>
         <details class="reveal"><summary>What do I need to run it?</summary><p>Claude Code and Python 3.9 or newer. The skill installs Pillow, Playwright with Chromium, edge-tts and a static ffmpeg build by itself the first time it needs them.</p></details>
         <details class="reveal"><summary>Which networks and sizes does it cover?</summary><p>Instagram, Facebook, LinkedIn, X, Threads, TikTok, YouTube and Pinterest. Every post is rendered as a 4:5 master with a 9:16 and a 1:1 derived from it, and it builds platform canvases such as a 1280×720 thumbnail or a 1200×630 link image directly.</p></details>
-        <details class="reveal"><summary>Can it make videos?</summary><p>Yes. promo.py turns a storyboard into a voiced, captioned MP4 per language and per size (9:16, 16:9 or 1:1) with music and sound effects, and a gate measures the rendered frames. A finished carousel can also become a reel in one command.</p></details>
-        <details class="reveal"><summary>Can it post to Instagram for me?</summary><p>publish.py posts carousels, single images and reels through the Instagram API with Instagram Login, so no Facebook Page is needed, and it can pull reach, saves and shares back after 48 hours. Every command has a dry-run mode.</p></details>
+        <details class="reveal"><summary>Can it make videos?</summary><p>Yes. It turns a storyboard into a voiced, captioned MP4 per language and per size (9:16, 16:9 or 1:1) with music and sound effects, and a gate measures the rendered frames. A finished carousel can also become a reel in one command.</p></details>
+        <details class="reveal"><summary>Can it post to Instagram for me?</summary><p>It posts carousels, single images and reels through the Instagram API with Instagram Login, so no Facebook Page is needed, and it can pull reach, saves and shares back after 48 hours. Every command has a dry-run mode.</p></details>
       </div>
     </div>
   </section>
@@ -268,9 +433,9 @@
   <section class="cta-band">
     <div class="wrap">
       <div class="cta-inner reveal">
-        <h2>Free and open source</h2>
-        <p>Read the code, run it on your own brand, fork it. Stars help other builders find it.</p>
-        <a class="btn btn-ondark btn-lg" href="https://github.com/xniperbuilds/xniper-social-studio" target="_blank" rel="noopener">View on GitHub</a>
+        <h2>Your next post, from one brief</h2>
+        <p>$29 one-time, every 1.x update included, and a licence that covers your clients' work.</p>
+        <a class="btn btn-ondark btn-lg js-buy" href="#buy">Buy — $29</a><a class="btn btn-ondark-ghost btn-lg" href="#promo">Watch the promo</a>
       </div>
     </div>
   </section>
@@ -324,6 +489,55 @@
   </div>
 </footer>
 
+
+<div class="dm-overlay" id="buy-modal" role="dialog" aria-modal="true" aria-labelledby="dm-title">
+  <div class="dm">
+    <button class="dm-close" aria-label="Close" onclick="dmClose()">✕</button>
+    <h3 id="dm-title">Buy Xniper Social Studio — $29</h3>
+    <p class="dm-sub">Send this and we reply by email with payment options. The download link follows as soon as the payment lands.</p>
+    <label for="dm-name">Your name</label>
+    <input id="dm-name" type="text" autocomplete="name">
+    <label for="dm-email">Email</label>
+    <input id="dm-email" type="email" autocomplete="email">
+    <label for="dm-country">Country</label>
+    <input id="dm-country" type="text" autocomplete="country-name">
+    <label for="dm-wa">WhatsApp number (optional)</label>
+    <input id="dm-wa" type="tel" autocomplete="tel">
+    <label for="dm-note">Anything we should know? (optional)</label>
+    <textarea id="dm-note" placeholder="Seats for a team, an invoice in your company's name…"></textarea>
+    <input type="checkbox" id="dm-bot" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="btn btn-primary dm-send" onclick="dmSend()">Send order</button>
+    <div class="dm-msg" id="dm-msg"></div>
+    <p class="dm-alt">Prefer email? <a href="mailto:hello@xniperbuilds.com?subject=Xniper%20Social%20Studio%20order">hello@xniperbuilds.com</a></p>
+  </div>
+</div>
+<script>
+var DM_PRODUCT='Xniper Social Studio';
+var W3KEY='a2f7894f-12bf-4f3d-b7c0-3680c257269b';
+function dmOpen(e){if(e)e.preventDefault();document.getElementById('buy-modal').classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('dm-name').focus();},60);}
+function dmClose(){document.getElementById('buy-modal').classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.js-buy').forEach(function(a){a.addEventListener('click',dmOpen);});
+document.getElementById('buy-modal').addEventListener('click',function(e){if(e.target===this)dmClose();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')dmClose();});
+function dmSend(){
+  var v=function(id){return document.getElementById(id).value.trim();},
+      name=v('dm-name'),email=v('dm-email'),country=v('dm-country'),wa=v('dm-wa'),note=v('dm-note'),
+      msg=document.getElementById('dm-msg'),btn=document.querySelector('.dm-send');
+  if(document.getElementById('dm-bot').checked)return;
+  if(!name||!email||!country){msg.className='dm-msg err';msg.textContent='Please fill in your name, email and country.';return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.className='dm-msg err';msg.textContent='Please enter a valid email address.';return;}
+  var orig=btn.textContent;btn.disabled=true;btn.textContent='Sending…';msg.className='dm-msg';msg.textContent='';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+    access_key:W3KEY,subject:DM_PRODUCT+' order — '+name,from_name:'XniperBuilds Order',
+    product:DM_PRODUCT,price:'$29',name:name,email:email,country:country,whatsapp:(wa||'—'),note:(note||'—')
+  })}).then(function(r){return r.json();}).then(function(d){
+    btn.disabled=false;btn.textContent=orig;
+    if(d&&d.success){msg.className='dm-msg ok';msg.textContent='✅ Thanks, '+name+'! Your order is in — we will email you the payment options shortly.';
+      ['dm-name','dm-email','dm-country','dm-wa','dm-note'].forEach(function(id){document.getElementById(id).value='';});}
+    else{msg.className='dm-msg err';msg.textContent='Could not send right now — please email us at hello@xniperbuilds.com.';}
+  }).catch(function(){btn.disabled=false;btn.textContent=orig;msg.className='dm-msg err';msg.textContent='Could not send right now — please email us at hello@xniperbuilds.com.';});
+}
+</script>
 <script src="/main.js"></script>
 </body>
 </html>
