@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Xniper Social Studio">
+  <defs>
+    <linearGradient id="xssBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B4BE0"/><stop offset="1" stop-color="#221C63"/></linearGradient>
+    <linearGradient id="xssArt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B7BF7"/><stop offset="1" stop-color="#5B4BE0"/></linearGradient>
+  </defs>
+  <rect width="100" height="100" fill="url(#xssBg)"/>
+  <g transform="rotate(-17 50 80)"><rect x="32" y="22" width="36" height="45" rx="5" fill="#8B7BF7" opacity=".5"/></g>
+  <g transform="rotate(-5 50 80)"><rect x="32" y="22" width="36" height="45" rx="5" fill="#C9C1FF" opacity=".85"/></g>
+  <g transform="rotate(9 50 80)">
+    <rect x="32" y="22" width="36" height="45" rx="5" fill="#000" opacity=".22" transform="translate(1.5 2.5)"/>
+    <rect x="32" y="22" width="36" height="45" rx="5" fill="#FFFFFF"/>
+    <rect x="37" y="28" width="19" height="5" rx="2" fill="#3E33A6"/>
+    <rect x="37" y="36" width="26" height="3" rx="1.5" fill="#D6D0F5"/>
+    <rect x="37" y="42" width="20" height="3" rx="1.5" fill="#D6D0F5"/>
+    <rect x="37" y="49" width="26" height="12" rx="3" fill="url(#xssArt)"/>
+  </g>
+</svg>
